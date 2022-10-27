@@ -1,10 +1,9 @@
-package com.example.eurder.domain;
+package com.example.eurder.domain.user;
 
-import java.util.ArrayList;
 import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 public enum Role {
-    USER(newArrayList(Feature.USER)), ADMIN(newArrayList());
+    USER(newArrayList(Feature.USER)), ADMIN(newArrayList(Feature.ADDING_NEW_ITEM));
 
     private List<Feature> featureList;
 
