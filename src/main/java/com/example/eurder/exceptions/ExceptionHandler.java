@@ -21,5 +21,28 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         response.sendError(BAD_REQUEST.value(), ex.getMessage());
     }
 
+    @org.springframework.web.bind.annotation.ExceptionHandler(IllegalArgumentException.class)
+    protected void userID(NotFoundexception ex, HttpServletResponse response) throws IOException {
+        logger.error(ex.getMessage(), ex);
+        response.sendError(NOT_FOUND.value(), ex.getMessage());
+    }
+    @org.springframework.web.bind.annotation.ExceptionHandler(IllegalArgumentException.class)
+    protected void userID(UnauthorizatedException ex, HttpServletResponse response) throws IOException {
+        logger.error(ex.getMessage(), ex);
+        response.sendError(NOT_FOUND.value(), ex.getMessage());
+    }
+
+    @org.springframework.web.bind.annotation.ExceptionHandler(IllegalArgumentException.class)
+    protected void userID(UnknownPersonException ex, HttpServletResponse response) throws IOException {
+        logger.error(ex.getMessage(), ex);
+        response.sendError(NOT_FOUND.value(), ex.getMessage());
+    }
+    @org.springframework.web.bind.annotation.ExceptionHandler(IllegalArgumentException.class)
+    protected void userID(WrongPasswordException ex, HttpServletResponse response) throws IOException {
+        logger.error(ex.getMessage(), ex);
+        response.sendError(NOT_FOUND.value(), ex.getMessage());
+    }
+
+
 
 }
