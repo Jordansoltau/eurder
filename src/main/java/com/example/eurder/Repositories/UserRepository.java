@@ -4,7 +4,7 @@ import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Role;
 import com.example.eurder.domain.user.User;
 import org.springframework.stereotype.Component;
-
+import com.example.eurder.exceptions.NotFoundexception;
 import java.util.*;
 
 @Component
@@ -36,7 +36,8 @@ public class UserRepository {
     }
 
     public User getUserByEmail(String eMail) {
-        return usersList.values().stream().filter(person -> person.getEmail().equals(eMail)).findFirst().orElseThrow();
+
+        return usersList.values().stream().filter(person -> person.getEmail().equals(eMail)).findFirst().orElseThrow(NotFoundexception::new);
     }
 }
 

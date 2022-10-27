@@ -32,23 +32,7 @@ class ItemControllerTest {
     }
     @Test
     void addItemHappyPath(){
-
-
-        String requestBody = "{\n" +
-                "  \"name\": \"digital book\",\n" +
-                "  \"description\": \"a book\",\n" +
-                "  \"price\": 20,\n" +
-                "  \"amount\": 15 \n}"
-                ;
-
-
-        String adminId = userRepository.getAllPersons().stream()
-                .filter(user -> user.getRole() == Role.ADMIN)
-                .toList()
-                .get(0)
-                .getUserId();
-
-        given()
+         given()
                 .baseUri("http://localhost")
                 .port(port)
                 .auth()
@@ -57,12 +41,61 @@ class ItemControllerTest {
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
-                .body(requestBody)
+                .body(createAnewItem())
                 .when()
                 .post("/items")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value())
                 .extract();
+    }
+
+    @Test
+    void addItemAsMember(){
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .body(createAnewItem())
+                .when()
+                .post("/items")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.FORBIDDEN.value())
+                .extract();
+    }
+@Test
+    void addItemEmailDoesNotExist(){
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("adn@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .body(createAnewItem())
+                .when()
+                .post("/items")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .extract();
+    }
+
+    private static String createAnewItem() {
+        String requestBody = "{\n" +
+                "  \"name\": \"digital book\",\n" +
+                "  \"description\": \"a book\",\n" +
+                "  \"price\": 20,\n" +
+                "  \"amount\": 15 \n}"
+                ;
+        return requestBody;
     }
 }

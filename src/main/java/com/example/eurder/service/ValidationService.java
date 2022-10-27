@@ -19,7 +19,7 @@ private final Logger logger = LoggerFactory.getLogger(ValidationService.class);
         this.userRepository = userRepository;
     }
 
-    void validateInputOfitemDto(ItemDto itemDto, String field, ItemService itemService) {
+    void validateInputOfitemDto(ItemDto itemDto, String field) {
         if (itemDto.getName() == null || itemDto.getName().isBlank())
             throw new IllegalArgumentException(field + canNotBeEmptyMessage());
         if (itemDto.getDescription() == null || itemDto.getDescription().isBlank())

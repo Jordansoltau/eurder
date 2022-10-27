@@ -23,10 +23,10 @@ public class ItemService {
 
     public void createANewItemInItemRepository(String authorization, ItemDto itemDto) {
         securityService.validateAuthorization(authorization,ADDING_NEW_ITEM);
-        validationService.validateInputOfitemDto(itemDto, "name", this);
-        validationService.validateInputOfitemDto(itemDto, "description", this);
-        validationService.validateInputOfitemDto(itemDto, "price", this);
-        validationService.validateInputOfitemDto(itemDto, "Name", this);
+        validationService.validateInputOfitemDto(itemDto, "name");
+        validationService.validateInputOfitemDto(itemDto, "description");
+        validationService.validateInputOfitemDto(itemDto, "price");
+        validationService.validateInputOfitemDto(itemDto, "amount");
         itemRepository.addNewItem(itemDto);
 
     }
