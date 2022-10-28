@@ -1,4 +1,4 @@
-package com.example.eurder.service;
+package com.example.eurder.service.security;
 
 public class UsernamePassword {
     private final String username;

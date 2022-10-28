@@ -1,4 +1,4 @@
-package com.example.eurder.service;
+package com.example.eurder.service.security;
 
 import com.example.eurder.Repositories.UserRepository;
 import com.example.eurder.domain.user.Feature;

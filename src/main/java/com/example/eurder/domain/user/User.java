@@ -13,8 +13,8 @@ public class User {
     private final String password;
     private Role role;
 
-    public User(String firstName, String lastName, String email, Address address, String phoneNumber, String password) {
-        this.password = password;
+    public User(String firstName, String lastName, String email, Address address, String phoneNumber) {
+        this.password = "password";
         UserId = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;

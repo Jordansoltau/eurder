@@ -1,7 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.dto.ItemDto;
-import com.example.eurder.service.ItemService;
+import com.example.eurder.service.security.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

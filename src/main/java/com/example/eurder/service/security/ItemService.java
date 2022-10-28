@@ -1,8 +1,9 @@
-package com.example.eurder.service;
+package com.example.eurder.service.security;
 
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.UserRepository;
 import com.example.eurder.dto.ItemDto;
+import com.example.eurder.service.ValidationInputService;
 import org.springframework.stereotype.Service;
 
 import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
@@ -11,22 +12,22 @@ import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
 public class ItemService {
     private final ItemRepository itemRepository;
     private final UserRepository userRepository;
-    private final ValidationService validationService;
+    private final ValidationInputService validationInputService;
     private final SecurityService securityService;
 
-    public ItemService(ItemRepository itemRepository, UserRepository userRepository, ValidationService validationService, SecurityService securityService) {
+    public ItemService(ItemRepository itemRepository, UserRepository userRepository, ValidationInputService validationInputService, SecurityService securityService) {
         this.itemRepository = itemRepository;
         this.userRepository = userRepository;
-        this.validationService = validationService;
+        this.validationInputService = validationInputService;
         this.securityService = securityService;
     }
 
     public void createANewItemInItemRepository(String authorization, ItemDto itemDto) {
         securityService.validateAuthorization(authorization,ADDING_NEW_ITEM);
-        validationService.validateInputOfitemDto(itemDto, "amount");
-        validationService.validateInputOfitemDto(itemDto, "price");
-        validationService.validateInputOfitemDto(itemDto, "description");
-        validationService.validateInputOfitemDto(itemDto, "name");
+        validationInputService.validateAmountOfitemDto(itemDto, "Amount");
+        validationInputService.validatePriceOfitemDto(itemDto,"Price");
+        validationInputService.validateDescriptionOfitemDto(itemDto,"Description");
+        validationInputService.validateNameOfitemDto(itemDto, "Name");
         itemRepository.addNewItem(itemDto);
 
     }
