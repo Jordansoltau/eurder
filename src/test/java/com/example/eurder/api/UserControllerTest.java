@@ -33,12 +33,15 @@ class UserControllerTest {
 
     @Test
     void addUserHappyPath() {
-        System.out.println(createAnewUser());
+
         given()
                 .baseUri("http://localhost")
                 .port(port)
-                .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
                 .and()
                 .body(createAnewUser())
                 .when()
@@ -49,17 +52,78 @@ class UserControllerTest {
                 .extract();
 
     }
+    @Test
+    void addUserWithoutFirstName() {
+        String requestBody = "{\n" +
+                "\"firstName\": \"\",\n" +
+                "\"lastName\": \"string\",\n" +
+                "\"email\": \"str@i.ng\",\n" +
+                "\"street\": \"string\",\n" +
+                "\"houseNumber\": \"string\",\n" +
+                "\"postCode\": \"string\",\n" +
+                "\"city\": \"string\",\n" +
+                "\"phoneNumber\": \"0123456789\"\n}";
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .body(requestBody)
+                .when()
+                .post("/users")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .extract();
+
+    }
+    @Test
+    void addUserWithoutLastName() {
+        String requestBody = "{\n" +
+                "\"firstName\": \"string\",\n" +
+                "\"lastName\": \"\",\n" +
+                "\"email\": \"str@i.ng\",\n" +
+                "\"street\": \"string\",\n" +
+                "\"houseNumber\": \"string\",\n" +
+                "\"postCode\": \"string\",\n" +
+                "\"city\": \"string\",\n" +
+                "\"phoneNumber\": \"0123456789\"\n}";
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .body(requestBody)
+                .when()
+                .post("/users")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .extract();
+
+    }
+
 
     private static String createAnewUser() {
         String requestBody = "{\n" +
                 "\"firstName\": \"string\",\n" +
                 "\"lastName\": \"string\",\n" +
-                "\"email\": \"string\",\n" +
+                "\"email\": \"str@i.ng\",\n" +
                     "\"street\": \"string\",\n" +
                     "\"houseNumber\": \"string\",\n" +
                     "\"postCode\": \"string\",\n" +
-                    "\"city\": \"string\"," +
-                "\"phoneNumber\": \"string\"\n}";
+                    "\"city\": \"string\",\n" +
+                "\"phoneNumber\": \"0123456789\"\n}";
         return requestBody;
     }
 

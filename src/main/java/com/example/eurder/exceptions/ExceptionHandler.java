@@ -29,7 +29,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(UnauthorizatedException.class)
     protected void userID(UnauthorizatedException ex, HttpServletResponse response) throws IOException {
         logger.error(ex.getMessage(), ex);
-        response.sendError(NOT_FOUND.value(), ex.getMessage());
+        response.sendError(FORBIDDEN.value(), ex.getMessage());
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(UnknownPersonException.class)

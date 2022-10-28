@@ -1,6 +1,7 @@
 package com.example.eurder.service;
 
 import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.domain.user.User;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.UserDto;
 import org.slf4j.Logger;
@@ -48,29 +49,48 @@ public class ValidationInputService {
     }
 
     public void validateEmail(UserDto userDto, String email) {
-
-        if (userDto.getEmail() == null || userRepository.doesEmailAlreadyExist(userDto.getEmail()))
+        if (userDto.getEmail() == null
+                || userDto.getEmail().isBlank()
+                || !userDto.getEmail().matches("^[A-z0-9]+@[A-z0-9]+\\.[A-z0-9]+$"))
             throw new IllegalArgumentException(email + mustBeValid());
+
+        if (userRepository.doesEmailAlreadyExist(userDto.getEmail())) {
+            throw new IllegalArgumentException(email + mustBeUnique());
+        }
+    }
+
+    private String mustBeUnique() {
+        return "must be unique";
+    }
+
+    void validateThatPerson(UserDto userDto, User user) {
+        if (userDto.getEmail().equals(user.getEmail()))
+            throw new IllegalArgumentException("E mail is not unique!");
+
     }
 
     public void validateAdressName(UserDto userDto, String adress) {
-        if (userDto.getAddress() == null
-                || userDto.getAddress().getStreet().isBlank()
-                || userDto.getAddress().getStreet()==null
-                || userDto.getAddress().getHouseNumber().isBlank()
-                || userDto.getAddress().getHouseNumber()==null
-                || userDto.getAddress().getCity().isBlank()
-                || userDto.getAddress().getCity()==null
-                || userDto.getAddress().getPostCode().isBlank()
-                || userDto.getAddress().getPostCode()==null)
+        if (
+                userDto.getStreet().isBlank()
+                        || userDto.getStreet() == null
+                        || userDto.getHouseNumber().isBlank()
+                        || userDto.getHouseNumber() == null
+                        || userDto.getPostCode().isBlank()
+                        || userDto.getPostCode() == null
+                        || userDto.getCity().isBlank()
+                        || userDto.getCity() == null)
             throw new IllegalArgumentException(adress + canNotBeEmptyMessage());
     }
 
     public void validatePhoneNumber(UserDto userDto, String phoneNumber) {
-        if (userDto.getPhoneNumber()==null
-        ||userDto.getPhoneNumber().isBlank()
-        ||userDto.getPhoneNumber().length() != 10)
+        if (userDto.getPhoneNumber() == null
+                || userDto.getPhoneNumber().isBlank()
+                || userDto.getPhoneNumber().length() != 10)
             throw new IllegalArgumentException(phoneNumber + mustBeValid());
+    }
+
+    public void validateNewUser(UserDto userDto) {
+        userRepository.getAllPersons().forEach(user -> validateThatPerson(userDto, user));
     }
 
     private static String mustBeValid() {

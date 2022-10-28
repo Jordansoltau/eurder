@@ -23,7 +23,7 @@ public class SecurityService {
 
     public void validateAuthorization(String authorization, Feature feature) {
         UsernamePassword usernamePassword = getUsernamePassword(authorization);
-        User user = personRepository.getUserByEmail(usernamePassword.getUsername());
+        User user = personRepository.getUserByEmailForLogin(usernamePassword.getUsername());
 
 
         if (user == null) {

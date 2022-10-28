@@ -24,11 +24,12 @@ public class UserService {
     }
 
     public void createANewAccount(UserDto userDto) {
+        validationInputService.validateNewUser(userDto);
         validationInputService.validateFirstName(userDto, "FirstName");
         validationInputService.validateLastName(userDto, "LastName");
         validationInputService.validateEmail(userDto, "Email");
         validationInputService.validateAdressName(userDto, "Adress");
         validationInputService.validatePhoneNumber(userDto, "phoneNumber");
-            userRepository.addNewUser(userMapper.fromDtoToUser(userDto));
+        userRepository.addNewUser(userMapper.fromDtoToUser(userDto));
     }
 }
