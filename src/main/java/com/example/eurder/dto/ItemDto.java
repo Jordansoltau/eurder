@@ -3,10 +3,10 @@ package com.example.eurder.dto;
 public class ItemDto {
     private final String name;
     private final String description;
-    private final int price;
+    private final double price;
     private final int amount;
 
-    public ItemDto(String name, String description, int price, int amount) {
+    public ItemDto(String name, String description, double price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -21,7 +21,7 @@ public class ItemDto {
         return description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

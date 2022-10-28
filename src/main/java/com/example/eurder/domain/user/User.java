@@ -22,7 +22,7 @@ public class User {
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.role = Role.USER;
+        this.role = Role.CUSTOMER;
     }
 
     public String getUserId() {

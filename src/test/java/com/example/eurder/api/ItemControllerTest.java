@@ -98,4 +98,37 @@ class ItemControllerTest {
                 ;
         return requestBody;
     }
+
+    @Test
+    void addOrderAsMember(){
+        System.out.println(orderAnewItem());
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .body(orderAnewItem())
+                .when()
+                .post("/items/order")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.CREATED.value())
+                .extract();
+    }
+
+    private String orderAnewItem() {
+        {
+            String requestBody = "{\n"+
+                    "\"itemId\": \"string\",\n"+
+                    "\"amount\": 1,\n"+
+                    "\"shipingDate\": \"2022-10-28\",\n"+
+                    "\"itemRepository\": {},\n"+
+                    "\"dateDependingOnStock\": \"2022-10-28\"\n}";
+            return requestBody;
+        }
+    }
 }

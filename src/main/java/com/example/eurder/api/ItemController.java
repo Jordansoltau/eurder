@@ -1,7 +1,10 @@
 package com.example.eurder.api;
 
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.dto.ItemDto;
-import com.example.eurder.service.security.ItemService;
+import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.service.OrderService;
+import com.example.eurder.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,10 +15,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ItemController {
     private final ItemService itemService;
+    private final OrderService orderService;
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    public ItemController(ItemService itemService) {
+    public ItemController(ItemService itemService, OrderService orderService) {
         this.itemService = itemService;
+        this.orderService = orderService;
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -23,4 +28,10 @@ public class ItemController {
     public void addANewItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto) {
         itemService.createANewItemInItemRepository(authorization, itemDto);
     }
+    @PostMapping(path = "/order",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void orderOneItem(@RequestHeader String authorization, @RequestParam ItemGroepDto itemgroepDto) {
+        orderService.createANewOrder(authorization, itemgroepDto);
+    }
+
 }

@@ -6,10 +6,10 @@ public class Item {
     private final String id;
     private final String description;
     private final String name;
-    private final int price;
+    private final double price;
     private final int amount;
 
-    public Item(String name, String description, int price, int amount) {
+    public Item(String name, String description, double price, int amount) {
         this.id = UUID.randomUUID().toString();
         this.description = description;
         this.name = name;
@@ -29,11 +29,12 @@ public class Item {
         return name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
     public int getAmount() {
         return amount;
     }
+
 }

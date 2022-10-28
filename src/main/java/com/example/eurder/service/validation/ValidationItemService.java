@@ -1,6 +1,8 @@
 package com.example.eurder.service.validation;
 
+import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.domain.item.Item;
 import com.example.eurder.dto.ItemDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,24 +10,28 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ValidationItemService {
+    public static final int MINIMUM_PRICE_VALUE = 1;
+    public static final int MINIMUM_AMOUNT_VALUE = 1;
     private final UserRepository userRepository;
+    private final ItemRepository itemRepository;
     private final CustomMessageService customMessageService;
     private final Logger logger = LoggerFactory.getLogger(ValidationItemService.class);
 
 
-    public ValidationItemService(UserRepository userRepository, CustomMessageService customMessageService) {
+    public ValidationItemService(UserRepository userRepository, ItemRepository itemRepository, CustomMessageService customMessageService) {
         this.userRepository = userRepository;
+        this.itemRepository = itemRepository;
         this.customMessageService = customMessageService;
     }
 
 
     public void validateAmountOfitemDto(ItemDto itemDto, String amount) {
-        if (itemDto.getAmount() < 1)
+        if (itemDto.getAmount() < MINIMUM_AMOUNT_VALUE)
             throw new IllegalArgumentException(amount + customMessageService.mustBeHigherThanZeroMessage());
     }
 
     public void validatePriceOfitemDto(ItemDto itemDto, String price) {
-        if (itemDto.getPrice() < 1)
+        if (itemDto.getPrice() < MINIMUM_PRICE_VALUE)
             throw new IllegalArgumentException(price + customMessageService.mustBeHigherThanZeroMessage());
     }
 
@@ -37,5 +43,9 @@ public class ValidationItemService {
     public void validateNameOfitemDto(ItemDto itemDto, String name) {
         if (itemDto.getName() == null || itemDto.getName().isBlank())
             throw new IllegalArgumentException(name + customMessageService.canNotBeEmptyMessage());
+    }
+
+    public void validateIfItemExist(String itemid) {
+        if(!itemRepository.doesItemExist(itemid))throw new IllegalArgumentException("Item does not exist");
     }
 }

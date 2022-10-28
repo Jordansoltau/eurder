@@ -1,7 +1,7 @@
 package com.example.eurder.domain.user;
 
 public enum Feature {
-    USER,
+    ORDER_ITEM,
     ADMIN,
     ADDING_NEW_ITEM
 }
