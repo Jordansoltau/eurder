@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Base64;
+
 @Service
 public class SecurityService {
     private final Logger logger = LoggerFactory.getLogger(SecurityService.class);
@@ -30,7 +31,7 @@ public class SecurityService {
             logger.error("Unknown user with the username " + usernamePassword.getUsername());
             throw new UnknownPersonException();
         }
-        if(!user.doesPasswordMatch(usernamePassword.getPassword())) {
+        if (!user.doesPasswordMatch(usernamePassword.getPassword())) {
             logger.error("Password does not match for user " + usernamePassword.getUsername());
             throw new WrongPasswordException();
         }
@@ -41,7 +42,7 @@ public class SecurityService {
 
     }
 
-    public String getEmail(String auth){
+    public String getEmail(String auth) {
         return getUsernamePassword(auth).getUsername();
     }
 

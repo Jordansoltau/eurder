@@ -26,6 +26,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         logger.error(ex.getMessage(), ex);
         response.sendError(NOT_FOUND.value(), ex.getMessage());
     }
+
     @org.springframework.web.bind.annotation.ExceptionHandler(UnauthorizatedException.class)
     protected void userID(UnauthorizatedException ex, HttpServletResponse response) throws IOException {
         logger.error(ex.getMessage(), ex);
@@ -37,12 +38,12 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         logger.error(ex.getMessage(), ex);
         response.sendError(NOT_FOUND.value(), ex.getMessage());
     }
+
     @org.springframework.web.bind.annotation.ExceptionHandler(WrongPasswordException.class)
     protected void userID(WrongPasswordException ex, HttpServletResponse response) throws IOException {
         logger.error(ex.getMessage(), ex);
         response.sendError(NOT_FOUND.value(), ex.getMessage());
     }
-
 
 
 }

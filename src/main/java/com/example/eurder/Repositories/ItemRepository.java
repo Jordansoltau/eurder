@@ -19,15 +19,16 @@ public class ItemRepository {
     }
 
     private Map<String, Item> hardCodedListOfItems() {
-        Item mouse = new Item("Mouse", "object for pc use only clicking",20,5);
-        Item keyboard = new Item("Keyboard", "object for pc use only typing",20,5);
-        HashMap<String,Item> hardCodedRepository = new HashMap<>();
-        hardCodedRepository.put(mouse.getId(),mouse);
-        hardCodedRepository.put(mouse.getId(),mouse);
+        Item mouse = new Item("Mouse", "object for pc use only clicking", 20, 5);
+        Item keyboard = new Item("Keyboard", "object for pc use only typing", 20, 5);
+        HashMap<String, Item> hardCodedRepository = new HashMap<>();
+        hardCodedRepository.put(mouse.getId(), mouse);
+        hardCodedRepository.put(mouse.getId(), mouse);
         return hardCodedRepository;
     }
+
     public void addNewItem(ItemDto itemDto) {
         Item itemToAdd = itemMapper.fromDtoToItem(itemDto);
-        itemsList.put(itemToAdd.getId(),itemToAdd);
+        itemsList.put(itemToAdd.getId(), itemToAdd);
     }
 }

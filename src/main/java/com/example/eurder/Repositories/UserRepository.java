@@ -5,6 +5,7 @@ import com.example.eurder.domain.user.Role;
 import com.example.eurder.domain.user.User;
 import org.springframework.stereotype.Component;
 import com.example.eurder.exceptions.NotFoundexception;
+
 import java.util.*;
 
 @Component
@@ -46,7 +47,7 @@ public class UserRepository {
     }
 
     public boolean doesEmailAlreadyExist(String email) {
-       return usersList.containsValue(email);
+        return usersList.containsValue(email);
     }
 }
 

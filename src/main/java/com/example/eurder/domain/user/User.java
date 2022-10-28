@@ -1,6 +1,7 @@
 package com.example.eurder.domain.user;
 
 import com.example.eurder.domain.user.Address.Address;
+
 import java.util.UUID;
 
 public class User {
@@ -27,7 +28,8 @@ public class User {
     public String getUserId() {
         return UserId;
     }
-    public boolean canHaveAccessTo(Feature feature){
+
+    public boolean canHaveAccessTo(Feature feature) {
         return getRole().containsFeature(feature);
     }
 

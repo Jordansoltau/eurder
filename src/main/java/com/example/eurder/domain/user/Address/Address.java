@@ -1,4 +1,5 @@
 package com.example.eurder.domain.user.Address;
+
 public class Address {
 
     private String street;
