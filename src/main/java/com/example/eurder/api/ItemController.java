@@ -1,6 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.order.ItemGroep;
+import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.service.OrderService;
@@ -10,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("items")
 @RestController
@@ -30,8 +33,14 @@ public class ItemController {
     }
     @PostMapping(path = "/order",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void orderOneItem(@RequestHeader String authorization, @RequestParam ItemGroepDto itemgroepDto) {
+    public void orderOneItem(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto) {
         orderService.createANewOrder(authorization, itemgroepDto);
+    }
+
+    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<ItemGroep> getOrderOfUser(@PathVariable String id){
+        return orderService.getOrderOfItems(id);
     }
 
 }

@@ -22,12 +22,17 @@ public class ItemRepository {
         this.itemsList = hardCodedListOfItems();
     }
 
+    public Item getItemInList(String itemId) {
+        return itemsList.get(itemId);
+    }
+
     private Map<String, Item> hardCodedListOfItems() {
         Item mouse = new Item("Mouse", "object for pc use only clicking", 20, 5);
         Item keyboard = new Item("Keyboard", "object for pc use only typing", 20, 5);
         HashMap<String, Item> hardCodedRepository = new HashMap<>();
         hardCodedRepository.put(mouse.getId(), mouse);
         hardCodedRepository.put(keyboard.getId(), mouse);
+        System.out.println(mouse.getId());
         return hardCodedRepository;
     }
 

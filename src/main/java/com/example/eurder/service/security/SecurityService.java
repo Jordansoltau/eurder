@@ -52,4 +52,10 @@ public class SecurityService {
         String password = decodedUsernameAndPassword.substring(decodedUsernameAndPassword.indexOf(":") + 1);
         return new UsernamePassword(username, password);
     }
+
+    public String getUserId(String authorization) {
+        UsernamePassword usernamePassword = getUsernamePassword(authorization);
+        User user = personRepository.getUserByEmailForLogin(usernamePassword.getUsername());
+        return user.getUserId();
+    }
 }

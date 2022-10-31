@@ -1,37 +1,24 @@
 package com.example.eurder.Repositories;
 
 import com.example.eurder.domain.order.ItemGroep;
+import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemGroepDto;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.util.*;
 
 @Component
 public class OrderRepository {
-    private final UserRepository userRepository;
-    private final ItemRepository itemRepository;
-    private final Map<String, ItemGroep> orderRepository;
-    private final String orderId;
 
-    public OrderRepository(UserRepository userRepository, ItemRepository itemRepository) {
-        this.userRepository = userRepository;
-        this.itemRepository = itemRepository;
+    private final Map<String, ArrayList<ItemGroep>> orderRepository;
+
+    public OrderRepository() {
         this.orderRepository = new HashMap<>();
-        this.orderId = randomUniqueIdGenerator();
+
     }
 
-
-    private String randomUniqueIdGenerator(){
-        String randomId = UUID.randomUUID().toString();
-        while(orderRepository.get(randomId)!=null){
-            randomId = UUID.randomUUID().toString();
-        }
-        return randomId;
-    }
-
-    public void addNewOrder(ItemGroep itemGroep) {
-        orderRepository.put(randomUniqueIdGenerator(),itemGroep);
+    public void saveCurrentOrder(String userId, ArrayList<ItemGroep> orders) {
+        orderRepository.put(userId, orders);
     }
 }

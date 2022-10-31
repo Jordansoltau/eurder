@@ -46,6 +46,7 @@ public class ValidationItemService {
     }
 
     public void validateIfItemExist(String itemid) {
+
         if(!itemRepository.doesItemExist(itemid))throw new IllegalArgumentException("Item does not exist");
     }
 }

@@ -1,7 +1,9 @@
 package com.example.eurder.domain.user;
 
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.user.Address.Address;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class User {
@@ -22,6 +24,7 @@ public class User {
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
+
         this.role = Role.CUSTOMER;
     }
 
@@ -72,6 +75,5 @@ public class User {
     public boolean doesPasswordMatch(String password) {
         return this.password.equals(password);
     }
-
 
 }
