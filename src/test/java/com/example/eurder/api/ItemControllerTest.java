@@ -91,9 +91,8 @@ class ItemControllerTest {
 
     private static String createAnewItem() {
         String requestBody = "{\n" +
-                "  \"name\": \"digital book\",\n" +
-                "  \"description\": \"a book\",\n" +
-                "  \"price\": 20,\n" +
+                "  \"itemGroepId\": \"Mouse\",\n" +
+                "  \"amount\": 20,\n" +
                 "  \"amount\": 15 \n}"
                 ;
         return requestBody;
@@ -122,13 +121,12 @@ class ItemControllerTest {
 
     private String orderAnewItem() {
         {
-            String requestBody = "{\n"+
+            return "{\n"+
                     "\"itemId\": \"string\",\n"+
                     "\"amount\": 1,\n"+
                     "\"shipingDate\": \"2022-10-28\",\n"+
                     "\"itemRepository\": {},\n"+
                     "\"dateDependingOnStock\": \"2022-10-28\"\n}";
-            return requestBody;
         }
     }
 }
