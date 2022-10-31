@@ -33,7 +33,6 @@ public class ItemService {
         validationItemService.validateDescriptionOfitemDto(itemDto, "Description");
         validationItemService.validateNameOfitemDto(itemDto, "Name");
         itemRepository.addNewItem(itemMapper.fromDtoToItem(itemDto));
-
     }
 
 }

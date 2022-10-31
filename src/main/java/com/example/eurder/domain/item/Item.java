@@ -7,10 +7,11 @@ public class Item {
     private final String description;
     private final String name;
     private final double price;
-    private final int amount;
+    private int amount;
 
-    public Item(String name, String description, double price, int amount) {
-        this.id = UUID.randomUUID().toString();
+    public Item(String id, String name, String description, double price, int amount) {
+//        this.id = UUID.randomUUID().toString();
+        this.id = id;
         this.description = description;
         this.name = name;
         this.price = price;
@@ -37,4 +38,10 @@ public class Item {
         return amount;
     }
 
+    public void decreaseAmount(int amountToPurchase) {
+        if (amount < amountToPurchase) {
+            throw new IllegalArgumentException("There is not enough" + getName() + "in  stock. Maximum amount to purchase = " + getAmount());
+        }
+        this.amount -= amountToPurchase;
+    }
 }

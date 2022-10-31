@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ItemMapper {
 
     public Item fromDtoToItem(ItemDto itemDto) {
-        return new Item(itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
+        return new Item("1",itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
     }
 
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {

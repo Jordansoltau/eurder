@@ -2,6 +2,7 @@ package com.example.eurder.api;
 
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.user.Role;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -15,6 +16,7 @@ import org.springframework.test.annotation.DirtiesContext;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 class ItemControllerTest {
@@ -30,9 +32,11 @@ class ItemControllerTest {
     public static void setup() {
         RestAssured.baseURI = "http://localhost";
     }
+
     @Test
-    void addItemHappyPath(){
-         given()
+    void addItemHappyPath() {
+        System.out.println(createAnewItem());
+        given()
                 .baseUri("http://localhost")
                 .port(port)
                 .auth()
@@ -51,7 +55,7 @@ class ItemControllerTest {
     }
 
     @Test
-    void addItemAsMember(){
+    void addItemAsMember() {
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -69,8 +73,9 @@ class ItemControllerTest {
                 .statusCode(HttpStatus.FORBIDDEN.value())
                 .extract();
     }
-@Test
-    void addItemEmailDoesNotExist(){
+
+    @Test
+    void addItemEmailDoesNotExist() {
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -89,18 +94,9 @@ class ItemControllerTest {
                 .extract();
     }
 
-    private static String createAnewItem() {
-        String requestBody = "{\n" +
-                "  \"itemGroepId\": \"Mouse\",\n" +
-                "  \"amount\": 20,\n" +
-                "  \"amount\": 15 \n}"
-                ;
-        return requestBody;
-    }
-
     @Test
-    void addOrderAsMember(){
-        System.out.println(orderAnewItem());
+    void addOrderAsMember() {
+        System.out.println(orderItem());
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -110,7 +106,7 @@ class ItemControllerTest {
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
-                .body(orderAnewItem())
+                .body(orderItem())
                 .when()
                 .post("/items/order")
                 .then()
@@ -119,14 +115,20 @@ class ItemControllerTest {
                 .extract();
     }
 
-    private String orderAnewItem() {
-        {
-            return "{\n"+
-                    "\"itemId\": \"string\",\n"+
-                    "\"amount\": 1,\n"+
-                    "\"shipingDate\": \"2022-10-28\",\n"+
-                    "\"itemRepository\": {},\n"+
-                    "\"dateDependingOnStock\": \"2022-10-28\"\n}";
-        }
+    private String orderItem() {
+
+        return "{\n" +
+                "  \"itemId\": \"10\",\n" +
+                "  \"amountToPurchase\": 1\n}";
+    }
+
+
+    private static String createAnewItem() {
+        String requestBody = "{\n" +
+                "  \"name\": \"Mouse\",\n" +
+                "  \"description\": 20,\n" +
+                "  \"price\": 15 ,\n" +
+                "  \"amount\": 5\n}";
+        return requestBody;
     }
 }

@@ -22,8 +22,8 @@ public class ItemRepository {
 
 
     private Map<String, Item> hardCodedListOfItems() {
-        Item mouse = new Item("Mouse", "object for pc use only clicking", 20, 5);
-        Item keyboard = new Item("Keyboard", "object for pc use only typing", 20, 5);
+        Item mouse = new Item("10","Mouse", "object for pc use only clicking", 20, 5);
+        Item keyboard = new Item("11","Keyboard", "object for pc use only typing", 20, 5);
         HashMap<String, Item> hardCodedRepository = new HashMap<>();
         hardCodedRepository.put(mouse.getId(), mouse);
         hardCodedRepository.put(keyboard.getId(), mouse);
@@ -44,5 +44,12 @@ public class ItemRepository {
         return itemsList.get(itemid) != null;
     }
 
+    public Item getItemOnId(String itemId){
+        return itemsList.get(itemId);
+    }
 
+    public void updateStock(String itemId,int amountToPurchase) {
+        Item itemToUpdate = itemsList.get(itemId);
+        itemToUpdate.decreaseAmount(amountToPurchase);
+    }
 }
