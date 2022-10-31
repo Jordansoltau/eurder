@@ -2,6 +2,7 @@ package com.example.eurder.domain.order;
 
 import com.example.eurder.Repositories.OrderRepository;
 import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.mapper.ItemMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,9 +15,11 @@ public class Order {
 
     private final Map<String, ArrayList<ItemGroep>> copyOfOrderRepository;
     private final OrderRepository orderRepository;
+    private final ItemMapper itemMapper;
 
-    public Order(OrderRepository orderRepository) {
+    public Order(OrderRepository orderRepository, ItemMapper itemMapper) {
         this.orderRepository = orderRepository;
+        this.itemMapper = itemMapper;
         this.copyOfOrderRepository = new HashMap<>();
 
     }
@@ -25,16 +28,14 @@ public class Order {
 
         if (copyOfOrderRepository.get(userId) == null) {
             ArrayList<ItemGroep> newList = new ArrayList<>();
-            ItemGroep itemGroep = new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase());
-            newList.add(itemGroep);
+            newList.add(itemMapper.fromItemGroepDtoToItemGroep(itemGroepDto));
             copyOfOrderRepository.put(userId, newList);
             orderRepository.saveCurrentOrder(userId, newList);
             return;
         }
 
         ArrayList<ItemGroep> updateList = copyOfOrderRepository.get(userId);
-        ItemGroep itemGroep = new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase());
-        updateList.add(itemGroep);
+        updateList.add(itemMapper.fromItemGroepDtoToItemGroep(itemGroepDto));
         copyOfOrderRepository.put(userId, updateList);
         orderRepository.saveCurrentOrder(userId, updateList);
 

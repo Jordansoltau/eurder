@@ -15,13 +15,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final Logger logger = LoggerFactory.getLogger(ValidationItemService.class);
     private final ValidationUserService validationUserService;
-    private final SecurityService securityService;
     private final UserMapper userMapper;
 
-    public UserService(UserRepository userRepository, ValidationUserService validationUserService, SecurityService securityService, UserMapper userMapper) {
+    public UserService(UserRepository userRepository, ValidationUserService validationUserService, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.validationUserService = validationUserService;
-        this.securityService = securityService;
         this.userMapper = userMapper;
     }
 

@@ -11,20 +11,15 @@ import java.util.Map;
 
 @Component
 public class ItemRepository {
-    public static final int DAYS_TO_ADD_IF_IN_STOCK = 1;
-    public static final int DAYS_TO_ADD_IF_NOT_IN_STOCK = 7;
+
     public static final int MINIMUM_AMOUNT_IN_STOCK = 0;
     private Map<String, Item> itemsList;
-    private final ItemMapper itemMapper;
 
-    public ItemRepository(ItemMapper itemMapper) {
-        this.itemMapper = itemMapper;
+    public ItemRepository() {
         this.itemsList = hardCodedListOfItems();
     }
 
-    public Item getItemInList(String itemId) {
-        return itemsList.get(itemId);
-    }
+
 
     private Map<String, Item> hardCodedListOfItems() {
         Item mouse = new Item("Mouse", "object for pc use only clicking", 20, 5);
@@ -49,11 +44,5 @@ public class ItemRepository {
         return itemsList.get(itemid) != null;
     }
 
-    public LocalDate dateDependingOnStock(String itemId) {
-        if (itemHasStock(itemId)) {
-            return LocalDate.now().plusDays(DAYS_TO_ADD_IF_IN_STOCK);
-        } else {
-            return LocalDate.now().plusDays(DAYS_TO_ADD_IF_NOT_IN_STOCK);
-        }
-    }
+
 }

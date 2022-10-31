@@ -19,27 +19,15 @@ import java.util.List;
 public class OrderService {
     private final SecurityService securityService;
     private final ValidationItemService validationItemService;
-    private final ValidationUserService validationUserService;
-    private final OrderRepository orderRepository;
     private final Order order;
-    private final UserRepository userRepository;
-    private final ItemRepository itemRepository;
-    private final ItemMapper itemMapper;
+
 
     public OrderService(SecurityService securityService
             , ValidationItemService validationItemService
-            , ValidationUserService validationUserService
-            , OrderRepository orderRepository
-            , Order order, UserRepository userRepository, ItemRepository itemRepository
-            , ItemMapper itemMapper) {
+            , Order order) {
         this.securityService = securityService;
         this.validationItemService = validationItemService;
-        this.validationUserService = validationUserService;
-        this.orderRepository = orderRepository;
         this.order = order;
-        this.userRepository = userRepository;
-        this.itemRepository = itemRepository;
-        this.itemMapper = itemMapper;
     }
 
     public void createANewOrder(String authorization, ItemGroepDto itemGroepDto) {

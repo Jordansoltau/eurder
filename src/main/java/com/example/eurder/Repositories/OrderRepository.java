@@ -1,11 +1,9 @@
 package com.example.eurder.Repositories;
 
 import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.order.Order;
-import com.example.eurder.dto.ItemGroepDto;
+
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.*;
 
 @Component
