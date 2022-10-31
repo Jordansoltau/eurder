@@ -14,22 +14,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("items")
+@RequestMapping("orders")
 @RestController
-public class ItemController {
+public class OrderController {
     private final ItemService itemService;
     private final OrderService orderService;
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    public ItemController(ItemService itemService, OrderService orderService) {
+    public OrderController(ItemService itemService, OrderService orderService) {
         this.itemService = itemService;
         this.orderService = orderService;
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
-    public void addANewItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto) {
-        itemService.createANewItemInItemRepository(authorization, itemDto);
-    }
+//
+//    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<ItemGroep> getOrderOfUser(@RequestHeader String authorization,@PathVariable String id){
+//        return orderService.getOrderOfItems(authorization,id);
+//    }
 
 }
