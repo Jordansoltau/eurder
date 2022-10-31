@@ -26,7 +26,7 @@ public class ItemRepository {
         Item keyboard = new Item("11","Keyboard", "object for pc use only typing", 20, 5);
         HashMap<String, Item> hardCodedRepository = new HashMap<>();
         hardCodedRepository.put(mouse.getId(), mouse);
-        hardCodedRepository.put(keyboard.getId(), mouse);
+        hardCodedRepository.put(keyboard.getId(), keyboard);
         System.out.println(mouse.getId());
         return hardCodedRepository;
     }
