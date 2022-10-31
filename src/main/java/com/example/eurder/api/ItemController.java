@@ -39,8 +39,8 @@ public class ItemController {
 
     @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<ItemGroep> getOrderOfUser(@PathVariable String id){
-        return orderService.getOrderOfItems(id);
+    public List<ItemGroep> getOrderOfUser(@RequestHeader String authorization,@PathVariable String id){
+        return orderService.getOrderOfItems(authorization,id);
     }
 
 }

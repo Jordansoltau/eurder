@@ -7,11 +7,15 @@ import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.UserDto;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class UserMapper {
 
     public User fromDtoToUser(UserDto userDto) {
-        return new User(userDto.getFirstName()
+        String randomId = UUID.randomUUID().toString();
+        return new User(randomId,
+                userDto.getFirstName()
                 , userDto.getFirstName()
                 , userDto.getEmail()
                 , new Address(userDto.getStreet()

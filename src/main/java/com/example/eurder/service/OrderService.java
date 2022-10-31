@@ -33,12 +33,12 @@ public class OrderService {
     public void createANewOrder(String authorization, ItemGroepDto itemGroepDto) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
         String userId = securityService.getUserId(authorization);
-        System.out.println(userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
         order.orderNewItem(userId,itemGroepDto);
     }
 
-    public List<ItemGroep> getOrderOfItems(String id) {
+    public List<ItemGroep> getOrderOfItems(String authorization,String id) {
+        securityService.validateAuthorization(authorization,Feature.ORDER_ITEM);
         return order.getOrder(id);
     }
 }

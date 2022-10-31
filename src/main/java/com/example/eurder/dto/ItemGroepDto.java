@@ -7,15 +7,13 @@ public class ItemGroepDto {
     private final int amountToPurchase;
     private final LocalDate shippingDate;
 
-    public ItemGroepDto(String itemId, int amountToPurchase) {
+    public ItemGroepDto(String itemId, int amountToPurchase, LocalDate date) {
         this.itemId = itemId;
         this.amountToPurchase = amountToPurchase;
-        this.shippingDate = getShippingDate();
+        this.shippingDate = date;
     }
 
-    private static LocalDate getShippingDate() {
-        return LocalDate.now();
-    }
+
 
     public String getItemId() {
         return itemId;

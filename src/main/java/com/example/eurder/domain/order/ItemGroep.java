@@ -1,5 +1,7 @@
 package com.example.eurder.domain.order;
 
+import com.example.eurder.Repositories.ItemRepository;
+
 import java.time.LocalDate;
 
 public class ItemGroep {
@@ -8,11 +10,10 @@ public class ItemGroep {
     private final LocalDate shipingDate;
 
 
-    public ItemGroep( String itemId, int amount) {
-
+    public ItemGroep(String itemId, int amount, LocalDate date) {
         this.itemId = itemId;
         this.amount = amount;
-        this.shipingDate = LocalDate.now();
+        this.shipingDate = date;
     }
 
 
@@ -27,7 +28,6 @@ public class ItemGroep {
     public LocalDate getShipingDate() {
         return shipingDate;
     }
-
 
 
 }

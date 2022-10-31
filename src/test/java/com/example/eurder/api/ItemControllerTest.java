@@ -96,7 +96,7 @@ class ItemControllerTest {
 
     @Test
     void addOrderAsMember() {
-        System.out.println(orderItem());
+
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -114,6 +114,27 @@ class ItemControllerTest {
                 .statusCode(HttpStatus.CREATED.value())
                 .extract();
     }
+
+    @Test
+    void getAllOrderAsMember() {
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .when()
+                .get("/items/1" )
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value())
+                .extract();
+    }
+
 
     private String orderItem() {
 

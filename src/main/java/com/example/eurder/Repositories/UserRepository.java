@@ -23,8 +23,8 @@ public class UserRepository {
     }
 
     private Map<String, User> hardCodedListOfUsers() {
-        User user = new User("John", "Snow", "user@eurder.com", new Address("userStree", "1", "1789", "brussels"), "0476594455");
-        User admin = new User("White", "Snow", "admin@eurder.com", new Address("adminStree", "1", "1789", "brussels"), "0476594445");
+        User user = new User("1","John", "Snow", "user@eurder.com", new Address("userStree", "1", "1789", "brussels"), "0476594455");
+        User admin = new User("2","White", "Snow", "admin@eurder.com", new Address("adminStree", "1", "1789", "brussels"), "0476594445");
         admin.setRole(Role.ADMIN);
         HashMap<String, User> hardCodedRepository = new HashMap<>();
         hardCodedRepository.put(user.getUserId(), user);

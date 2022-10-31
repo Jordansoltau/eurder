@@ -39,9 +39,6 @@ public class Item {
     }
 
     public void decreaseAmount(int amountToPurchase) {
-        if (amount < amountToPurchase) {
-            throw new IllegalArgumentException("There is not enough" + getName() + "in  stock. Maximum amount to purchase = " + getAmount());
-        }
         this.amount -= amountToPurchase;
     }
 }

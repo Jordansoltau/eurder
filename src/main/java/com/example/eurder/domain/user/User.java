@@ -1,13 +1,9 @@
 package com.example.eurder.domain.user;
 
-import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.user.Address.Address;
 
-import java.util.ArrayList;
-import java.util.UUID;
-
 public class User {
-    private final String UserId;
+    private final String userId;
     private final String firstName;
     private final String lastName;
     private final String email;
@@ -16,9 +12,10 @@ public class User {
     private final String password;
     private Role role;
 
-    public User(String firstName, String lastName, String email, Address address, String phoneNumber) {
+    public User(String id,String firstName, String lastName, String email, Address address, String phoneNumber) {
         this.password = "password";
-        UserId = UUID.randomUUID().toString();
+        this.userId = id;
+//        userId = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -29,7 +26,7 @@ public class User {
     }
 
     public String getUserId() {
-        return UserId;
+        return userId;
     }
 
     public boolean canHaveAccessTo(Feature feature) {
