@@ -31,7 +31,7 @@ class OrderControllerTest {
     }
 
     @Test
-    void getAllOrderAsMember() {
+    void getAllOrderAsMemberWhenListEmpty() {
 
         given()
                 .baseUri("http://localhost")
@@ -42,13 +42,33 @@ class OrderControllerTest {
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
+                .body(orderItem())
                 .when()
                 .get("/orders/1" )
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.OK.value())
+                .statusCode(HttpStatus.BAD_REQUEST.value())
                 .extract();
     }
+//    @Test
+//    void getAllOrderAsMemberAfterOrder() {
+//
+//        given()
+//                .baseUri("http://localhost")
+//                .port(port)
+//                .auth()
+//                .preemptive()
+//                .basic("user@eurder.com", "password")
+//                .header("Accept", ContentType.JSON.getAcceptHeader())
+//                .header("Content-type", "application/json")
+//                .and()
+//                .when()
+//                .get("/orders/15" )
+//                .then()
+//                .assertThat()
+//                .statusCode(HttpStatus.OK.value())
+//                .extract();
+//    }
     @Test
     void addOrderAsMember() {
 

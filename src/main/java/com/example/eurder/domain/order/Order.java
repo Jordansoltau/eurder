@@ -68,6 +68,9 @@ public class Order {
 
     public List<Receipt> getOrder(String id) {
         List<ItemGroep> orderedItems = currentOrder.get(id);
+        if (orderedItems==null){
+            throw new IllegalArgumentException("There is nothing ordered yet");
+        }
         Receipt receiptOfUser = new Receipt(orderedItems,caclculateTotalPriceOfOrder(orderedItems), id);
         List<Receipt> receipt =new ArrayList<>();
         receipt.add(receiptOfUser);
@@ -77,6 +80,9 @@ public class Order {
 
     private static double caclculateTotalPriceOfOrder(List<ItemGroep> orderedItems) {
         double totalOrderPrice = 0;
+        if (orderedItems==null){
+            return totalOrderPrice;
+        }
         for (ItemGroep items: orderedItems){
             totalOrderPrice+=items.getPriceOfOrder();
         }

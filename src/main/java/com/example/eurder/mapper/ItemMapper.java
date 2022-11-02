@@ -18,6 +18,4 @@ public class ItemMapper {
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto, LocalDate date, double price) {
         return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), date, price);
     }
-
-
 }
