@@ -5,6 +5,7 @@ import com.example.eurder.Repositories.OrderRepository;
 import com.example.eurder.Repositories.UserRepository;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
+import com.example.eurder.domain.order.Receipt;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
@@ -13,6 +14,7 @@ import com.example.eurder.service.validation.ValidationItemService;
 import com.example.eurder.service.validation.ValidationUserService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -37,7 +39,7 @@ public class OrderService {
         order.orderNewItem(userId,itemGroepDto);
     }
 
-    public List<ItemGroep> getOrderOfItems(String authorization,String id) {
+    public List<Receipt> getOrderOfItems(String authorization, String id) {
         securityService.validateAuthorization(authorization,Feature.ORDER_ITEM);
         return order.getOrder(id);
     }

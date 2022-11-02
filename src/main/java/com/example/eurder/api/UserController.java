@@ -17,12 +17,12 @@ import java.util.List;
 @RestController
 public class UserController {
     private final UserService userService;
-    private final OrderService orderService;
+
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    public UserController(UserService userService, OrderService orderService) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.orderService = orderService;
+
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -30,16 +30,5 @@ public class UserController {
     public void addANewItem(@RequestBody UserDto userDto) {
         userService.createANewAccount(userDto);
     }
-    @PostMapping(path = "/order",consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
-    public void orderOneItem(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto) {
-        orderService.createANewOrder(authorization, itemgroepDto);
-    }
 
-
-    @GetMapping(path = "/order/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    public List<ItemGroep> getOrderOfUser(@RequestHeader String authorization, @PathVariable String id){
-        return orderService.getOrderOfItems(authorization,id);
-    }
 }

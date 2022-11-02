@@ -112,45 +112,7 @@ class UserControllerTest {
                 .extract();
 
     }
-    @Test
-    void getAllOrderAsMember() {
 
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("user@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .when()
-                .get("users/order/1" )
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.OK.value())
-                .extract();
-    }
-    @Test
-    void addOrderAsMember() {
-
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("user@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .body(orderItem())
-                .when()
-                .post("/users/order")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.CREATED.value())
-                .extract();
-    }
 
 
 
@@ -165,12 +127,6 @@ class UserControllerTest {
                     "\"city\": \"string\",\n" +
                 "\"phoneNumber\": \"0123456789\"\n}";
         return requestBody;
-    }
-    private String orderItem() {
-
-        return "{\n" +
-                "  \"itemId\": \"10\",\n" +
-                "  \"amountToPurchase\": 1\n}";
     }
 
 }
