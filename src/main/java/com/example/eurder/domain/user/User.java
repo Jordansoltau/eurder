@@ -1,6 +1,12 @@
 package com.example.eurder.domain.user;
 
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.user.Address.Address;
+import jdk.dynalink.linker.LinkerServices;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class User {
     private final String userId;
@@ -11,8 +17,14 @@ public class User {
     private final String phoneNumber;
     private final String password;
     private Role role;
+    private final ArrayList<ItemGroep> cart;
+    private final ArrayList<ItemGroep> pastOrders;
 
-    public User(String id,String firstName, String lastName, String email, Address address, String phoneNumber) {
+    public User(String id, String firstName
+            , String lastName, String email
+            , Address address, String phoneNumber) {
+
+        this.cart = new ArrayList<>();
         this.password = "password";
         this.userId = id;
 //        userId = UUID.randomUUID().toString();
@@ -23,6 +35,26 @@ public class User {
         this.phoneNumber = phoneNumber;
 
         this.role = Role.CUSTOMER;
+        pastOrders = new ArrayList<>();
+    }
+
+    public ArrayList<ItemGroep> getCurrentOrder() {
+        if (cart.isEmpty()) {
+            throw new IllegalArgumentException("Cart is empty. Can not confirm order");
+        }
+        ArrayList<ItemGroep> confirmedCart = copyCartToPastOrder();
+
+        moveToPastOrders();
+        return confirmedCart;
+    }
+
+    private ArrayList<ItemGroep> copyCartToPastOrder() {
+        return new ArrayList<>(cart);
+    }
+
+    private void moveToPastOrders() {
+        pastOrders.addAll(cart);
+        cart.clear();
     }
 
     public String getUserId() {
@@ -73,4 +105,11 @@ public class User {
         return this.password.equals(password);
     }
 
+    public void addToCart(ItemGroep itemGroep) {
+        cart.add(itemGroep);
+    }
+
+    public void confirmCart() {
+
+    }
 }

@@ -1,9 +1,6 @@
 package com.example.eurder.api;
 
-import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemDto;
-import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.service.OrderService;
 import com.example.eurder.service.ItemService;
 import org.slf4j.Logger;
@@ -12,18 +9,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RequestMapping("items")
 @RestController
 public class ItemController {
     private final ItemService itemService;
-    private final OrderService orderService;
+
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    public ItemController(ItemService itemService, OrderService orderService) {
+    public ItemController(ItemService itemService) {
         this.itemService = itemService;
-        this.orderService = orderService;
+
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

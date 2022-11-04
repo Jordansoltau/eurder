@@ -1,6 +1,7 @@
 package com.example.eurder.Repositories;
 
 import com.example.eurder.domain.order.ItemGroep;
+import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Role;
 import com.example.eurder.domain.user.User;
@@ -8,17 +9,15 @@ import com.example.eurder.dto.ItemGroepDto;
 import org.springframework.stereotype.Component;
 import com.example.eurder.exceptions.NotFoundexception;
 
-import java.time.LocalDate;
 import java.util.*;
 
 @Component
 public class UserRepository {
 
     private Map<String, User> usersList;
-    private final ItemRepository itemRepository;
 
-    public UserRepository(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+
+    public UserRepository() {
         this.usersList = hardCodedListOfUsers();
     }
 
@@ -54,7 +53,12 @@ public class UserRepository {
     }
 
 
+    public void createOrderInUserCart(String userId, ItemGroep itemGroep) {
+        usersList.get(userId).addToCart(itemGroep);
+    }
 
-
+    public ArrayList<ItemGroep> confirmOrderOfUser(String id) {
+       return usersList.get(id).getCurrentOrder();
+    }
 }
 
