@@ -60,5 +60,6 @@ public class UserRepository {
     public ArrayList<ItemGroep> confirmOrderOfUser(String id) {
        return usersList.get(id).getCurrentOrder();
     }
+
 }
 
