@@ -122,13 +122,6 @@ class ItemControllerTest {
         return requestBody;
     }
 
-    //Unit Test
-//    @Test
-//    void addItemToItemRepository() {
-//        ItemDto itemDto = new ItemDto("pc", "description", 100.0, 100);
-//        String authorization = "YWRtaW5AZXVyZGVyLmNvbTpwYXNzd29yZA==";
-//        itemService.createANewItemInItemRepository(authorization, itemDto);
-//        verify(itemRepository).addNewItem(itemMapper.fromDtoToItem(itemDto));
-//    }
+
 
 }
