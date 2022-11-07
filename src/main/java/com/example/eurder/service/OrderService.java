@@ -45,13 +45,12 @@ public class OrderService {
     }
 
 
-    public Order getOrderOfItems(String authorization, String id) {
+    public Order getOrderOfItems(String authorization) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
-
-        ArrayList<ItemGroep> currentOrder = userRepository.confirmOrderOfUser(id);
+        String userId = securityService.getUserId(authorization);
+        ArrayList<ItemGroep> currentOrder = userRepository.confirmOrderOfUser(userId);
         String orderId = orderRepository.saveOrder(currentOrder);
         double totalPrice = calculateTotalOfOrder(orderId);
-        String userId = securityService.getUserId(authorization);
         return itemMapper.mapFromItemGroepToOrder(orderId,currentOrder, totalPrice, userId);
     }
 

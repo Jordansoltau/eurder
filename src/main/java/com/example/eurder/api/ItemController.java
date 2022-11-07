@@ -24,6 +24,7 @@ public class ItemController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public void addANewItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto) {
+        logger.info("Create a new Item in itemRepository");
         itemService.createANewItemInItemRepository(authorization, itemDto);
     }
 
