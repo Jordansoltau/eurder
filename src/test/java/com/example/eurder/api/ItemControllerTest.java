@@ -3,14 +3,10 @@ package com.example.eurder.api;
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.UserRepository;
 import com.example.eurder.domain.item.Item;
-import com.example.eurder.domain.user.Feature;
-import com.example.eurder.domain.user.Role;
-import com.example.eurder.domain.user.User;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.service.ItemService;
 import com.example.eurder.service.security.SecurityService;
-import com.example.eurder.service.security.UsernamePassword;
 import com.example.eurder.service.validation.CustomMessageService;
 import com.example.eurder.service.validation.ValidationItemService;
 import io.restassured.RestAssured;
@@ -21,17 +17,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
-
-import java.util.Base64;
-
-import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -45,7 +35,7 @@ class ItemControllerTest {
     @InjectMocks
     private ItemService itemService;
     @InjectMocks
-    private ItemMapper itemMapper;
+    private ItemMapper itemMapper = new ItemMapper(itemRepository);
     @Mock
     private SecurityService securityService = new SecurityService(userRepository);
     @Mock
@@ -81,8 +71,7 @@ class ItemControllerTest {
                 .post("/items")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.CREATED.value())
-                .extract();
+                .statusCode(HttpStatus.CREATED.value());
     }
 
     @Test
@@ -101,8 +90,7 @@ class ItemControllerTest {
                 .post("/items")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.FORBIDDEN.value())
-                .extract();
+                .statusCode(HttpStatus.FORBIDDEN.value());
     }
 
     @Test
@@ -121,8 +109,7 @@ class ItemControllerTest {
                 .post("/items")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.NOT_FOUND.value())
-                .extract();
+                .statusCode(HttpStatus.NOT_FOUND.value());
     }
 
 
@@ -135,15 +122,6 @@ class ItemControllerTest {
         return requestBody;
     }
 
-    //Unit Test
-    @Test
-    void addItemToItemRepository() {
-        ItemDto itemDto = new ItemDto("pc", "description", 100.0, 100);
-        String authorization = "YWRtaW5AZXVyZGVyLmNvbTpwYXNzd29yZA==";
-        itemService.createANewItemInItemRepository(authorization, itemDto);
-        Item item = new Item("148",itemDto.getName(),itemDto.getDescription(),itemDto.getPrice(),itemDto.getAmount());
-        System.out.println(item);
-        verify(itemRepository).addNewItem(item);
-    }
+
 
 }

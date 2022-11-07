@@ -2,6 +2,10 @@ package com.example.eurder.api;
 
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.domain.item.Item;
+import com.example.eurder.domain.order.ItemGroep;
+import com.example.eurder.domain.user.Address.Address;
+import com.example.eurder.domain.user.User;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,6 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
+
+import java.time.LocalDate;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
@@ -48,8 +54,8 @@ class UserControllerTest {
                 .post("/users")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.CREATED.value())
-                .extract();
+                .statusCode(HttpStatus.CREATED.value());
+
 
     }
     @Test
@@ -78,8 +84,8 @@ class UserControllerTest {
                 .post("/users")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.BAD_REQUEST.value())
-                .extract();
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+
 
     }
     @Test
@@ -108,8 +114,8 @@ class UserControllerTest {
                 .post("/users")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.BAD_REQUEST.value())
-                .extract();
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+
 
     }
 
@@ -127,6 +133,79 @@ class UserControllerTest {
                     "\"city\": \"string\",\n" +
                 "\"phoneNumber\": \"0123456789\"\n}";
         return requestBody;
+    }
+
+
+    @Test
+    void addOrderAsMember() {
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .body(orderItem())
+                .when()
+                .post("users/cart")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.CREATED.value());
+
+    }
+    @Test
+    void confirmOrderAsMember() {
+       User user = userRepository.getUserByEmailForLogin("user@eurder.com");
+        ItemGroep itemGroep = new ItemGroep("10",2, LocalDate.now(),40.0);
+        user.addToCart(itemGroep);
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .when()
+                .get("users/cart")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+        ;
+
+    }
+    @Test
+    void confirmEmptyOrderAsMember() {
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("user@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .when()
+                .get("users/cart")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+
+    }
+
+
+
+
+    private String orderItem() {
+
+        return "{\n" +
+                "  \"itemId\": \"10\",\n" +
+                "  \"amountToPurchase\": 1\n}";
     }
 
 }
