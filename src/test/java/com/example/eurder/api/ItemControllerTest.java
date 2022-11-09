@@ -1,22 +1,9 @@
 package com.example.eurder.api;
 
-import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.Repositories.UserRepository;
-import com.example.eurder.domain.item.Item;
-import com.example.eurder.dto.ItemDto;
-import com.example.eurder.mapper.ItemMapper;
-import com.example.eurder.service.ItemService;
-import com.example.eurder.service.security.SecurityService;
-import com.example.eurder.service.validation.CustomMessageService;
-import com.example.eurder.service.validation.ValidationItemService;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -24,24 +11,10 @@ import org.springframework.test.annotation.DirtiesContext;
 import static io.restassured.RestAssured.given;
 import static org.mockito.Mockito.verify;
 
-@ExtendWith(MockitoExtension.class)
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 class ItemControllerTest {
-    @Mock
-    private ItemRepository itemRepository;
-    @Mock
-    private UserRepository userRepository;
-    @InjectMocks
-    private ItemService itemService;
-    @InjectMocks
-    private ItemMapper itemMapper = new ItemMapper(itemRepository);
-    @Mock
-    private SecurityService securityService = new SecurityService(userRepository);
-    @Mock
-    private CustomMessageService customMessageService;
-    @Mock
-    private ValidationItemService validationItemService = new ValidationItemService(userRepository, itemRepository, customMessageService);
 
     @LocalServerPort
     private int port;
@@ -56,7 +29,7 @@ class ItemControllerTest {
     //integration testing
     @Test
     void addItemHappyPath() {
-        System.out.println(createAnewItem());
+
         given()
                 .baseUri("http://localhost")
                 .port(port)

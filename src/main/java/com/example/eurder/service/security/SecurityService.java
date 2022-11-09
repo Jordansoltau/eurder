@@ -1,6 +1,6 @@
 package com.example.eurder.service.security;
 
-import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.domain.user.User;
 import com.example.eurder.exceptions.UnauthorizatedException;

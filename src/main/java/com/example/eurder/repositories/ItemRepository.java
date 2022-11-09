@@ -1,11 +1,8 @@
-package com.example.eurder.Repositories;
+package com.example.eurder.repositories;
 
 import com.example.eurder.domain.item.Item;
-import com.example.eurder.dto.ItemDto;
-import com.example.eurder.mapper.ItemMapper;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +24,6 @@ public class ItemRepository {
         HashMap<String, Item> hardCodedRepository = new HashMap<>();
         hardCodedRepository.put(mouse.getId(), mouse);
         hardCodedRepository.put(keyboard.getId(), keyboard);
-        System.out.println(mouse.getId());
         return hardCodedRepository;
     }
 

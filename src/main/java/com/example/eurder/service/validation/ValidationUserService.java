@@ -1,6 +1,6 @@
 package com.example.eurder.service.validation;
 
-import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.user.User;
 import com.example.eurder.dto.UserDto;
 import org.springframework.stereotype.Service;

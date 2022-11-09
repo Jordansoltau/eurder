@@ -1,4 +1,4 @@
-package com.example.eurder.Repositories;
+package com.example.eurder.repositories;
 
 import org.junit.jupiter.api.Test;
 

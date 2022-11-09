@@ -1,9 +1,8 @@
 package com.example.eurder.service;
 
-import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.dto.UserDto;
 import com.example.eurder.mapper.UserMapper;
-import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import com.example.eurder.service.validation.ValidationUserService;
 import org.slf4j.Logger;

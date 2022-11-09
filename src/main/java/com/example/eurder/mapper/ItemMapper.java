@@ -1,6 +1,6 @@
 package com.example.eurder.mapper;
 
-import com.example.eurder.Repositories.ItemRepository;
+import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
@@ -18,8 +18,8 @@ public class ItemMapper {
 
     public ItemMapper(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
-    }
 
+    }
 
     public Item fromDtoToItem(ItemDto itemDto) {
         return new Item("1",itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
@@ -28,11 +28,6 @@ public class ItemMapper {
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
         return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
     }
-
-    public Order mapFromItemGroepToOrder(String orderId, ArrayList<ItemGroep> currentOrder, double totalPrice, String userId) {
-        return new Order(orderId,currentOrder,totalPrice,userId);
-    }
-
 
     private double calculatePriceOfOrder(ItemGroepDto itemGroepDto) {
         return itemGroepDto.getAmountToPurchase() * itemRepository.getItemOnId(itemGroepDto.getItemId()).getPrice();
@@ -44,5 +39,13 @@ public class ItemMapper {
         } else {
             return LocalDate.now().plusDays(DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK);
         }
+    }
+
+    //Order should not lose information
+    public Order fromItemGroepDTOToOrder(String userId, ItemGroepDto itemGroepDto) {
+        ItemGroep itemGroep=fromItemGroepDtoToItemGroep(itemGroepDto);
+        Order order = new Order();
+        order.addOrder(userId,itemGroep);
+        return order;
     }
 }

@@ -1,10 +1,8 @@
 package com.example.eurder.api;
 
-import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.Repositories.UserRepository;
-import com.example.eurder.domain.item.Item;
+import com.example.eurder.repositories.ItemRepository;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.User;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -19,7 +17,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import java.time.LocalDate;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)

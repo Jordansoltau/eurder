@@ -1,7 +1,6 @@
 package com.example.eurder.service;
 
-import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.service.security.SecurityService;
@@ -13,14 +12,12 @@ import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
 @Service
 public class ItemService {
     private final ItemRepository itemRepository;
-    private final UserRepository userRepository;
     private final ItemMapper itemMapper;
     private final ValidationItemService validationItemService;
     private final SecurityService securityService;
 
-    public ItemService(ItemRepository itemRepository, UserRepository userRepository, ItemMapper itemMapper, ValidationItemService validationItemService, SecurityService securityService) {
+    public ItemService(ItemRepository itemRepository, ItemMapper itemMapper, ValidationItemService validationItemService, SecurityService securityService) {
         this.itemRepository = itemRepository;
-        this.userRepository = userRepository;
         this.itemMapper = itemMapper;
         this.validationItemService = validationItemService;
         this.securityService = securityService;
