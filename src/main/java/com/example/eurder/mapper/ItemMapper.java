@@ -1,5 +1,6 @@
 package com.example.eurder.mapper;
 
+import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ItemMapper {
@@ -42,10 +45,21 @@ public class ItemMapper {
     }
 
     //Order should not lose information
-    public Order fromItemGroepDTOToOrder(String userId, ItemGroepDto itemGroepDto) {
+    public Order fromItemGroepDTOToOrder(ItemGroepDto itemGroepDto) {
         ItemGroep itemGroep=fromItemGroepDtoToItemGroep(itemGroepDto);
-        Order order = new Order();
-        order.addOrder(userId,itemGroep);
-        return order;
+        return new Order(itemGroep);
+    }
+
+    public OrderDTO fromOrderRepositoryToOrderDTO( ArrayList<Order> orderRepository) {
+        return new OrderDTO(orderRepository);
+    }
+
+
+    public List<OrderDTO> fromOrderRepositoryToListOrderDTO(Map<String, ArrayList<Order>> orderRepository) {
+        List<OrderDTO> orders = new ArrayList<>();
+        for (ArrayList<Order> listToIterate:orderRepository.values()) {
+            orders.add(fromOrderRepositoryToOrderDTO(listToIterate));
+        }
+        return orders;
     }
 }

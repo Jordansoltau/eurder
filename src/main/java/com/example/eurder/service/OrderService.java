@@ -1,5 +1,6 @@
 package com.example.eurder.service;
 
+import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.repositories.OrderRepository;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.order.ItemGroep;
@@ -11,6 +12,7 @@ import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,15 +37,17 @@ public class OrderService {
 
     public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, String userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
+        securityService.validateUserAndAuthorization(authorization,userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
-        Order order = itemMapper.fromItemGroepDTOToOrder(userId, itemGroepDto);
+        Order order = itemMapper.fromItemGroepDTOToOrder(itemGroepDto);
         orderRepository.addOrder(userId, order);
     }
 
 
-    public Map<String, Order> getOrderOfItems(String authorization) {
+    public List<OrderDTO> getOrderOfItems(String authorization) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
-        return orderRepository.getAllOrders();
+        List<OrderDTO> orderDTO =itemMapper.fromOrderRepositoryToListOrderDTO(orderRepository.getOrderRepository());
+        return orderDTO;
 
     }
 

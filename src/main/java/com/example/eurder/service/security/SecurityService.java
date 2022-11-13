@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Base64;
+import java.util.Objects;
 
 @Service
 public class SecurityService {
@@ -57,5 +58,15 @@ public class SecurityService {
         UsernamePassword usernamePassword = getUsernamePassword(authorization);
         User user = personRepository.getUserByEmailForLogin(usernamePassword.getUsername());
         return user.getUserId();
+    }
+
+
+    public void validateUserAndAuthorization(String authorization, String userId) {
+        UsernamePassword usernamePassword = getUsernamePassword(authorization);
+        User user = personRepository.getUserByEmailForLogin(usernamePassword.getUsername());
+        if (!Objects.equals(user.getUserId(), userId)) {
+            throw new IllegalArgumentException("You do not have access");
+        }
+
     }
 }

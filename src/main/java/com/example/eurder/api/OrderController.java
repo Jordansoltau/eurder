@@ -2,11 +2,13 @@ package com.example.eurder.api;
 
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +29,7 @@ public class OrderController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Map<String,Order> confirmOrder(@RequestHeader String authorization){
+    public List<OrderDTO> confirmOrder(@RequestHeader String authorization){
         return orderService.getOrderOfItems(authorization);
     }
 }

@@ -3,7 +3,6 @@ package com.example.eurder.repositories;
 import com.example.eurder.domain.order.ItemGroep;
 
 import com.example.eurder.domain.order.Order;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -12,26 +11,41 @@ import java.util.*;
 @Repository
 public class OrderRepository {
 
-    private final Map<String, Order> orderRepository;
+    private final Map<String, ArrayList<Order>> orderRepository;
 
-    public OrderRepository(Map<String, Order> orderRepository) {
-        this.orderRepository = orderRepository;
-        hardCodedRepository();
+    public OrderRepository() {
+        this.orderRepository = hardCodedRepository();
     }
 
 
-    private void hardCodedRepository() {
-        Order orderHardCoded = new Order();
-        orderHardCoded.addOrder("1",new ItemGroep("10", 1, LocalDate.now(), 20));
-        orderRepository.put("15",orderHardCoded);
+    private Map<String, ArrayList<Order>> hardCodedRepository() {
+        Map<String, ArrayList<Order>> hardCodedRepository = new HashMap<>();
+        Order orderHardCoded = new Order(new ItemGroep("10", 1, LocalDate.now(), 20));
+        ArrayList<Order> listOfOrders = new ArrayList<>();
+        listOfOrders.add(orderHardCoded);
+        hardCodedRepository.put("1", listOfOrders);
+        return hardCodedRepository;
     }
 
 
     public void addOrder(String userId, Order order) {
-            orderRepository.put(userId, order);
+        ArrayList<Order> ListOfOrderOfUser = updateOrdersForUser(userId, order);
+        orderRepository.put(userId,ListOfOrderOfUser);
     }
 
-    public Map<String, Order> getAllOrders() {
+    private ArrayList<Order> updateOrdersForUser(String userId, Order order) {
+        if (orderRepository.get(userId) == null){
+            ArrayList<Order> ListOfOrderOfUser = new ArrayList<>();
+            ListOfOrderOfUser.add(order);
+            return ListOfOrderOfUser;
+
+        }
+        ArrayList<Order> ListOfOrderOfUser = orderRepository.get(userId);
+        ListOfOrderOfUser.add(order);
+        return ListOfOrderOfUser;
+    }
+
+    public Map<String, ArrayList<Order>> getOrderRepository() {
         return orderRepository;
     }
 }
