@@ -45,7 +45,7 @@ public class OrderService {
 
 
     public List<OrderDTO> getOrderOfItems(String authorization) {
-        securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
+        securityService.validateAuthorization(authorization, Feature.ADMIN);
         return itemMapper.fromOrderRepositoryToListOrderDTO(orderRepository.getOrderRepository());
 
     }
