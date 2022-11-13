@@ -51,5 +51,8 @@ public class UserRepository {
     }
 
 
+    public User getUserById(String id) {
+        return usersList.get(id);
+    }
 }
 

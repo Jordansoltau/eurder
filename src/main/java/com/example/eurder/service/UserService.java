@@ -1,6 +1,7 @@
 package com.example.eurder.service;
 
 import com.example.eurder.domain.user.Feature;
+import com.example.eurder.domain.user.User;
 import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.dto.UserDto;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,5 +52,15 @@ public class UserService {
         return allOrders.stream()
                 .filter(orderDTO -> orderDTO.getUserId().equals(id))
                 .collect(Collectors.toList());
+    }
+
+    public Collection<User> getAllUsers(String authorization) {
+        securityService.validateAuthorization(authorization,Feature.ADMIN);
+        return userRepository.getAllPersons();
+    }
+
+    public User getUsers(String authorization, String id) {
+        securityService.validateAuthorization(authorization,Feature.ADMIN);
+        return userRepository.getUserById(id);
     }
 }

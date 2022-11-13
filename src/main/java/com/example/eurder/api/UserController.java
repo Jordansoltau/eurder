@@ -1,6 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.order.Order;
+import com.example.eurder.domain.user.User;
 import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.dto.UserDto;
@@ -13,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RequestMapping("users")
@@ -32,10 +34,23 @@ public class UserController {
         userService.createANewAccount(userDto);
     }
 
+    @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public Collection<User> getAllUsers(@RequestHeader String authorization){
+        return userService.getAllUsers(authorization);
+        //Danger!! ask Tim
+    }
+    @GetMapping(params = "id",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public User getUserInformation(@RequestHeader String authorization,@Parameter String id){
+        return userService.getUsers(authorization,id);
+        //Danger!! ask Tim
+    }
 
     @GetMapping(path = "/{id}/my-orders", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public List<OrderDTO> getUserOrders( @RequestHeader String authorization, @PathVariable String id){
         return userService.getReportOfOrders(authorization,id);
+        //not green requirement
     }
 }
