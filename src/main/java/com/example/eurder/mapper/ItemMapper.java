@@ -7,6 +7,7 @@ import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.repositories.OrderRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -17,15 +18,16 @@ import java.util.Map;
 @Component
 public class ItemMapper {
     private final ItemRepository itemRepository;
+    private final OrderRepository orderRepository;
     public static final int DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK = 7;
 
-    public ItemMapper(ItemRepository itemRepository) {
+    public ItemMapper(ItemRepository itemRepository, OrderRepository orderRepository) {
         this.itemRepository = itemRepository;
-
+        this.orderRepository = orderRepository;
     }
 
     public Item fromDtoToItem(ItemDto itemDto) {
-        return new Item("1",itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
+        return new Item("1", itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
     }
 
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
@@ -46,20 +48,19 @@ public class ItemMapper {
 
     //Order should not lose information
     public Order fromItemGroepDTOToOrder(ItemGroepDto itemGroepDto) {
-        ItemGroep itemGroep=fromItemGroepDtoToItemGroep(itemGroepDto);
+        ItemGroep itemGroep = fromItemGroepDtoToItemGroep(itemGroepDto);
         return new Order(itemGroep);
     }
 
-    public OrderDTO fromOrderRepositoryToOrderDTO( ArrayList<Order> orderRepository) {
-        return new OrderDTO(orderRepository);
-    }
-
-
-    public List<OrderDTO> fromOrderRepositoryToListOrderDTO(Map<String, ArrayList<Order>> orderRepository) {
+    public List<OrderDTO> fromOrderRepositoryToListOrderDTO(Map<String, ArrayList<Order>> orderRepo) {
         List<OrderDTO> orders = new ArrayList<>();
-        for (ArrayList<Order> listToIterate:orderRepository.values()) {
-            orders.add(fromOrderRepositoryToOrderDTO(listToIterate));
+        for (Map.Entry<String, ArrayList<Order>> entry : orderRepo.entrySet()) {
+            String userId = entry.getKey();
+            orders.add(new OrderDTO(orderRepo.get(userId),userId));
         }
         return orders;
     }
+
+
+
 }

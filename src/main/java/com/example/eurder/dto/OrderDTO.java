@@ -3,18 +3,25 @@ package com.example.eurder.dto;
 import com.example.eurder.domain.order.Order;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class OrderDTO {
 
     private final  ArrayList<Order> order;
     private final double price;
 
-    public OrderDTO(ArrayList<Order> order) {
+    private final String userId;
+
+
+    public OrderDTO(ArrayList<Order> order, String userId) {
         this.order = order;
         this.price = calculateTotalPrice(order);
+        this.userId = userId;
     }
 
+
+    public String getUserId() {
+        return userId;
+    }
 
     private double calculateTotalPrice(ArrayList<Order> order) {
         double sum = 0;
