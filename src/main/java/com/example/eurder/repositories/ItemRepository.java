@@ -48,4 +48,8 @@ public class ItemRepository {
         Item itemToUpdate = itemsList.get(itemId);
         itemToUpdate.decreaseAmount(amountToPurchase);
     }
+
+    public void updateSpecificItem(Item item) {
+        itemsList.put(item.getId(),item);
+    }
 }

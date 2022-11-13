@@ -26,8 +26,8 @@ public class ItemMapper {
         this.orderRepository = orderRepository;
     }
 
-    public Item fromDtoToItem(ItemDto itemDto) {
-        return new Item("1", itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
+    public Item fromDtoToItem(ItemDto itemDto, String itemId) {
+        return new Item(itemId, itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
     }
 
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
@@ -39,7 +39,7 @@ public class ItemMapper {
     }
 
     private LocalDate setShippingDate(ItemGroepDto itemGroepDto) {
-        if (itemGroepDto.getAmountToPurchase() < itemRepository.getItemOnId(itemGroepDto.getItemId()).getAmount()) {
+        if (itemGroepDto.getAmountToPurchase() <= itemRepository.getItemOnId(itemGroepDto.getItemId()).getAmount()) {
             return LocalDate.now();
         } else {
             return LocalDate.now().plusDays(DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK);

@@ -22,6 +22,12 @@ public class ValidationItemService {
         this.itemRepository = itemRepository;
         this.customMessageService = customMessageService;
     }
+    public void validateCorrectInput(ItemDto itemDto) {
+        validateAmountOfitemDto(itemDto, "Amount");
+        validatePriceOfitemDto(itemDto, "Price");
+        validateDescriptionOfitemDto(itemDto, "Description");
+        validateNameOfitemDto(itemDto, "Name");
+    }
 
 
     public void validateAmountOfitemDto(ItemDto itemDto, String amount) {

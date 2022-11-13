@@ -1,5 +1,6 @@
 package com.example.eurder.service;
 
+import com.example.eurder.domain.item.Item;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.mapper.ItemMapper;
@@ -7,7 +8,10 @@ import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
+import static com.example.eurder.domain.user.Feature.ADMIN;
 
 @Service
 public class ItemService {
@@ -25,11 +29,18 @@ public class ItemService {
 
     public void createANewItemInItemRepository(String authorization, ItemDto itemDto) {
         securityService.validateAuthorization(authorization, ADDING_NEW_ITEM);
-        validationItemService.validateAmountOfitemDto(itemDto, "Amount");
-        validationItemService.validatePriceOfitemDto(itemDto, "Price");
-        validationItemService.validateDescriptionOfitemDto(itemDto, "Description");
-        validationItemService.validateNameOfitemDto(itemDto, "Name");
-        itemRepository.addNewItem(itemMapper.fromDtoToItem(itemDto));
+        validationItemService.validateCorrectInput(itemDto);
+        Item item = itemMapper.fromDtoToItem(itemDto, UUID.randomUUID().toString());
+        itemRepository.addNewItem(item);
     }
 
+
+
+    public void updateThisItem(String authorization, ItemDto itemDto, String itemId) {
+        securityService.validateAuthorization(authorization,ADMIN);
+        validationItemService.validateIfItemExist(itemId);
+        validationItemService.validateCorrectInput(itemDto);
+        Item item = itemMapper.fromDtoToItem(itemDto,itemId);
+        itemRepository.updateSpecificItem(item);
+    }
 }

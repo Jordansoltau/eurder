@@ -28,4 +28,10 @@ public class ItemController {
         itemService.createANewItemInItemRepository(authorization, itemDto);
     }
 
+    @PatchMapping(path="/{itemID}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public void updateItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto, @PathVariable String itemID){
+        itemService.updateThisItem(authorization,itemDto,itemID);
+    }
+
 }

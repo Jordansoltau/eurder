@@ -85,6 +85,26 @@ class ItemControllerTest {
                 .statusCode(HttpStatus.NOT_FOUND.value());
     }
 
+    @Test
+    void updateItemHappyPath() {
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .body(createAnewItem())
+                .when()
+                .patch("/items/10")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+    }
+
 
     private static String createAnewItem() {
         String requestBody = "{\n" +
