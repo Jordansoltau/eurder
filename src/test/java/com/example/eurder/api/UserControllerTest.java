@@ -115,6 +115,50 @@ class UserControllerTest {
 
     }
 
+    @Test
+    void getAllUsersAsAdmin() {
+
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .when()
+                .get("/users")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+
+
+    }
+
+    @Test
+    void getUsersIdOneAsAdmin() {
+
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .when()
+                .get("/users?id=1")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+
+
+    }
+
 
 
 
