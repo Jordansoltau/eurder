@@ -4,34 +4,50 @@ import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.user.Address.Address;
 import jdk.dynalink.linker.LinkerServices;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
+@Entity
+@Table(name = "USER")
 public class User {
-    private final String userId;
-    private final String firstName;
-    private final String lastName;
-    private final String email;
-    private final Address address;
-    private final String phoneNumber;
-    private final String password;
+    @Id
+    @Column(name = "user_id")
+    private String userId;
+    @Column(name = "user_firstname")
+    private String firstName;
+    @Column(name = "user_lastname")
+    private String lastName;
+    @Column(name = "user_email")
+    private String email;
+    @Embedded
+    private Address address;
+    @Column(name = "user_phoneNumber")
+    private String phoneNumber;
+    @Column(name = "user_password")
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_role")
     private Role role;
 
-    public User(String id, String firstName
+    public User(String firstName
             , String lastName, String email
             , Address address, String phoneNumber) {
 
         this.password = "password";
-        this.userId = id;
-//        userId = UUID.randomUUID().toString();
+        userId = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-
         this.role = Role.CUSTOMER;
+    }
+
+    public User() {
 
     }
 

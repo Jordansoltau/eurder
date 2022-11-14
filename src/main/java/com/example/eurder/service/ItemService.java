@@ -33,7 +33,7 @@ public class ItemService {
         securityService.validateAuthorization(authorization, ADDING_NEW_ITEM);
         validationItemService.validateCorrectInput(itemDto);
         Item item = itemMapper.fromDtoToItem(itemDto, UUID.randomUUID().toString());
-        itemRepository.addNewItem(item);
+        itemRepository.save(item);
     }
 
 

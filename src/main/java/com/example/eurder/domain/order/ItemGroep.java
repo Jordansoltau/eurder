@@ -1,7 +1,9 @@
 package com.example.eurder.domain.order;
 
+import javax.persistence.Embeddable;
 import java.time.LocalDate;
 
+@Embeddable
 public class ItemGroep {
     private final String itemId;
     private final int amount;
