@@ -39,7 +39,7 @@ public class ValidationUserService {
     }
 
     private boolean emailAlreadyExistInDataBase(UserDto userDto) {
-        return userRepository.findUserByEmailIs(userDto.getEmail()) == null;
+        return userRepository.findUserByEmailIs(userDto.getEmail()) != null;
     }
 
     private String mustBeUnique() {
