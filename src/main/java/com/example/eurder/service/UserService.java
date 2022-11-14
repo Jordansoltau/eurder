@@ -1,8 +1,10 @@
 package com.example.eurder.service;
 
+import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
-import com.example.eurder.domain.user.User;
+import com.example.eurder.domain.user.Person;
 import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.mapper.OrderMapper;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.dto.UserDto;
 import com.example.eurder.mapper.UserMapper;
@@ -15,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -25,13 +26,15 @@ public class UserService {
     private final SecurityService securityService;
     private final OrderService orderService;
     private final UserMapper userMapper;
+    private final OrderMapper orderMapper;
 
-    public UserService(UserRepository userRepository, ValidationUserService validationUserService, SecurityService securityService, OrderService orderService, UserMapper userMapper) {
+    public UserService(UserRepository userRepository, ValidationUserService validationUserService, SecurityService securityService, OrderService orderService, UserMapper userMapper, OrderMapper orderMapper) {
         this.userRepository = userRepository;
         this.validationUserService = validationUserService;
         this.securityService = securityService;
         this.orderService = orderService;
         this.userMapper = userMapper;
+        this.orderMapper = orderMapper;
     }
 
     public void createANewAccount(UserDto userDto) {
@@ -41,26 +44,24 @@ public class UserService {
         validationUserService.validateEmail(userDto, "Email");
         validationUserService.validateAdressName(userDto, "Adress");
         validationUserService.validatePhoneNumber(userDto, "phoneNumber");
-        userRepository.addNewUser(userMapper.fromDtoToUser(userDto));
+        userRepository.save(userMapper.fromDtoToUser(userDto));
         logger.info("new user is created");
     }
 
-    public List<OrderDTO> getReportOfOrders(String authorization, String id) {
+    public List<OrderDTO> getReportOfOrders(String authorization, String userId) {
         securityService.validateAuthorization(authorization, Feature.VIEW_OWN_REPORTS);
-        securityService.validateUserAndAuthorization(authorization,id);
-        List<OrderDTO> allOrders = orderService.getAllOrderOfItemsWithoutAuthorization();
-        return allOrders.stream()
-                .filter(orderDTO -> orderDTO.getUserId().equals(id))
-                .collect(Collectors.toList());
+        securityService.validateUserAndAuthorization(authorization,userId);
+        List<Order> allOrders = orderService.getAllOrderOfItemsWithoutAuthorization(userId);
+        return orderMapper.fromListOrderToListOrderDTO(allOrders,userId);
     }
 
-    public Collection<User> getAllUsers(String authorization) {
+    public Collection<Person> getAllUsers(String authorization) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
-        return userRepository.getAllPersons();
+        return userRepository.findAll();
     }
 
-    public User getUsers(String authorization, String id) {
+    public Person getUsers(String authorization, String id) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
-        return userRepository.getUserById(id);
+        return userRepository.findById(id).orElseThrow();
     }
 }

@@ -29,7 +29,7 @@ public class OrderController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<OrderDTO> confirmOrder(@RequestHeader String authorization){
+    public List<Order> confirmOrder(@RequestHeader String authorization){
         return orderService.getOrderOfItems(authorization);
     }
 }

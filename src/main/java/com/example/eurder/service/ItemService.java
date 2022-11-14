@@ -29,10 +29,10 @@ public class ItemService {
         this.securityService = securityService;
     }
 
-    public void createANewItemInItemRepository(String authorization, ItemDto itemDto) {
+    public void createANewItemInItemRepository(ItemDto itemDto, String authorization) {
         securityService.validateAuthorization(authorization, ADDING_NEW_ITEM);
         validationItemService.validateCorrectInput(itemDto);
-        Item item = itemMapper.fromDtoToItem(itemDto, UUID.randomUUID().toString());
+        Item item = itemMapper.fromItemDtoToItemWhenCreatingItem(itemDto, UUID.randomUUID().toString());
         itemRepository.save(item);
     }
 
@@ -42,12 +42,13 @@ public class ItemService {
         securityService.validateAuthorization(authorization,ADMIN);
         validationItemService.validateIfItemExist(itemId);
         validationItemService.validateCorrectInput(itemDto);
-        Item item = itemMapper.fromDtoToItem(itemDto,itemId);
-        itemRepository.updateSpecificItem(item);
+        Item item = itemMapper.fromItemDtoToItem(itemDto, itemId);
+        itemRepository.save(item);
+
     }
 
-    public Collection<Item> getItemStockOverview(String authorization) {
+    public List<Item> getItemStockOverview(String authorization) {
         securityService.validateAuthorization(authorization,ADMIN);
-        return itemRepository.getAllItems();
+        return itemRepository.findAll();
     }
 }

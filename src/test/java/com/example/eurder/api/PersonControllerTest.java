@@ -1,9 +1,6 @@
 package com.example.eurder.api;
 
-import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.repositories.UserRepository;
-import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.user.User;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,13 +11,11 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
 
-import java.time.LocalDate;
-
 import static io.restassured.RestAssured.given;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-class UserControllerTest {
+class PersonControllerTest {
     @LocalServerPort
     private int port;
 

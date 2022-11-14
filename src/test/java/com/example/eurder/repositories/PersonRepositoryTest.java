@@ -2,7 +2,7 @@ package com.example.eurder.repositories;
 
 import org.junit.jupiter.api.Test;
 
-class UserRepositoryTest {
+class PersonRepositoryTest {
 
     @Test
     void GivenHardcodedRepositoryReturnsUserAndAdmin(){

@@ -9,17 +9,17 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "ITEM")
+@Table(name = "item")
 public class Item {
     @Id
     private String id;
-    @Column(name = "item_description")
+    @Column(name = "description")
     private String description;
-    @Column(name = "item_name")
+    @Column(name = "name")
     private String name;
-    @Column(name = "item_price")
+    @Column(name = "price")
     private double price;
-    @Column(name = "item_amount_stock")
+    @Column(name = "amountstock")
     private int amount;
 
     public Item( String name, String description, double price, int amount) {
@@ -30,8 +30,32 @@ public class Item {
         this.amount = amount;
     }
 
+    public Item(String id, String name, String description, double price, int amount) {
+        this.id = id;
+        this.description = description;
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+    }
+
     public Item() {
 
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getId() {

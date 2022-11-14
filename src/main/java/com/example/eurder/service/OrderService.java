@@ -1,6 +1,6 @@
 package com.example.eurder.service;
 
-import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.domain.item.Item;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.repositories.OrderRepository;
 import com.example.eurder.domain.order.Order;
@@ -11,7 +11,7 @@ import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 
 @Service
@@ -36,20 +36,25 @@ public class OrderService {
 
     public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, String userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
-        securityService.validateUserAndAuthorization(authorization,userId);
+        securityService.validateUserAndAuthorization(authorization, userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
+
         Order order = itemMapper.fromItemGroepDTOToOrder(itemGroepDto);
-        orderRepository.addOrder(userId, order);
-        itemRepository.updateStock(itemGroepDto.getItemId(),itemGroepDto.getAmountToPurchase());
+        orderRepository.save(order);
+
+        Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
+        item.decreaseAmount(itemGroepDto.getAmountToPurchase());
+        itemRepository.save(item);
     }
 
 
-    public List<OrderDTO> getOrderOfItems(String authorization) {
+    public List<Order> getOrderOfItems(String authorization) {
         securityService.validateAuthorization(authorization, Feature.ADMIN);
-        return itemMapper.fromOrderRepositoryToListOrderDTO(orderRepository.getOrderRepository());
+        return orderRepository.findAll();
     }
 
-    public List<OrderDTO> getAllOrderOfItemsWithoutAuthorization() {
-        return itemMapper.fromOrderRepositoryToListOrderDTO(orderRepository.getOrderRepository());
+    public List<Order> getAllOrderOfItemsWithoutAuthorization(String userId) {
+        return  orderRepository.findAllById(Collections.singleton(userId));
+        //not ok
     }
 }

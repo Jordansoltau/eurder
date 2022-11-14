@@ -52,9 +52,12 @@ public class ValidationItemService {
 
     public void validateIfItemExist(String itemid) {
 
-        if(!itemRepository.doesItemExist(itemid))throw new IllegalArgumentException("Item does not exist");
+        if(doesItemExist(itemid))throw new IllegalArgumentException("Item does not exist");
     }
 
+    private boolean doesItemExist(String itemid) {
+        return itemRepository.findById(itemid) == null;
+    }
 
 
 }

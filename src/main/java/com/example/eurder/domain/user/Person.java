@@ -1,44 +1,38 @@
 package com.example.eurder.domain.user;
 
-import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.user.Address.Address;
-import jdk.dynalink.linker.LinkerServices;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "person")
+public class Person {
     @Id
-    @Column(name = "user_id")
-    private String userId;
-    @Column(name = "user_firstname")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_seq")
+    @SequenceGenerator(name = "person_seq", sequenceName = "person_seq", allocationSize = 1)
+    private Integer id;
+    @Column(name = "firstname")
     private String firstName;
-    @Column(name = "user_lastname")
+    @Column(name = "lastname")
     private String lastName;
-    @Column(name = "user_email")
+    @Column(unique = true,name = "email")
     private String email;
     @Embedded
     private Address address;
-    @Column(name = "user_phoneNumber")
+    @Column(name = "phonenumber")
     private String phoneNumber;
-    @Column(name = "user_password")
+    @Column(name = "password")
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_role")
+    @Column(name = "role")
     private Role role;
 
-    public User(String firstName
+    public Person(String firstName
             , String lastName, String email
             , Address address, String phoneNumber) {
 
         this.password = "password";
-        userId = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -47,12 +41,12 @@ public class User {
         this.role = Role.CUSTOMER;
     }
 
-    public User() {
+    public Person() {
 
     }
 
-    public String getUserId() {
-        return userId;
+    public Integer getUserId() {
+        return id;
     }
 
     public boolean canHaveAccessTo(Feature feature) {

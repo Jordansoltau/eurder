@@ -26,20 +26,20 @@ public class ItemMapper {
         this.orderRepository = orderRepository;
     }
 
-    public Item fromDtoToItem(ItemDto itemDto, String itemId) {
-        return new Item(itemId, itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
-    }
-
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
+
         return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
     }
 
+
     private double calculatePriceOfOrder(ItemGroepDto itemGroepDto) {
-        return itemGroepDto.getAmountToPurchase() * itemRepository.getItemOnId(itemGroepDto.getItemId()).getPrice();
+        Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
+        return itemGroepDto.getAmountToPurchase() * item.getPrice();
     }
 
     private LocalDate setShippingDate(ItemGroepDto itemGroepDto) {
-        if (itemGroepDto.getAmountToPurchase() <= itemRepository.getItemOnId(itemGroepDto.getItemId()).getAmount()) {
+        Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
+        if (itemGroepDto.getAmountToPurchase() <= item.getAmount()) {
             return LocalDate.now();
         } else {
             return LocalDate.now().plusDays(DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK);
@@ -52,15 +52,17 @@ public class ItemMapper {
         return new Order(itemGroep);
     }
 
-    public List<OrderDTO> fromOrderRepositoryToListOrderDTO(Map<String, ArrayList<Order>> orderRepo) {
-        List<OrderDTO> orders = new ArrayList<>();
-        for (Map.Entry<String, ArrayList<Order>> entry : orderRepo.entrySet()) {
-            String userId = entry.getKey();
-            orders.add(new OrderDTO(orderRepo.get(userId),userId));
-        }
-        return orders;
+
+    public Item fromItemDtoToItem(ItemDto itemDto, String itemId) {
+        Item item = itemRepository.findById(itemId).orElseThrow();
+        item.setName(itemDto.getName());
+        item.setAmount(itemDto.getAmount());
+        item.setPrice(itemDto.getPrice());
+        item.setDescription(itemDto.getDescription());
+        return item;
     }
 
-
-
+    public Item fromItemDtoToItemWhenCreatingItem(ItemDto itemDto, String itemId) {
+        return new Item(itemId,itemDto.getName(),itemDto.getDescription(),itemDto.getPrice(),itemDto.getAmount());
+    }
 }

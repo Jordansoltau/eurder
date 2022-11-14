@@ -1,14 +1,9 @@
 package com.example.eurder.api;
 
-import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.user.User;
-import com.example.eurder.repositories.ItemRepository;
-import com.example.eurder.repositories.UserRepository;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;

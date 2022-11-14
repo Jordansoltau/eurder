@@ -15,8 +15,10 @@ public class Order {
     private String orderId;
     @Embedded
     private ItemGroep orderedItems;
-    @Column(name = "priceoforder")
+    @Column(name = "totalprice")
     private double totalPrice;
+    @Column(name = "user_id")
+    private String userid;
 
 
     public Order() {

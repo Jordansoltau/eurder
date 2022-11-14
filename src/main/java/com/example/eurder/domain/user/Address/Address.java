@@ -1,7 +1,7 @@
 package com.example.eurder.domain.user.Address;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
+
 
 @Embeddable
 public class Address {
