@@ -8,6 +8,8 @@ import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
@@ -42,5 +44,10 @@ public class ItemService {
         validationItemService.validateCorrectInput(itemDto);
         Item item = itemMapper.fromDtoToItem(itemDto,itemId);
         itemRepository.updateSpecificItem(item);
+    }
+
+    public Collection<Item> getItemStockOverview(String authorization) {
+        securityService.validateAuthorization(authorization,ADMIN);
+        return itemRepository.getAllItems();
     }
 }

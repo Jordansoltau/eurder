@@ -3,6 +3,7 @@ package com.example.eurder.repositories;
 import com.example.eurder.domain.item.Item;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,5 +52,9 @@ public class ItemRepository {
 
     public void updateSpecificItem(Item item) {
         itemsList.put(item.getId(),item);
+    }
+
+    public Collection<Item> getAllItems() {
+        return itemsList.values();
     }
 }

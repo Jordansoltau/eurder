@@ -105,6 +105,25 @@ class ItemControllerTest {
                 .statusCode(HttpStatus.OK.value());
     }
 
+    @Test
+    void itemOverview() {
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .header("Content-type", "application/json")
+                .and()
+                .when()
+                .get("/items/stock")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+    }
+
 
     private static String createAnewItem() {
         String requestBody = "{\n" +
