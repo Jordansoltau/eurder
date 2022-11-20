@@ -1,0 +1,676 @@
+2022-11-05 07:24:42.211  INFO 18008 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 18008 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:24:42.221  INFO 18008 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:24:43.568  INFO 18008 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$46d2b844] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:24:43.693  INFO 18008 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:24:44.389  INFO 18008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:24:44.408  INFO 18008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:24:44.410  INFO 18008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:24:45.023  INFO 18008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:24:45.023  INFO 18008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2735 ms
+2022-11-05 07:24:47.621  INFO 18008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64541 (http) with context path ''
+2022-11-05 07:24:47.636  INFO 18008 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.909 seconds (JVM running for 9.688)
+2022-11-05 07:24:47.869  INFO 18008 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:25:44.843  INFO 21216 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 21216 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:25:44.845  INFO 21216 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:25:46.179  INFO 21216 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3a2ade24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:25:46.280  INFO 21216 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:25:47.020  INFO 21216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:25:47.034  INFO 21216 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:25:47.035  INFO 21216 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:25:47.747  INFO 21216 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:25:47.747  INFO 21216 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2838 ms
+2022-11-05 07:25:50.293  INFO 21216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64554 (http) with context path ''
+2022-11-05 07:25:50.316  INFO 21216 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.929 seconds (JVM running for 9.665)
+2022-11-05 07:25:50.501  INFO 21216 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:26:38.612  INFO 24236 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 24236 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:26:38.614  INFO 24236 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:26:39.861  INFO 24236 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9966c5a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:26:39.959  INFO 24236 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:26:40.713  INFO 24236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:26:40.733  INFO 24236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:26:40.735  INFO 24236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:26:41.429  INFO 24236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:26:41.430  INFO 24236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2744 ms
+2022-11-05 07:26:43.813  INFO 24236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64564 (http) with context path ''
+2022-11-05 07:26:43.829  INFO 24236 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.64 seconds (JVM running for 8.977)
+2022-11-05 07:26:44.055  INFO 24236 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:26:58.376  INFO 19924 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 19924 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:26:58.378  INFO 19924 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:26:59.727  INFO 19924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$e61137c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:26:59.811  INFO 19924 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:27:00.540  INFO 19924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:27:00.553  INFO 19924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:27:00.554  INFO 19924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:27:00.953  INFO 19924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:27:00.954  INFO 19924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2522 ms
+2022-11-05 07:27:03.703  INFO 19924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64573 (http) with context path ''
+2022-11-05 07:27:03.727  INFO 19924 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.83 seconds (JVM running for 12.203)
+2022-11-05 07:27:05.841  WARN 19924 --- [main] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-auto-1] because the local address was not available
+2022-11-05 07:27:05.842  INFO 19924 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:27:05.850 ERROR 19924 --- [http-nio-auto-1-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:376) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:547) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-05 07:31:28.618  INFO 10568 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 10568 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:31:28.619  INFO 10568 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:31:29.956  INFO 10568 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ed679ecb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:31:30.058  INFO 10568 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:31:30.723  INFO 10568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:31:30.741  INFO 10568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:31:30.741  INFO 10568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:31:31.435  INFO 10568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:31:31.436  INFO 10568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2752 ms
+2022-11-05 07:31:33.923  INFO 10568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64594 (http) with context path ''
+2022-11-05 07:31:33.941  INFO 10568 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.81 seconds (JVM running for 9.56)
+2022-11-05 07:31:34.146  INFO 10568 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:34:13.707  INFO 29096 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 29096 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:34:13.709  INFO 29096 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:34:14.996  INFO 29096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8b9d208c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:34:15.112  INFO 29096 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:34:15.761  INFO 29096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:34:15.779  INFO 29096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:34:15.779  INFO 29096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:34:16.482  INFO 29096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:34:16.483  INFO 29096 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2718 ms
+2022-11-05 07:34:19.049  INFO 29096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64611 (http) with context path ''
+2022-11-05 07:34:19.070  INFO 29096 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.833 seconds (JVM running for 9.587)
+2022-11-05 07:34:19.320  INFO 29096 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:55:59.292  INFO 24416 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 24416 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:55:59.293  INFO 24416 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:56:00.694  INFO 24416 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8b9d208c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:56:00.794  INFO 24416 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:56:01.524  INFO 24416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:56:01.537  INFO 24416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:56:01.538  INFO 24416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:56:02.185  INFO 24416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:56:02.185  INFO 24416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2811 ms
+2022-11-05 07:56:04.681  INFO 24416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64749 (http) with context path ''
+2022-11-05 07:56:04.710  INFO 24416 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.913 seconds (JVM running for 9.493)
+2022-11-05 07:56:04.972  INFO 24416 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:58:19.624  INFO 16704 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 16704 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:58:19.627  INFO 16704 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:58:20.949  INFO 16704 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5b06b3ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:58:21.056  INFO 16704 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:58:21.742  INFO 16704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:58:21.760  INFO 16704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:58:21.762  INFO 16704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:58:22.454  INFO 16704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:58:22.454  INFO 16704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2772 ms
+2022-11-05 07:58:24.997  INFO 16704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64770 (http) with context path ''
+2022-11-05 07:58:25.017  INFO 16704 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.869 seconds (JVM running for 9.644)
+2022-11-05 07:58:25.139  INFO 16704 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 07:58:47.998  INFO 1996 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 1996 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 07:58:48.001  INFO 1996 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 07:58:49.341  INFO 1996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a94cfe8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 07:58:49.437  INFO 1996 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 07:58:50.148  INFO 1996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 07:58:50.165  INFO 1996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 07:58:50.166  INFO 1996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 07:58:50.818  INFO 1996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 07:58:50.818  INFO 1996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2755 ms
+2022-11-05 07:58:53.471  INFO 1996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64781 (http) with context path ''
+2022-11-05 07:58:53.494  INFO 1996 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 6.007 seconds (JVM running for 9.733)
+2022-11-05 07:58:53.657  INFO 1996 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:01:03.239  INFO 29256 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 29256 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:01:03.240  INFO 29256 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:01:04.785  INFO 29256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3488ef4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:01:04.887  INFO 29256 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:01:05.889  INFO 29256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:01:05.904  INFO 29256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:01:05.905  INFO 29256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:01:06.713  INFO 29256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:01:06.714  INFO 29256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3420 ms
+2022-11-05 08:01:10.155  INFO 29256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64803 (http) with context path ''
+2022-11-05 08:01:10.172  INFO 29256 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 7.536 seconds (JVM running for 12.992)
+2022-11-05 08:01:10.483  INFO 29256 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:02:03.412  INFO 28248 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 28248 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:02:03.413  INFO 28248 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:02:05.178  INFO 28248 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$be77bf09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:02:05.319  INFO 28248 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:02:06.290  INFO 28248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:02:06.334  INFO 28248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:02:06.335  INFO 28248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:02:07.046  INFO 28248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:02:07.047  INFO 28248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3508 ms
+2022-11-05 08:02:10.814  INFO 28248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64814 (http) with context path ''
+2022-11-05 08:02:10.829  INFO 28248 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 7.885 seconds (JVM running for 13.085)
+2022-11-05 08:02:10.925  INFO 28248 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:02:56.438  INFO 6812 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 6812 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:02:56.439  INFO 6812 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:02:58.172  INFO 6812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ac6ecd1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:02:58.269  INFO 6812 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:02:59.107  INFO 6812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:02:59.141  INFO 6812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:02:59.143  INFO 6812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:02:59.959  INFO 6812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:02:59.959  INFO 6812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3464 ms
+2022-11-05 08:03:03.806  INFO 6812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64828 (http) with context path ''
+2022-11-05 08:03:03.848  INFO 6812 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 8.151 seconds (JVM running for 13.602)
+2022-11-05 08:03:04.032  INFO 6812 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:05:09.833  INFO 1952 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 1952 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:05:09.835  INFO 1952 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:05:11.450  INFO 1952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$256ff020] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:05:11.608  INFO 1952 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:05:12.451  INFO 1952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:05:12.466  INFO 1952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:05:12.467  INFO 1952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:05:13.195  INFO 1952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:05:13.196  INFO 1952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3291 ms
+2022-11-05 08:05:16.546  INFO 1952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64848 (http) with context path ''
+2022-11-05 08:05:16.563  INFO 1952 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 7.296 seconds (JVM running for 12.346)
+2022-11-05 08:05:16.811  INFO 1952 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:05:44.470  INFO 20400 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 20400 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:05:44.472  INFO 20400 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:05:46.229  INFO 20400 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6e217e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:05:46.334  INFO 20400 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:05:47.311  INFO 20400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:05:47.325  INFO 20400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:05:47.326  INFO 20400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:05:48.119  INFO 20400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:05:48.120  INFO 20400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3576 ms
+2022-11-05 08:05:51.606  INFO 20400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64859 (http) with context path ''
+2022-11-05 08:05:51.621  INFO 20400 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 7.852 seconds (JVM running for 12.908)
+2022-11-05 08:05:51.816  INFO 20400 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:07:40.157  INFO 28620 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 28620 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:07:40.159  INFO 28620 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:07:41.830  INFO 28620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$14d55d7b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:07:41.996  INFO 28620 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:07:42.813  INFO 28620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:07:42.829  INFO 28620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:07:42.830  INFO 28620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:07:43.526  INFO 28620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:07:43.528  INFO 28620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3307 ms
+2022-11-05 08:07:47.181  INFO 28620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64907 (http) with context path ''
+2022-11-05 08:07:47.228  INFO 28620 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 7.59 seconds (JVM running for 12.696)
+2022-11-05 08:07:47.407  INFO 28620 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 08:09:36.835  INFO 25144 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 25144 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 08:09:36.837  INFO 25144 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 08:09:38.772  INFO 25144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$14d55d7b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 08:09:38.930  INFO 25144 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 08:09:39.936  INFO 25144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 08:09:39.950  INFO 25144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 08:09:39.951  INFO 25144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 08:09:40.673  INFO 25144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 08:09:40.673  INFO 25144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3708 ms
+2022-11-05 08:09:44.374  INFO 25144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 64937 (http) with context path ''
+2022-11-05 08:09:44.398  INFO 25144 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 8.179 seconds (JVM running for 13.21)
+2022-11-05 08:09:44.539  INFO 25144 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:15:30.360  INFO 11432 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 11432 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:15:30.362  INFO 11432 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:15:31.268  INFO 11432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$dea61b67] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:15:31.359  INFO 11432 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:15:31.900  INFO 11432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:15:31.913  INFO 11432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:15:31.913  INFO 11432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:15:32.232  INFO 11432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:15:32.233  INFO 11432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1816 ms
+2022-11-05 22:15:34.220  INFO 11432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62445 (http) with context path ''
+2022-11-05 22:15:34.233  INFO 11432 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.261 seconds (JVM running for 7.473)
+2022-11-05 22:15:34.325  INFO 11432 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:16:22.661  INFO 3080 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 3080 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:16:22.663  INFO 3080 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:16:23.571  INFO 3080 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$11229120] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:16:23.635  INFO 3080 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:16:24.067  INFO 3080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:16:24.077  INFO 3080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:16:24.078  INFO 3080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:16:24.398  INFO 3080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:16:24.398  INFO 3080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1696 ms
+2022-11-05 22:16:26.178  INFO 3080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62458 (http) with context path ''
+2022-11-05 22:16:26.189  INFO 3080 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.829 seconds (JVM running for 6.582)
+2022-11-05 22:16:26.274  INFO 3080 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:17:14.897  INFO 25556 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 25556 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:17:14.898  INFO 25556 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:17:15.730  INFO 25556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$87a21024] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:17:15.795  INFO 25556 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:17:16.232  INFO 25556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:17:16.244  INFO 25556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:17:16.244  INFO 25556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:17:16.551  INFO 25556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:17:16.551  INFO 25556 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1616 ms
+2022-11-05 22:17:18.284  INFO 25556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62470 (http) with context path ''
+2022-11-05 22:17:18.295  INFO 25556 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.697 seconds (JVM running for 6.398)
+2022-11-05 22:17:18.401  INFO 25556 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:18:23.136  INFO 19052 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 19052 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:18:23.137  INFO 19052 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:18:24.009  INFO 19052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$63c994ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:18:24.077  INFO 19052 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:18:24.507  INFO 19052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:18:24.517  INFO 19052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:18:24.517  INFO 19052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:18:24.835  INFO 19052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:18:24.836  INFO 19052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1663 ms
+2022-11-05 22:18:26.529  INFO 19052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62496 (http) with context path ''
+2022-11-05 22:18:26.540  INFO 19052 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.702 seconds (JVM running for 6.279)
+2022-11-05 22:18:26.652  INFO 19052 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:19:28.447  INFO 4776 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 4776 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:19:28.448  INFO 4776 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:19:29.325  INFO 4776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$99a777cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:19:29.395  INFO 4776 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:19:29.833  INFO 4776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:19:29.845  INFO 4776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:19:29.845  INFO 4776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:19:30.159  INFO 4776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:19:30.159  INFO 4776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1675 ms
+2022-11-05 22:19:31.871  INFO 4776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62507 (http) with context path ''
+2022-11-05 22:19:31.882  INFO 4776 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.736 seconds (JVM running for 6.433)
+2022-11-05 22:19:31.994  INFO 4776 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:20:44.090  INFO 22444 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 22444 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:20:44.090  INFO 22444 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:20:44.884  INFO 22444 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$99a777cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:20:44.949  INFO 22444 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:20:45.367  INFO 22444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:20:45.378  INFO 22444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:20:45.378  INFO 22444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:20:45.678  INFO 22444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:20:45.678  INFO 22444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1554 ms
+2022-11-05 22:20:47.322  INFO 22444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62524 (http) with context path ''
+2022-11-05 22:20:47.333  INFO 22444 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.516 seconds (JVM running for 6.0)
+2022-11-05 22:20:47.439  INFO 22444 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:24:59.469  INFO 15988 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 15988 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:24:59.470  INFO 15988 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:25:00.276  INFO 15988 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$63c994ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:25:00.342  INFO 15988 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:25:00.749  INFO 15988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:25:00.762  INFO 15988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:25:00.762  INFO 15988 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:25:01.060  INFO 15988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:25:01.060  INFO 15988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1552 ms
+2022-11-05 22:25:02.722  INFO 15988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62551 (http) with context path ''
+2022-11-05 22:25:02.732  INFO 15988 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.557 seconds (JVM running for 6.067)
+2022-11-05 22:25:02.815  INFO 15988 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:26:51.906  INFO 24696 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 24696 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:26:51.908  INFO 24696 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:26:52.739  INFO 24696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1d2ee3da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:26:52.807  INFO 24696 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:26:53.227  INFO 24696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:26:53.238  INFO 24696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:26:53.238  INFO 24696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:26:53.539  INFO 24696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:26:53.540  INFO 24696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1597 ms
+2022-11-05 22:26:55.118  INFO 24696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62570 (http) with context path ''
+2022-11-05 22:26:55.130  INFO 24696 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.494 seconds (JVM running for 5.976)
+2022-11-05 22:26:55.274  INFO 24696 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:27:40.800  INFO 27772 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 27772 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:27:40.802  INFO 27772 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:27:41.663  INFO 27772 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$8e96f4cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:27:41.735  INFO 27772 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:27:42.154  INFO 27772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:27:42.164  INFO 27772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:27:42.165  INFO 27772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:27:42.460  INFO 27772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:27:42.461  INFO 27772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1623 ms
+2022-11-05 22:27:44.072  INFO 27772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62581 (http) with context path ''
+2022-11-05 22:27:44.083  INFO 27772 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.595 seconds (JVM running for 6.128)
+2022-11-05 22:27:44.238  INFO 27772 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:34:33.897  INFO 25932 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 25932 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:34:33.898  INFO 25932 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:34:34.686  INFO 25932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b0c95c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:34:34.749  INFO 25932 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:34:35.150  INFO 25932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:34:35.160  INFO 25932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:34:35.161  INFO 25932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:34:35.455  INFO 25932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:34:35.455  INFO 25932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1522 ms
+2022-11-05 22:34:37.044  INFO 25932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62629 (http) with context path ''
+2022-11-05 22:34:37.056  INFO 25932 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.431 seconds (JVM running for 5.854)
+2022-11-05 22:34:37.149  INFO 25932 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:35:11.862  INFO 28284 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 28284 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:35:11.863  INFO 28284 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:35:12.641  INFO 28284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$eef228ef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:35:12.715  INFO 28284 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:35:13.156  INFO 28284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:35:13.168  INFO 28284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:35:13.169  INFO 28284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:35:13.470  INFO 28284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:35:13.470  INFO 28284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1573 ms
+2022-11-05 22:35:15.135  INFO 28284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62639 (http) with context path ''
+2022-11-05 22:35:15.145  INFO 28284 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.552 seconds (JVM running for 9.408)
+2022-11-05 22:37:10.163  INFO 28284 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:37:16.787  INFO 17568 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 17568 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:37:16.789  INFO 17568 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:37:17.719  INFO 17568 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$fabb41a3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:37:17.793  INFO 17568 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:37:18.245  INFO 17568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:37:18.256  INFO 17568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:37:18.257  INFO 17568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:37:18.575  INFO 17568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:37:18.576  INFO 17568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1741 ms
+2022-11-05 22:37:20.481  INFO 17568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62661 (http) with context path ''
+2022-11-05 22:37:20.492  INFO 17568 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.058 seconds (JVM running for 7.149)
+2022-11-05 22:37:24.871  INFO 17568 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:38:21.798  INFO 3852 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 3852 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:38:21.799  INFO 3852 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:38:22.605  INFO 3852 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$87a21024] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:38:22.667  INFO 3852 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:38:23.079  INFO 3852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:38:23.091  INFO 3852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:38:23.092  INFO 3852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:38:23.395  INFO 3852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:38:23.395  INFO 3852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1563 ms
+2022-11-05 22:38:25.147  INFO 3852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62672 (http) with context path ''
+2022-11-05 22:38:25.158  INFO 3852 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.662 seconds (JVM running for 6.179)
+2022-11-05 22:38:25.257  INFO 3852 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:41:02.495  INFO 12868 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 12868 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:41:02.497  INFO 12868 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:41:03.305  INFO 12868 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c39fbc91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:41:03.367  INFO 12868 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:41:03.766  INFO 12868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:41:03.776  INFO 12868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:41:03.776  INFO 12868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:41:04.062  INFO 12868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:41:04.063  INFO 12868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1521 ms
+2022-11-05 22:41:05.723  INFO 12868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62695 (http) with context path ''
+2022-11-05 22:41:05.734  INFO 12868 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.54 seconds (JVM running for 6.095)
+2022-11-05 22:41:05.823  INFO 12868 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 22:41:43.624  INFO 8036 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 8036 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 22:41:43.626  INFO 8036 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 22:41:44.468  INFO 8036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1d2ee3da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 22:41:44.544  INFO 8036 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 22:41:45.022  INFO 8036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 22:41:45.034  INFO 8036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 22:41:45.034  INFO 8036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 22:41:45.329  INFO 8036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 22:41:45.329  INFO 8036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1668 ms
+2022-11-05 22:41:47.014  INFO 8036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62706 (http) with context path ''
+2022-11-05 22:41:47.025  INFO 8036 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.68 seconds (JVM running for 6.138)
+2022-11-05 22:41:47.145  INFO 8036 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:07:51.021  INFO 1572 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 1572 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:07:51.022  INFO 1572 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:07:52.129  INFO 1572 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$473736b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:07:52.225  INFO 1572 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:07:52.818  INFO 1572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:07:52.835  INFO 1572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:07:52.835  INFO 1572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:07:53.275  INFO 1572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:07:53.276  INFO 1572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2194 ms
+2022-11-05 23:07:55.539  INFO 1572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62859 (http) with context path ''
+2022-11-05 23:07:55.555  INFO 1572 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.954 seconds (JVM running for 8.472)
+2022-11-05 23:07:55.794  INFO 1572 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:08:22.976  INFO 25532 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 25532 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:08:22.978  INFO 25532 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:08:24.106  INFO 25532 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f073ff9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:08:24.201  INFO 25532 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:08:24.802  INFO 25532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:08:24.818  INFO 25532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:08:24.819  INFO 25532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:08:25.145  INFO 25532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:08:25.145  INFO 25532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2105 ms
+2022-11-05 23:08:26.772  INFO 25532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62871 (http) with context path ''
+2022-11-05 23:08:26.783  INFO 25532 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.24 seconds (JVM running for 7.849)
+2022-11-05 23:08:26.878  INFO 25532 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:09:24.509  INFO 26576 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 26576 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:09:24.511  INFO 26576 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:09:25.324  INFO 26576 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$c0353b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:09:25.387  INFO 26576 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:09:25.781  INFO 26576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:09:25.791  INFO 26576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:09:25.791  INFO 26576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:09:26.079  INFO 26576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:09:26.079  INFO 26576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1531 ms
+2022-11-05 23:09:27.681  INFO 26576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62882 (http) with context path ''
+2022-11-05 23:09:27.693  INFO 26576 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.462 seconds (JVM running for 5.913)
+2022-11-05 23:09:27.795  INFO 26576 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:10:05.819  INFO 11612 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 11612 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:10:05.820  INFO 11612 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:10:06.622  INFO 11612 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$367b9a12] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:10:06.685  INFO 11612 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:10:07.077  INFO 11612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:10:07.086  INFO 11612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:10:07.087  INFO 11612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:10:07.374  INFO 11612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:10:07.374  INFO 11612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1519 ms
+2022-11-05 23:10:09.007  INFO 11612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62896 (http) with context path ''
+2022-11-05 23:10:09.018  INFO 11612 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.473 seconds (JVM running for 5.952)
+2022-11-05 23:10:09.163  INFO 11612 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:11:50.722  INFO 20488 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 20488 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:11:50.725  INFO 20488 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:11:51.846  INFO 20488 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$7817a6fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:11:51.934  INFO 20488 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:11:52.531  INFO 20488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:11:52.546  INFO 20488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:11:52.546  INFO 20488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:11:52.982  INFO 20488 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:11:52.983  INFO 20488 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2207 ms
+2022-11-05 23:11:55.265  INFO 20488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62910 (http) with context path ''
+2022-11-05 23:11:55.283  INFO 20488 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.98 seconds (JVM running for 8.435)
+2022-11-05 23:11:55.472  INFO 20488 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:13:11.338  INFO 15212 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 15212 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:13:11.341  INFO 15212 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:13:12.469  INFO 15212 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6b2cc429] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:13:12.561  INFO 15212 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:13:13.145  INFO 15212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:13:13.161  INFO 15212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:13:13.162  INFO 15212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:13:13.599  INFO 15212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:13:13.600  INFO 15212 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2022-11-05 23:13:15.936  INFO 15212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62921 (http) with context path ''
+2022-11-05 23:13:15.951  INFO 15212 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.038 seconds (JVM running for 8.542)
+2022-11-05 23:13:16.126  INFO 15212 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:13:45.470  INFO 10996 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 10996 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:13:45.472  INFO 10996 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:13:46.327  INFO 10996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$278c2945] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:13:46.419  INFO 10996 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:13:46.844  INFO 10996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:13:46.855  INFO 10996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:13:46.855  INFO 10996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:13:47.153  INFO 10996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:13:47.154  INFO 10996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1648 ms
+2022-11-05 23:13:48.926  INFO 10996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62931 (http) with context path ''
+2022-11-05 23:13:48.939  INFO 10996 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.765 seconds (JVM running for 6.599)
+2022-11-05 23:15:59.115  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 12672 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:15:59.116  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:16:00.335  INFO 12672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5d063be3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:16:00.448  INFO 12672 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:16:01.063  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:16:01.080  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:16:01.080  INFO 12672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:16:01.522  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:16:01.523  INFO 12672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2351 ms
+2022-11-05 23:16:03.936  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62946 (http) with context path ''
+2022-11-05 23:16:03.952  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 5.272 seconds (JVM running for 8.884)
+2022-11-05 23:16:04.278  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:16:04.351  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 12672 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:16:04.351  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:16:04.613  INFO 12672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5d063be3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:16:04.622  INFO 12672 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:16:04.701  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:16:04.702  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:16:04.702  INFO 12672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:16:04.746  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:16:04.746  INFO 12672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 393 ms
+2022-11-05 23:16:05.762  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62951 (http) with context path ''
+2022-11-05 23:16:05.768  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 1.459 seconds (JVM running for 10.699)
+2022-11-05 23:16:06.509  INFO 12672 --- [http-nio-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-05 23:16:06.509  INFO 12672 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-05 23:16:06.510  INFO 12672 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-05 23:16:06.767  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:16:06.767  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-05 23:16:06.808  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 12672 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:16:06.808  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:16:07.019  INFO 12672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5d063be3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:16:07.028  INFO 12672 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:16:07.096  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:16:07.097  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:16:07.098  INFO 12672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:16:07.138  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:16:07.138  INFO 12672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 328 ms
+2022-11-05 23:16:08.088  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62956 (http) with context path ''
+2022-11-05 23:16:08.091  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 1.31 seconds (JVM running for 13.022)
+2022-11-05 23:16:08.107  INFO 12672 --- [http-nio-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-05 23:16:08.107  INFO 12672 --- [http-nio-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-05 23:16:08.108  INFO 12672 --- [http-nio-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-05 23:16:08.112 ERROR 12672 --- [http-nio-auto-3-exec-1] c.e.e.service.security.SecurityService   : User John Snow does not have access to ADDING_NEW_ITEM
+2022-11-05 23:16:08.121 ERROR 12672 --- [http-nio-auto-3-exec-1] c.e.eurder.exceptions.ExceptionHandler   : You don't have the authorization of this feature
+
+com.example.eurder.exceptions.UnauthorizatedException: You don't have the authorization of this feature
+	at com.example.eurder.service.security.SecurityService.validateAuthorization(SecurityService.java:40) ~[classes/:na]
+	at com.example.eurder.service.ItemService.createANewItemInItemRepository(ItemService.java:30) ~[classes/:na]
+	at com.example.eurder.api.ItemController.addANewItem(ItemController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-05 23:16:08.219  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:16:08.219  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-05 23:16:08.253  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 12672 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:16:08.254  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:16:08.460  INFO 12672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5d063be3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:16:08.468  INFO 12672 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:16:08.543  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:16:08.544  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:16:08.544  INFO 12672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:16:08.583  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:16:08.584  INFO 12672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 328 ms
+2022-11-05 23:16:09.466  INFO 12672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62961 (http) with context path ''
+2022-11-05 23:16:09.477  INFO 12672 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 1.251 seconds (JVM running for 14.409)
+2022-11-05 23:16:09.492  INFO 12672 --- [http-nio-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-05 23:16:09.492  INFO 12672 --- [http-nio-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-05 23:16:09.493  INFO 12672 --- [http-nio-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-05 23:16:09.499 ERROR 12672 --- [http-nio-auto-4-exec-1] c.e.eurder.exceptions.ExceptionHandler   : Not Found! Try Again!
+
+com.example.eurder.exceptions.NotFoundexception: Not Found! Try Again!
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.example.eurder.Repositories.UserRepository.getUserByEmailForLogin(UserRepository.java:43) ~[classes/:na]
+	at com.example.eurder.service.security.SecurityService.validateAuthorization(SecurityService.java:27) ~[classes/:na]
+	at com.example.eurder.service.ItemService.createANewItemInItemRepository(ItemService.java:30) ~[classes/:na]
+	at com.example.eurder.api.ItemController.addANewItem(ItemController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-05 23:16:09.554  INFO 12672 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:16:09.555  INFO 12672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-05 23:18:29.798  INFO 28624 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 28624 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:18:29.800  INFO 28624 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:18:30.962  INFO 28624 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6e217e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:18:31.049  INFO 28624 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:18:31.655  INFO 28624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:18:31.670  INFO 28624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:18:31.671  INFO 28624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:18:32.092  INFO 28624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:18:32.092  INFO 28624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2229 ms
+2022-11-05 23:18:34.223  INFO 28624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62980 (http) with context path ''
+2022-11-05 23:18:34.235  INFO 28624 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 4.851 seconds (JVM running for 8.379)
+2022-11-05 23:18:34.377  INFO 28624 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:18:57.088  INFO 29660 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 29660 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:18:57.089  INFO 29660 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:18:57.884  INFO 29660 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9bcb8691] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:18:57.944  INFO 29660 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:18:58.342  INFO 29660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:18:58.352  INFO 29660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:18:58.352  INFO 29660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:18:58.651  INFO 29660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:18:58.651  INFO 29660 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1529 ms
+2022-11-05 23:19:00.269  INFO 29660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 62990 (http) with context path ''
+2022-11-05 23:19:00.279  INFO 29660 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.482 seconds (JVM running for 5.98)
+2022-11-05 23:19:00.420  INFO 29660 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-05 23:20:30.093  INFO 2144 --- [main] c.example.eurder.api.ItemControllerTest  : Starting ItemControllerTest using Java 18.0.2.1 on DESKTOP-COG8P0C with PID 2144 (started by jorda in C:\Users\jorda\OneDrive\Documents\jo\jordan\switch)
+2022-11-05 23:20:30.094  INFO 2144 --- [main] c.example.eurder.api.ItemControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2022-11-05 23:20:30.866  INFO 2144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$272caa84] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-11-05 23:20:30.930  INFO 2144 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-11-05 23:20:31.325  INFO 2144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-11-05 23:20:31.336  INFO 2144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-05 23:20:31.336  INFO 2144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-05 23:20:31.624  INFO 2144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-05 23:20:31.624  INFO 2144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1497 ms
+2022-11-05 23:20:33.234  INFO 2144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63003 (http) with context path ''
+2022-11-05 23:20:33.244  INFO 2144 --- [main] c.example.eurder.api.ItemControllerTest  : Started ItemControllerTest in 3.435 seconds (JVM running for 5.876)
+2022-11-05 23:20:33.331  INFO 2144 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
