@@ -1,34 +1,52 @@
 package com.example.eurder.domain.order;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+@Entity
+@Table(name = "ORDER")
 public class Order {
-    private final String orderId;
-    private final List<ItemGroep> orderedItems;
-    private final double price;
-    private final String userId;
+    @Id
+    @Column(name = "order_id")
+    private String orderId;
+    @Embedded
+    private ItemGroep orderedItems;
+    @Column(name = "totalprice")
+    private double totalPrice;
+    @Column(name = "user_id")
+    private String userid;
 
 
-    public Order(String orderId, List<ItemGroep> orderedItems, double price, String userId) {
-        this.orderId = orderId;
+    public Order() {
+
+    }
+
+    public Order(ItemGroep orderedItems) {
         this.orderedItems = orderedItems;
-        this.price = price;
-        this.userId = userId;
+        this.totalPrice = calculatePriceOfOrder(orderedItems);
     }
 
-    public String getOrderId() {
-        return orderId;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public List<ItemGroep> getOrderedItems() {
+    public ItemGroep getOrderedItems() {
         return orderedItems;
     }
 
-    public double getPrice() {
-        return price;
+    private double calculatePriceOfOrder(ItemGroep itemGroep) {
+        return itemGroep.getPriceOfOrder();
     }
 
-    public String getUserId() {
-        return userId;
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderedItems=" + orderedItems +
+                ", totalPrice=" + totalPrice +
+                '}';
     }
 }

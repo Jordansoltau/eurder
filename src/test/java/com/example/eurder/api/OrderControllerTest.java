@@ -8,17 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
-import static io.restassured.RestAssured.given;
-import static org.mockito.Mockito.verify;
 
+import static io.restassured.RestAssured.given;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-class ItemControllerTest {
-
+class OrderControllerTest {
     @LocalServerPort
     private int port;
-
 
     @BeforeAll
     public static void setup() {
@@ -26,29 +23,9 @@ class ItemControllerTest {
     }
 
 
-    //integration testing
     @Test
-    void addItemHappyPath() {
+    void addOrderAsMember() {
 
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("admin@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .body(createAnewItem())
-                .when()
-                .post("/items")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.CREATED.value());
-    }
-
-    @Test
-    void addItemAsMember() {
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -58,56 +35,40 @@ class ItemControllerTest {
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
-                .body(createAnewItem())
+                .body(orderItem())
                 .when()
-                .post("/items")
+                .post("orders/1")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.FORBIDDEN.value());
+                .statusCode(HttpStatus.CREATED.value());
+
     }
 
     @Test
-    void addItemEmailDoesNotExist() {
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("adn@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .body(createAnewItem())
-                .when()
-                .post("/items")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.NOT_FOUND.value());
-    }
-
-    @Test
-    void updateItemHappyPath() {
+    void addOrderAsMemberOnOtherMemberId() {
 
         given()
                 .baseUri("http://localhost")
                 .port(port)
                 .auth()
                 .preemptive()
-                .basic("admin@eurder.com", "password")
+                .basic("user@eurder.com", "password")
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
-                .body(createAnewItem())
+                .body(orderItem())
                 .when()
-                .patch("/items/10")
+                .post("orders/3")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.OK.value());
+                .statusCode(HttpStatus.BAD_REQUEST.value());
+
     }
 
-    @Test
-    void itemOverview() {
 
+
+    @Test
+    void returnAllOrders() {
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -118,22 +79,17 @@ class ItemControllerTest {
                 .header("Content-type", "application/json")
                 .and()
                 .when()
-                .get("/items/stock")
+                .get("orders")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.OK.value());
+
     }
 
+    private String orderItem() {
 
-    private static String createAnewItem() {
-        String requestBody = "{\n" +
-                "  \"name\": \"Mouse\",\n" +
-                "  \"description\": 20,\n" +
-                "  \"price\": 15 ,\n" +
-                "  \"amount\": 5\n}";
-        return requestBody;
+        return "{\n" +
+                "  \"itemId\": \"10\",\n" +
+                "  \"amountToPurchase\": 1\n}";
     }
-
-
-
 }

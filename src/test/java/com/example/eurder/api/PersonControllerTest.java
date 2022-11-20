@@ -1,11 +1,6 @@
 package com.example.eurder.api;
 
-import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.Repositories.UserRepository;
-import com.example.eurder.domain.item.Item;
-import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.user.Address.Address;
-import com.example.eurder.domain.user.User;
+import com.example.eurder.repositories.UserRepository;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,18 +11,14 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
 
-import java.time.LocalDate;
-
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-class UserControllerTest {
+class PersonControllerTest {
     @LocalServerPort
     private int port;
-    @Autowired
-    private ItemRepository itemRepository;
+
 
     @Autowired
     private UserRepository userRepository;
@@ -119,6 +110,50 @@ class UserControllerTest {
 
     }
 
+    @Test
+    void getAllUsersAsAdmin() {
+
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .when()
+                .get("/users")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+
+
+    }
+
+    @Test
+    void getUsersIdOneAsAdmin() {
+
+
+        given()
+                .baseUri("http://localhost")
+                .port(port)
+                .header("Content-type", "application/json")
+                .auth()
+                .preemptive()
+                .basic("admin@eurder.com", "password")
+                .header("Accept", ContentType.JSON.getAcceptHeader())
+                .and()
+                .when()
+                .get("/users?id=1")
+                .then()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value());
+
+
+    }
+
 
 
 
@@ -136,76 +171,6 @@ class UserControllerTest {
     }
 
 
-    @Test
-    void addOrderAsMember() {
 
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("user@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .body(orderItem())
-                .when()
-                .post("users/cart")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.CREATED.value());
-
-    }
-    @Test
-    void confirmOrderAsMember() {
-       User user = userRepository.getUserByEmailForLogin("user@eurder.com");
-        ItemGroep itemGroep = new ItemGroep("10",2, LocalDate.now(),40.0);
-        user.addToCart(itemGroep);
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("user@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .when()
-                .get("users/cart")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.OK.value());
-        ;
-
-    }
-    @Test
-    void confirmEmptyOrderAsMember() {
-
-        given()
-                .baseUri("http://localhost")
-                .port(port)
-                .auth()
-                .preemptive()
-                .basic("user@eurder.com", "password")
-                .header("Accept", ContentType.JSON.getAcceptHeader())
-                .header("Content-type", "application/json")
-                .and()
-                .when()
-                .get("users/cart")
-                .then()
-                .assertThat()
-                .statusCode(HttpStatus.BAD_REQUEST.value());
-
-    }
-
-
-
-
-    private String orderItem() {
-
-        return "{\n" +
-                "  \"itemId\": \"10\",\n" +
-                "  \"amountToPurchase\": 1\n}";
-    }
 
 }

@@ -1,7 +1,7 @@
 package com.example.eurder.service.validation;
 
-import com.example.eurder.Repositories.UserRepository;
-import com.example.eurder.domain.user.User;
+import com.example.eurder.domain.user.Person;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.dto.UserDto;
 import org.springframework.stereotype.Service;
 
@@ -33,17 +33,21 @@ public class ValidationUserService {
                 || !userDto.getEmail().matches("^[A-z0-9]+@[A-z0-9]+\\.[A-z0-9]+$"))
             throw new IllegalArgumentException(email + customMessageService.mustBeValid());
 
-        if (userRepository.doesEmailAlreadyExist(userDto.getEmail())) {
+        if (emailAlreadyExistInDataBase(userDto)) {
             throw new IllegalArgumentException(email + mustBeUnique());
         }
+    }
+
+    private boolean emailAlreadyExistInDataBase(UserDto userDto) {
+        return userRepository.findUserByEmailIs(userDto.getEmail()) != null;
     }
 
     private String mustBeUnique() {
         return "must be unique";
     }
 
-    void validateThatPerson(UserDto userDto, User user) {
-        if (userDto.getEmail().equals(user.getEmail()))
+    void validateThatPerson(UserDto userDto, Person person) {
+        if (userDto.getEmail().equals(person.getEmail()))
             throw new IllegalArgumentException("E mail is not unique!");
 
     }
@@ -69,6 +73,6 @@ public class ValidationUserService {
     }
 
     public void validateNewUser(UserDto userDto) {
-        userRepository.getAllPersons().forEach(user -> validateThatPerson(userDto, user));
+        userRepository.findAll().forEach(user -> validateThatPerson(userDto, user));
     }
 }

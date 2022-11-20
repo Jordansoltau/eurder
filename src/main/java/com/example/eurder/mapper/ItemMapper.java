@@ -1,48 +1,68 @@
 package com.example.eurder.mapper;
 
-import com.example.eurder.Repositories.ItemRepository;
+import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.repositories.OrderRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ItemMapper {
     private final ItemRepository itemRepository;
+    private final OrderRepository orderRepository;
     public static final int DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK = 7;
 
-    public ItemMapper(ItemRepository itemRepository) {
+    public ItemMapper(ItemRepository itemRepository, OrderRepository orderRepository) {
         this.itemRepository = itemRepository;
-    }
-
-
-    public Item fromDtoToItem(ItemDto itemDto) {
-        return new Item("1",itemDto.getName(), itemDto.getDescription(), itemDto.getPrice(), itemDto.getAmount());
+        this.orderRepository = orderRepository;
     }
 
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
-        return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
-    }
 
-    public Order mapFromItemGroepToOrder(String orderId, ArrayList<ItemGroep> currentOrder, double totalPrice, String userId) {
-        return new Order(orderId,currentOrder,totalPrice,userId);
+        return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
     }
 
 
     private double calculatePriceOfOrder(ItemGroepDto itemGroepDto) {
-        return itemGroepDto.getAmountToPurchase() * itemRepository.getItemOnId(itemGroepDto.getItemId()).getPrice();
+        Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
+        return itemGroepDto.getAmountToPurchase() * item.getPrice();
     }
 
     private LocalDate setShippingDate(ItemGroepDto itemGroepDto) {
-        if (itemGroepDto.getAmountToPurchase() < itemRepository.getItemOnId(itemGroepDto.getItemId()).getAmount()) {
+        Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
+        if (itemGroepDto.getAmountToPurchase() <= item.getAmount()) {
             return LocalDate.now();
         } else {
             return LocalDate.now().plusDays(DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK);
         }
+    }
+
+    //Order should not lose information
+    public Order fromItemGroepDTOToOrder(ItemGroepDto itemGroepDto) {
+        ItemGroep itemGroep = fromItemGroepDtoToItemGroep(itemGroepDto);
+        return new Order(itemGroep);
+    }
+
+
+    public Item fromItemDtoToItem(ItemDto itemDto, String itemId) {
+        Item item = itemRepository.findById(itemId).orElseThrow();
+        item.setName(itemDto.getName());
+        item.setAmount(itemDto.getAmount());
+        item.setPrice(itemDto.getPrice());
+        item.setDescription(itemDto.getDescription());
+        return item;
+    }
+
+    public Item fromItemDtoToItemWhenCreatingItem(ItemDto itemDto, String itemId) {
+        return new Item(itemId,itemDto.getName(),itemDto.getDescription(),itemDto.getPrice(),itemDto.getAmount());
     }
 }

@@ -1,38 +1,54 @@
 package com.example.eurder.service;
 
-import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.Repositories.UserRepository;
+import com.example.eurder.domain.item.Item;
+import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
+
 import static com.example.eurder.domain.user.Feature.ADDING_NEW_ITEM;
+import static com.example.eurder.domain.user.Feature.ADMIN;
 
 @Service
 public class ItemService {
     private final ItemRepository itemRepository;
-    private final UserRepository userRepository;
     private final ItemMapper itemMapper;
     private final ValidationItemService validationItemService;
     private final SecurityService securityService;
 
-    public ItemService(ItemRepository itemRepository, UserRepository userRepository, ItemMapper itemMapper, ValidationItemService validationItemService, SecurityService securityService) {
+    public ItemService(ItemRepository itemRepository, ItemMapper itemMapper, ValidationItemService validationItemService, SecurityService securityService) {
         this.itemRepository = itemRepository;
-        this.userRepository = userRepository;
         this.itemMapper = itemMapper;
         this.validationItemService = validationItemService;
         this.securityService = securityService;
     }
 
-    public void createANewItemInItemRepository(String authorization, ItemDto itemDto) {
+    public void createANewItemInItemRepository(ItemDto itemDto, String authorization) {
         securityService.validateAuthorization(authorization, ADDING_NEW_ITEM);
-        validationItemService.validateAmountOfitemDto(itemDto, "Amount");
-        validationItemService.validatePriceOfitemDto(itemDto, "Price");
-        validationItemService.validateDescriptionOfitemDto(itemDto, "Description");
-        validationItemService.validateNameOfitemDto(itemDto, "Name");
-        itemRepository.addNewItem(itemMapper.fromDtoToItem(itemDto));
+        validationItemService.validateCorrectInput(itemDto);
+        Item item = itemMapper.fromItemDtoToItemWhenCreatingItem(itemDto, UUID.randomUUID().toString());
+        itemRepository.save(item);
     }
 
+
+
+    public void updateThisItem(String authorization, ItemDto itemDto, String itemId) {
+        securityService.validateAuthorization(authorization,ADMIN);
+        validationItemService.validateIfItemExist(itemId);
+        validationItemService.validateCorrectInput(itemDto);
+        Item item = itemMapper.fromItemDtoToItem(itemDto, itemId);
+        itemRepository.save(item);
+
+    }
+
+    public List<Item> getItemStockOverview(String authorization) {
+        securityService.validateAuthorization(authorization,ADMIN);
+        return itemRepository.findAll();
+    }
 }
