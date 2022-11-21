@@ -1,6 +1,7 @@
 package com.example.eurder.service.security;
 
 import com.example.eurder.domain.user.Person;
+import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.exceptions.UnauthorizatedException;
@@ -25,7 +26,7 @@ public class SecurityService {
 
     public void validateAuthorization(String authorization, Feature feature) {
         UsernamePassword usernamePassword = getUsernamePassword(authorization);
-        Person person = userRepository.findUserByEmail(usernamePassword.getUsername()).orElseThrow();
+        Person person = userRepository.findUserByEmail(usernamePassword.getUsername()).orElseThrow(()-> new NotFoundexception());
 
 
         if (person == null) {

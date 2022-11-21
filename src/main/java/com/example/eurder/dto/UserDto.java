@@ -13,9 +13,21 @@ public class UserDto {
     private String city;
     private String phoneNumber;
 
+    public UserDto(String firstName, String lastName, String email, String street, String houseNumber, String postCode, String city, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.postCode = postCode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
