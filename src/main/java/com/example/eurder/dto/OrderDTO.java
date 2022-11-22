@@ -9,17 +9,17 @@ public class OrderDTO {
     private final  ArrayList<Order> order;
     private final double price;
 
-    private final String userId;
+    private final Integer userId;
 
 
-    public OrderDTO(ArrayList<Order> order, String userId) {
+    public OrderDTO(ArrayList<Order> order, Integer userId) {
         this.order = order;
         this.price = calculateTotalPrice(order);
         this.userId = userId;
     }
 
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 

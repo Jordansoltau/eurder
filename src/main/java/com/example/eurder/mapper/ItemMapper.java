@@ -1,6 +1,6 @@
 package com.example.eurder.mapper;
 
-import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
@@ -11,24 +11,19 @@ import com.example.eurder.repositories.OrderRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Component
 public class ItemMapper {
     private final ItemRepository itemRepository;
-    private final OrderRepository orderRepository;
     public static final int DAYS_TO_ADD_IF_NOT_ENOUGH_STOCK = 7;
 
-    public ItemMapper(ItemRepository itemRepository, OrderRepository orderRepository) {
+    public ItemMapper(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
-        this.orderRepository = orderRepository;
     }
 
     public ItemGroep fromItemGroepDtoToItemGroep(ItemGroepDto itemGroepDto) {
 
-        return new ItemGroep(itemGroepDto.getItemId(), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
+        return new ItemGroep(itemRepository.findById(itemGroepDto.getItemId()).orElseThrow(()-> new NotFoundexception()), itemGroepDto.getAmountToPurchase(), setShippingDate(itemGroepDto), calculatePriceOfOrder(itemGroepDto));
     }
 
 

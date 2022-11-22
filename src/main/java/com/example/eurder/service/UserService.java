@@ -47,17 +47,16 @@ public class UserService {
         logger.info("new user is created");
     }
 
-    public List<OrderDTO> getReportOfOrders(String authorization, String userId) {
+    public List<OrderDTO> getReportOfOrders(String authorization, Integer userId) {
         securityService.validateAuthorization(authorization, Feature.VIEW_OWN_REPORTS);
         securityService.validateUserAndAuthorization(authorization,userId);
-        List<Order> allOrders = orderService.getAllOrderOfItemsWithoutAuthorization(userId);
+        List<Order> allOrders = orderService.getAllOrderOfItemsWithoutAuthorization();
         return orderMapper.fromListOrderToListOrderDTO(allOrders,userId);
     }
 
     public List<Person> getAllUsers(String authorization) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
         List<Person> allUsers = userRepository.findAll();
-        System.out.println(allUsers);
         return allUsers;
     }
 

@@ -2,11 +2,11 @@ package com.example.eurder.service;
 
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.repositories.ItemRepository;
-import com.example.eurder.repositories.OrderRepository;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
+import com.example.eurder.repositories.OrderRepository;
 import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
@@ -34,7 +34,7 @@ public class OrderService {
 
     }
 
-    public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, String userId) {
+    public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
         securityService.validateUserAndAuthorization(authorization, userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
@@ -50,11 +50,12 @@ public class OrderService {
 
     public List<Order> getOrderOfItems(String authorization) {
         securityService.validateAuthorization(authorization, Feature.ADMIN);
-        return orderRepository.findAll();
+        List<Order> allOrders = orderRepository.findAll();
+        return allOrders;
     }
 
-    public List<Order> getAllOrderOfItemsWithoutAuthorization(String userId) {
-        return  orderRepository.findAllById(Collections.singleton(userId));
+    public List<Order> getAllOrderOfItemsWithoutAuthorization() {
+        return orderRepository.findAll();
         //not ok
     }
 }

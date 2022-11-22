@@ -53,7 +53,7 @@ public class SecurityService {
 
 
 
-    public void validateUserAndAuthorization(String authorization, String userId) {
+    public void validateUserAndAuthorization(String authorization, Integer userId) {
         UsernamePassword usernamePassword = getUsernamePassword(authorization);
         Person person = userRepository.findUserByEmail(usernamePassword.getUsername()).orElseThrow();
         if (!Objects.equals(person.getUserId(), userId)) {

@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class OrderMapper {
 
-    public List<OrderDTO> fromListOrderToListOrderDTO(List<Order> allOrders, String userId) {
+    public List<OrderDTO> fromListOrderToListOrderDTO(List<Order> allOrders, Integer userId) {
         List<OrderDTO> orderDtoList = new ArrayList<>();
         orderDtoList.add(new OrderDTO((ArrayList<Order>) allOrders, userId));
         return orderDtoList;

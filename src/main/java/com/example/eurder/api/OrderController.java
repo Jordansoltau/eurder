@@ -21,9 +21,9 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping(path = "{userId}",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/{userId}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void AddItemToReservedOrder(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto, @PathVariable String userId) {
+    public void AddItemToReservedOrder(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto, @PathVariable Integer userId) {
         orderService.createAnOrder(authorization, itemgroepDto,userId);
     }
 
