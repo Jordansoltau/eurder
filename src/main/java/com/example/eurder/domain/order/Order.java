@@ -18,7 +18,7 @@ public class Order {
     @Column(name = "totalprice")
     private double totalPrice;
     @Column(name = "user_id")
-    private String userid;
+    private Integer userid;
 
 
     public Order() {

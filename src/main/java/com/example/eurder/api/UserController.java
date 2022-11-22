@@ -31,23 +31,23 @@ public class UserController {
         userService.createANewAccount(userDto);
     }
 
-    @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Collection<Person> getAllUsers(@RequestHeader String authorization){
+    public List<Person> getAllUsers(@RequestHeader String authorization){
         return userService.getAllUsers(authorization);
         //Danger!! ask Tim
     }
     @GetMapping(params = "id",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Person getUserInformation(@RequestHeader String authorization, @Parameter String id){
+    public Person getUserInformation(@RequestHeader String authorization, @Parameter Integer id){
         return userService.getUsers(authorization,id);
         //Danger!! ask Tim
     }
 
-    @GetMapping(path = "/{id}/my-orders", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    public List<OrderDTO> getUserOrders( @RequestHeader String authorization, @PathVariable String id){
-        return userService.getReportOfOrders(authorization,id);
-        //not green requirement
-    }
+//    @GetMapping(path = "/{id}/my-orders", produces = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<OrderDTO> getUserOrders( @RequestHeader String authorization, @PathVariable String id){
+//        return userService.getReportOfOrders(authorization,id);
+//        //not green requirement
+//    }
 }

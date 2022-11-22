@@ -5,9 +5,9 @@ import com.example.eurder.domain.user.Feature;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.mapper.OrderMapper;
-import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.dto.UserDto;
 import com.example.eurder.mapper.UserMapper;
+import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import com.example.eurder.service.validation.ValidationUserService;
@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -55,12 +54,14 @@ public class UserService {
         return orderMapper.fromListOrderToListOrderDTO(allOrders,userId);
     }
 
-    public Collection<Person> getAllUsers(String authorization) {
+    public List<Person> getAllUsers(String authorization) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
-        return userRepository.findAll();
+        List<Person> allUsers = userRepository.findAll();
+        System.out.println(allUsers);
+        return allUsers;
     }
 
-    public Person getUsers(String authorization, String id) {
+    public Person getUsers(String authorization, Integer id) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
         return userRepository.findById(id).orElseThrow();
     }

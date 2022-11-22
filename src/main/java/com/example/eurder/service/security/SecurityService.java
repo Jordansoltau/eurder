@@ -2,11 +2,11 @@ package com.example.eurder.service.security;
 
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.exceptions.NotFoundexception;
-import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.exceptions.UnauthorizatedException;
 import com.example.eurder.exceptions.UnknownPersonException;
 import com.example.eurder.exceptions.WrongPasswordException;
+import com.example.eurder.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

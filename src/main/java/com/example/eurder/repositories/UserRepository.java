@@ -2,17 +2,12 @@ package com.example.eurder.repositories;
 
 import com.example.eurder.domain.user.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import java.util.Optional;
 
-@Repository
-public interface UserRepository extends JpaRepository<Person,String> {
-    
+public interface UserRepository extends JpaRepository<Person,Integer> {
 
-     Person findUserByEmailIs(String eMail);
+    Person findUserByEmailIs(String eMail);
 
-     Optional<Person> findUserByEmail(String email);
-
+    Optional<Person> findUserByEmail(String email);
 }
-
