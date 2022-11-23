@@ -82,7 +82,6 @@ class PersonControllerTest {
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());
 
-
     }
 
     @Test

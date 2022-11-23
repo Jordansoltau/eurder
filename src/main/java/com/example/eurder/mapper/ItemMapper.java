@@ -7,7 +7,6 @@ import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.ItemGroepDto;
-import com.example.eurder.repositories.OrderRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

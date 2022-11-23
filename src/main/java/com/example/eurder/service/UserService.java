@@ -41,10 +41,10 @@ public class UserService {
         validationUserService.validateFirstName(userDto, "FirstName");
         validationUserService.validateLastName(userDto, "LastName");
         validationUserService.validateEmail(userDto, "Email");
-        validationUserService.validateAdressName(userDto, "Adress");
+        validationUserService.validateAddressName(userDto, "Adress");
         validationUserService.validatePhoneNumber(userDto, "phoneNumber");
         userRepository.save(userMapper.fromDtoToUser(userDto));
-        logger.info("new user is created");
+
     }
 
     public List<OrderDTO> getReportOfOrders(String authorization, Integer userId) {
@@ -56,8 +56,7 @@ public class UserService {
 
     public List<Person> getAllUsers(String authorization) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
-        List<Person> allUsers = userRepository.findAll();
-        return allUsers;
+        return userRepository.findAll();
     }
 
     public Person getUsers(String authorization, Integer id) {

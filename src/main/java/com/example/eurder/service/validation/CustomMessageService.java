@@ -16,4 +16,7 @@ public class CustomMessageService {
     public String canNotBeEmptyMessage() {
         return " can not be empty!";
     }
+    public String mustBeUnique() {
+        return "must be unique";
+    }
 }

@@ -50,8 +50,7 @@ public class OrderService {
 
     public List<Order> getOrderOfItems(String authorization) {
         securityService.validateAuthorization(authorization, Feature.ADMIN);
-        List<Order> allOrders = orderRepository.findAll();
-        return allOrders;
+        return orderRepository.findAll();
     }
 
     public List<Order> getAllOrderOfItemsWithoutAuthorization() {
