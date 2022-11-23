@@ -50,9 +50,9 @@ public class ValidationUserService {
 
 
     void validateThatPerson(UserDto userDto, Person person) {
-        if (userDto.getEmail().equals(person.getEmail()))
+        if (userDto.getEmail().equals(person.getEmail())){
             logger.info("email  " + customMessageService.mustBeUnique());
-        throw new IllegalArgumentException("E mail is not unique!");
+        throw new IllegalArgumentException("E mail is not unique!");}
 
     }
 
@@ -65,17 +65,17 @@ public class ValidationUserService {
                         || userDto.getPostCode().isBlank()
                         || userDto.getPostCode() == null
                         || userDto.getCity().isBlank()
-                        || userDto.getCity() == null)
+                        || userDto.getCity() == null){
             logger.info("address  " + customMessageService.canNotBeEmptyMessage());
-        throw new IllegalArgumentException(address + customMessageService.canNotBeEmptyMessage());
+        throw new IllegalArgumentException(address + customMessageService.canNotBeEmptyMessage());}
     }
 
     public void validatePhoneNumber(UserDto userDto, String phoneNumber) {
         if (userDto.getPhoneNumber() == null
                 || userDto.getPhoneNumber().isBlank()
-                || userDto.getPhoneNumber().length() != 10)
+                || userDto.getPhoneNumber().length() != 10){
             logger.info("phonenumber  " + customMessageService.mustBeValid());
-        throw new IllegalArgumentException(phoneNumber + customMessageService.mustBeValid());
+        throw new IllegalArgumentException(phoneNumber + customMessageService.mustBeValid());}
     }
 
     public void validateNewUser(UserDto userDto) {
