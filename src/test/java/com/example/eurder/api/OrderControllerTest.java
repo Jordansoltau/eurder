@@ -2,6 +2,7 @@ package com.example.eurder.api;
 
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
+import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.domain.user.Role;
@@ -14,6 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -22,9 +24,10 @@ import org.springframework.test.annotation.DirtiesContext;
 import java.time.LocalDate;
 
 import static io.restassured.RestAssured.given;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+@AutoConfigureTestDatabase
 class OrderControllerTest {
     @Autowired
     private UserRepository userRepository;
@@ -42,6 +45,7 @@ class OrderControllerTest {
     public static void setup() {
         RestAssured.baseURI = "http://localhost";
     }
+
     @BeforeAll
     public void createDatabase() {
 
@@ -55,15 +59,15 @@ class OrderControllerTest {
         Item item = new Item("2", "Mouse", "cliky", 150, 100);
         itemRepository.save(item);
 
-        ItemGroep itemGroep =new ItemGroep(item,1, LocalDate.now(),150);
-
+        ItemGroep itemGroep = new ItemGroep(item, 1, LocalDate.now(), 150);
+        Order order = new Order(1, itemGroep, member1, 150);
+        orderRepository.save(order);
     }
 
 
     @Test
     void addOrderAsMember() {
-        Person member = new Person("Eva", "Degallaix", "user5@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
-        userRepository.save(member);
+Person person = userRepository.findUserByEmailIs("user3@eurder.com");
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -75,7 +79,7 @@ class OrderControllerTest {
                 .and()
                 .body(orderItem())
                 .when()
-                .post("orders/"+ member.getUserId())
+                .post("orders/" + person.getUserId())
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());
@@ -96,13 +100,12 @@ class OrderControllerTest {
                 .and()
                 .body(orderItem())
                 .when()
-                .post("orders/"+3)
+                .post("orders/" + 15)
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.BAD_REQUEST.value());
 
     }
-
 
 
     @Test
@@ -120,7 +123,7 @@ class OrderControllerTest {
                 .get("orders")
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.OK.value());
+                .statusCode(HttpStatus.CREATED.value());
 
     }
 

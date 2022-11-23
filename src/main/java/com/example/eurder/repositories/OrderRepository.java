@@ -9,16 +9,6 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class OrderRepository {
+public interface OrderRepository extends JpaRepository<Order,Integer> {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
-    public List<Order> findAll() {
-        return entityManager.createQuery("select o from Order o", Order.class).getResultList();
-    }
-
-    public void save(Order order) {
-
-    }
 }

@@ -11,12 +11,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_seq")
     @SequenceGenerator(name = "order_seq", sequenceName = "order_seq",allocationSize = 1)
     private Integer id;
-//    @Embedded
-    @Transient
+    @Embedded
     private ItemGroep orderedItems;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "memberid")
-    @Transient
     private Person userid;
     @Column(name = "totalprice")
     private double totalPrice;
