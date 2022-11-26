@@ -22,12 +22,17 @@ public class ReservedOrder {
     @JoinColumn(name = "member_id")
     private Person person;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "order_id")
+    private Order order;
+
     public ReservedOrder() {
     }
 
     public ReservedOrder(ItemGroep itemGroep, Person person) {
         this.itemGroep = itemGroep;
         this.person = person;
+        order = null;
     }
 
     public Integer getId() {
@@ -40,5 +45,9 @@ public class ReservedOrder {
 
     public Person getPerson() {
         return person;
+    }
+
+    public void setOrderId(Order orderId) {
+        this.order = orderId;
     }
 }

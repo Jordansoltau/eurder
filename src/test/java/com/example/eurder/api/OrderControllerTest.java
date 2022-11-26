@@ -3,12 +3,16 @@ package com.example.eurder.api;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
+import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.domain.user.Role;
+import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.repositories.OrderRepository;
+import com.example.eurder.repositories.ReservedOrderRepository;
 import com.example.eurder.repositories.UserRepository;
+import com.example.eurder.service.ReservedOrderService;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,6 +26,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -41,6 +46,12 @@ class OrderControllerTest {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private ReservedOrderRepository reservedOrderRepository;
+
+    @Autowired
+    private ReservedOrderService reservedOrderService;
+
     @BeforeAll
     public static void setup() {
         RestAssured.baseURI = "http://localhost";
@@ -49,9 +60,9 @@ class OrderControllerTest {
     @BeforeAll
     public void createDatabase() {
 
-        Person person = new Person("Jordan", "Soltau", "admin3@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
-        person.setRole(Role.ADMIN);
-        userRepository.save(person);
+        Person admin = new Person("Jordan", "Soltau", "admin3@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
+        admin.setRole(Role.ADMIN);
+        userRepository.save(admin);
 
         Person member1 = new Person("Eva", "Degallaix", "user3@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
         userRepository.save(member1);
@@ -60,14 +71,18 @@ class OrderControllerTest {
         itemRepository.save(item);
 
         ItemGroep itemGroep = new ItemGroep(item, 1, LocalDate.now(), 150);
-        Order order = new Order(1, itemGroep, member1, 150);
+        ReservedOrder reservedOrder = new ReservedOrder(itemGroep, member1);
+        reservedOrderRepository.saveAnOrder(reservedOrder);
+
+        double totalPrice = reservedOrderService.getTotalprice(member1.getUserId());
+        Order order = new Order(member1,totalPrice);
         orderRepository.save(order);
     }
 
 
     @Test
     void addOrderAsMember() {
-Person person = userRepository.findUserByEmailIs("user3@eurder.com");
+        Person person = userRepository.findUserByEmailIs("user3@eurder.com");
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -110,17 +125,18 @@ Person person = userRepository.findUserByEmailIs("user3@eurder.com");
 
     @Test
     void returnAllOrders() {
+        Person person = userRepository.findUserByEmailIs("user3@eurder.com");
         given()
                 .baseUri("http://localhost")
                 .port(port)
                 .auth()
                 .preemptive()
-                .basic("admin3@eurder.com", "password")
+                .basic("user3@eurder.com", "password")
                 .header("Accept", ContentType.JSON.getAcceptHeader())
                 .header("Content-type", "application/json")
                 .and()
                 .when()
-                .get("orders")
+                .post("orders/" +person.getUserId() + "/confirm")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());

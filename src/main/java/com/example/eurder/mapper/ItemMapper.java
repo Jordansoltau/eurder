@@ -1,5 +1,7 @@
 package com.example.eurder.mapper;
 
+import com.example.eurder.domain.order.ReservedOrder;
+import com.example.eurder.domain.user.Person;
 import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
@@ -41,10 +43,7 @@ public class ItemMapper {
     }
 
     //Order should not lose information
-    public Order fromItemGroepDTOToOrder(ItemGroepDto itemGroepDto) {
-        ItemGroep itemGroep = fromItemGroepDtoToItemGroep(itemGroepDto);
-        return new Order(itemGroep);
-    }
+
 
 
     public Item fromItemDtoToItem(ItemDto itemDto, String itemId) {
@@ -58,5 +57,10 @@ public class ItemMapper {
 
     public Item fromItemDtoToItemWhenCreatingItem(ItemDto itemDto, String itemId) {
         return new Item(itemId,itemDto.getName(),itemDto.getDescription(),itemDto.getPrice(),itemDto.getAmount());
+    }
+
+    public ReservedOrder fromItemGroepDTOToReservedOrder(ItemGroepDto itemGroepDto, Person person) {
+
+        return new ReservedOrder(fromItemGroepDtoToItemGroep(itemGroepDto),person);
     }
 }

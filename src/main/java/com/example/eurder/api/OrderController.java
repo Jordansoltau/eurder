@@ -27,9 +27,9 @@ public class OrderController {
         orderService.createAnOrder(authorization, itemgroepDto,userId);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/{userId}/confirm",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public List<Order> confirmOrder(@RequestHeader String authorization){
-        return orderService.getOrderOfItems(authorization);
+    public Order confirmOrder(@RequestHeader String authorization, @PathVariable Integer userId){
+        return orderService.confirmReservedItems(authorization,userId);
     }
 }

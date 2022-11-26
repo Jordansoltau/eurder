@@ -8,13 +8,13 @@ import java.time.LocalDate;
 @Embeddable
 public class ItemGroep {
     @ManyToOne
-    @JoinColumn(name = "itemid")
+    @JoinColumn(name = "item_id")
     private Item itemId;
-    @Column(name = "amountpurchase")
+    @Column(name = "amount_purchase")
     private  int amount;
-    @Column(name = "shippingdate")
+    @Column(name = "shipping_date")
     private  LocalDate shippingdate;
-    @Column(name = "priceoforder")
+    @Column(name = "price_of_items")
     private  double priceOfOrder;
 
 
