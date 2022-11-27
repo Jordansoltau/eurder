@@ -1,5 +1,6 @@
-package com.example.eurder.repositories;
+package com.example.eurder.Repositories;
 
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.ReservedOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -42,4 +43,6 @@ public class ReservedOrderRepository{
     public void UpdateReservedOrder(ReservedOrder reservedOrder) {
         entityManager.merge(reservedOrder);
     }
+
+
 }

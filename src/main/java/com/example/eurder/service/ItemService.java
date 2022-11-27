@@ -1,7 +1,8 @@
 package com.example.eurder.service;
 
+import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
-import com.example.eurder.repositories.ItemRepository;
+
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.service.security.SecurityService;

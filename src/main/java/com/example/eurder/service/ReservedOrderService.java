@@ -1,8 +1,8 @@
 package com.example.eurder.service;
 
+import com.example.eurder.Repositories.ReservedOrderRepository;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.order.ReservedOrder;
-import com.example.eurder.repositories.ReservedOrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,8 +24,7 @@ public class ReservedOrderService {
         return totalprice;
     }
 
-    public void finalizeReservedOrder(Integer userId, Order orderId) {
-        List<ReservedOrder> listOfAllReservedOrdersOfUser =  reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
+    public void finalizeReservedOrder(Integer userId, Order orderId,List<ReservedOrder> listOfAllReservedOrdersOfUser) {
    for (ReservedOrder reservedOrder: listOfAllReservedOrdersOfUser){
        reservedOrder.setOrderId(orderId);
        reservedOrderRepository.UpdateReservedOrder(reservedOrder);

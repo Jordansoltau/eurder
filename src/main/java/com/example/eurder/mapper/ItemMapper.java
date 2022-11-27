@@ -1,17 +1,22 @@
 package com.example.eurder.mapper;
 
+import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
+import com.example.eurder.dto.ItemGroepClientViewDTO;
+import com.example.eurder.dto.OrderedItemsDto;
 import com.example.eurder.exceptions.NotFoundexception;
-import com.example.eurder.repositories.ItemRepository;
+
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.order.Order;
+
 import com.example.eurder.dto.ItemDto;
 import com.example.eurder.dto.ItemGroepDto;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ItemMapper {
@@ -62,5 +67,15 @@ public class ItemMapper {
     public ReservedOrder fromItemGroepDTOToReservedOrder(ItemGroepDto itemGroepDto, Person person) {
 
         return new ReservedOrder(fromItemGroepDtoToItemGroep(itemGroepDto),person);
+    }
+
+    public List<ItemGroepClientViewDTO> mapFromItemGroepListToItemGroepClientViewDTOList(List<ItemGroep> orderedItems) {
+    List<ItemGroepClientViewDTO> listClientViewOrder = new ArrayList<>();
+    for (ItemGroep itemGroep:orderedItems){
+        ItemGroepClientViewDTO itemGroepClientViewDTO = new ItemGroepClientViewDTO(itemGroep.getAmount(),itemGroep.getShippingdate(),itemGroep.getPriceOfOrder(),
+                new OrderedItemsDto(itemGroep.getItem().getId(),itemGroep.getItem().getName(),itemGroep.getItem().getPrice()));
+    listClientViewOrder.add(itemGroepClientViewDTO);
+    }
+    return listClientViewOrder;
     }
 }

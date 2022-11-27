@@ -3,7 +3,6 @@ package com.example.eurder.domain.order;
 import com.example.eurder.domain.user.Person;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "ordering")
@@ -35,7 +34,7 @@ public class Order {
     }
 
 
-    public Person getUserid() {
+    public Person getUser() {
         return userid;
     }
 

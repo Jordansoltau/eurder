@@ -1,25 +1,29 @@
 package com.example.eurder.service;
 
+import com.example.eurder.Repositories.ItemRepository;
+import com.example.eurder.Repositories.OrderRepository;
+import com.example.eurder.Repositories.ReservedOrderRepository;
 import com.example.eurder.domain.item.Item;
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
+import com.example.eurder.dto.ItemGroepClientViewDTO;
 import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.exceptions.UnknownPersonException;
 import com.example.eurder.mapper.OrderMapper;
-import com.example.eurder.repositories.ItemRepository;
+
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.dto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
-import com.example.eurder.repositories.OrderRepository;
-import com.example.eurder.repositories.ReservedOrderRepository;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -72,21 +76,22 @@ public class OrderService {
     public OrderDTO confirmReservedItems(String authorization, Integer userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
         securityService.validateUserAndAuthorization(authorization, userId);
-        Person person = userRepository.findById(userId).orElseThrow(()->new NotFoundexception());
 
         if(reservedOrderService.findReservedOrderByUserId(userId).isEmpty()){
             throw new IllegalArgumentException("There are no reserved orders for this member");
         }
 
+        Person person = userRepository.findById(userId).orElseThrow(()->new NotFoundexception());
         double totalPrice = reservedOrderService.getTotalprice(userId);
-
         Order order = new Order(person,totalPrice);
         orderRepository.save(order);
-        //set orderIdInReservedOrder
-        reservedOrderService.finalizeReservedOrder(userId,order);
-        //retunr order
-        List<ReservedOrder> reservedOrderList = reservedOrderService.findReservedOrderByUserId(userId);
-        return orderMapper.mapFromOrderToOrderDto(order,reservedOrderList);
+
+        List<ReservedOrder> listOfAllReservedOrdersOfUser =  reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
+        reservedOrderService.finalizeReservedOrder(userId,order,listOfAllReservedOrdersOfUser);
+
+        List<ItemGroep> orderedItems = listOfAllReservedOrdersOfUser.stream().map(ReservedOrder::getItemGroep).collect(Collectors.toList());
+        List<ItemGroepClientViewDTO> itemGroepClientViewDTOList = itemMapper.mapFromItemGroepListToItemGroepClientViewDTOList(orderedItems);
+        return orderMapper.mapFromOrderToOrderDto(order,itemGroepClientViewDTOList);
     }
 
 

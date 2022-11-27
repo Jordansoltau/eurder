@@ -1,40 +1,48 @@
 package com.example.eurder.dto;
 
-import com.example.eurder.domain.order.Order;
+import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.ReservedOrder;
+import com.example.eurder.domain.user.Person;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class OrderDTO {
 
-    private final Map<Order, List<ReservedOrder>> order;
+    private final Integer orderId;
+    private final List<ItemGroepClientViewDTO> reservedOrderList;
+    private final PersonDTO user;
+    private final double totalPrice;
 
-
-    public OrderDTO(Map<Order, List<ReservedOrder>> order) {
-        this.order = order;
+    public OrderDTO(Integer orderId, List<ItemGroepClientViewDTO> reservedOrderList, PersonDTO userId, double totalPrice) {
+        this.orderId = orderId;
+        this.reservedOrderList = reservedOrderList;
+        this.user = userId;
+        this.totalPrice = totalPrice;
     }
 
-    public OrderDTO(Order order, List<ReservedOrder> reservedOrderList) {
-        this.order = setupOrderDto(order,reservedOrderList);
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    private Map<Order, List<ReservedOrder>> setupOrderDto(Order order, List<ReservedOrder> reservedOrderList) {
-        HashMap<Order,List<ReservedOrder>> orderArrayListHashMap = new HashMap<>();
-        orderArrayListHashMap.put(order, reservedOrderList);
-        return orderArrayListHashMap;
+    public List<ItemGroepClientViewDTO> getReservedOrderList() {
+        return reservedOrderList;
     }
 
-    public Map<Order, List<ReservedOrder>> getOrder() {
-        return order;
+    public PersonDTO getUserId() {
+        return user;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
     @Override
     public String toString() {
         return "OrderDTO{" +
-                "order=" + order +
+                "orderId=" + orderId +
+                ", reservedOrderList=" + reservedOrderList +
+                ", user=" + user +
+                ", totalPrice=" + totalPrice +
                 '}';
     }
 }

@@ -1,6 +1,7 @@
 package com.example.eurder.service.validation;
 
-import com.example.eurder.repositories.ItemRepository;
+
+import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.dto.ItemDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

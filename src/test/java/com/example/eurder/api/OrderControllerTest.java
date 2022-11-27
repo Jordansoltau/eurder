@@ -1,5 +1,8 @@
 package com.example.eurder.api;
 
+import com.example.eurder.Repositories.ItemRepository;
+import com.example.eurder.Repositories.OrderRepository;
+import com.example.eurder.Repositories.ReservedOrderRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
@@ -7,10 +10,7 @@ import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.domain.user.Role;
-import com.example.eurder.exceptions.NotFoundexception;
-import com.example.eurder.repositories.ItemRepository;
-import com.example.eurder.repositories.OrderRepository;
-import com.example.eurder.repositories.ReservedOrderRepository;
+
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.service.ReservedOrderService;
 import io.restassured.RestAssured;
@@ -23,12 +23,13 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.annotation.DirtiesContext;
+
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 import static io.restassured.RestAssured.given;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -75,7 +76,7 @@ class OrderControllerTest {
         reservedOrderRepository.saveAnOrder(reservedOrder);
 
         double totalPrice = reservedOrderService.getTotalprice(member1.getUserId());
-        Order order = new Order(member1,totalPrice);
+        Order order = new Order(member1, totalPrice);
         orderRepository.save(order);
     }
 
@@ -83,6 +84,7 @@ class OrderControllerTest {
     @Test
     void addOrderAsMember() {
         Person person = userRepository.findUserByEmailIs("user3@eurder.com");
+
         given()
                 .baseUri("http://localhost")
                 .port(port)
@@ -98,6 +100,7 @@ class OrderControllerTest {
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());
+
 
     }
 
@@ -136,7 +139,7 @@ class OrderControllerTest {
                 .header("Content-type", "application/json")
                 .and()
                 .when()
-                .post("orders/" +person.getUserId() + "/confirm")
+                .post("orders/" + person.getUserId() + "/confirm")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());

@@ -1,10 +1,10 @@
 package com.example.eurder.api;
 
+import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.domain.user.Role;
-import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.repositories.UserRepository;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
