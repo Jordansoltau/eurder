@@ -1,23 +1,37 @@
 package com.example.eurder.api;
 
+import com.example.eurder.domain.item.Item;
+import com.example.eurder.domain.user.Address.Address;
+import com.example.eurder.domain.user.Person;
+import com.example.eurder.domain.user.Role;
+import com.example.eurder.repositories.ItemRepository;
+import com.example.eurder.repositories.UserRepository;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.annotation.DirtiesContext;
+
+
 import static io.restassured.RestAssured.given;
-import static org.mockito.Mockito.verify;
 
-
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+@AutoConfigureTestDatabase
 class ItemControllerTest {
+    @Autowired
+    UserRepository userRepository;
 
     @LocalServerPort
     private int port;
+
+    @Autowired
+    private ItemRepository itemRepository;
 
 
     @BeforeAll
@@ -25,6 +39,19 @@ class ItemControllerTest {
         RestAssured.baseURI = "http://localhost";
     }
 
+    @BeforeAll
+    public void createDatabase() {
+
+        Person person = new Person("Jordan", "Soltau", "admin@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
+        person.setRole(Role.ADMIN);
+        userRepository.save(person);
+
+        Person member = new Person("Eva", "Degallaix", "user@eurder.com", new Address("street", "15", "1540", "brussel"), "0476594874");
+        userRepository.save(member);
+
+        Item item = new Item("1","Mouse","cliky",150,100);
+        itemRepository.save(item);
+    }
 
     //integration testing
     @Test
@@ -99,7 +126,7 @@ class ItemControllerTest {
                 .and()
                 .body(createAnewItem())
                 .when()
-                .patch("/items/10")
+                .patch("/items/1")
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.OK.value());
@@ -133,7 +160,6 @@ class ItemControllerTest {
                 "  \"amount\": 5\n}";
         return requestBody;
     }
-
 
 
 }

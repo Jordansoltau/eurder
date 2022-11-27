@@ -1,25 +1,27 @@
 package com.example.eurder.domain.order;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import com.example.eurder.domain.item.Item;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Embeddable
 public class ItemGroep {
-    @Column(name = "item_id")
-    private  String itemId;
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item itemId;
     @Column(name = "amount_purchase")
     private  int amount;
-    @Column(name = "shippingdate")
+    @Column(name = "shipping_date")
     private  LocalDate shippingdate;
-    @Column(name = "priceoforder")
+    @Column(name = "price_of_items")
     private  double priceOfOrder;
 
 
-    public ItemGroep(String itemId, int amount, LocalDate date, double priceOfOrder) {
+    public ItemGroep(Item itemId, int amount, LocalDate shippingdate, double priceOfOrder) {
         this.itemId = itemId;
         this.amount = amount;
-        this.shippingdate = date;
+        this.shippingdate = shippingdate;
         this.priceOfOrder = priceOfOrder;
     }
 
@@ -31,7 +33,7 @@ public class ItemGroep {
         return priceOfOrder;
     }
 
-    public String getItemId() {
+    public Item getItem() {
         return itemId;
     }
 

@@ -1,52 +1,64 @@
 package com.example.eurder.domain.order;
 
-import org.springframework.stereotype.Component;
+import com.example.eurder.domain.user.Person;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "ordering")
 public class Order {
     @Id
-    @Column(name = "order_id")
-    private String orderId;
-    @Embedded
-    private ItemGroep orderedItems;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_seq")
+    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq",allocationSize = 1)
+    private Integer id;
+    @ManyToOne()
+    @JoinColumn(name = "member_id")
+    private Person userid;
     @Column(name = "totalprice")
     private double totalPrice;
-    @Column(name = "user_id")
-    private String userid;
-
 
     public Order() {
-
     }
 
-    public Order(ItemGroep orderedItems) {
-        this.orderedItems = orderedItems;
-        this.totalPrice = calculatePriceOfOrder(orderedItems);
+    public Order(Person userid, double totalPrice) {
+        this.userid = userid;
+        this.totalPrice = totalPrice;
+    }
+//getters
+
+
+
+
+    public Integer getId() {
+        return id;
+    }
+
+
+    public Person getUserid() {
+        return userid;
     }
 
     public double getTotalPrice() {
         return totalPrice;
     }
 
-    public ItemGroep getOrderedItems() {
-        return orderedItems;
+
+
+    //setters
+    public void setOrderId(Integer orderId) {
+        this.id = orderId;
     }
 
-    private double calculatePriceOfOrder(ItemGroep itemGroep) {
-        return itemGroep.getPriceOfOrder();
+
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderedItems=" + orderedItems +
-                ", totalPrice=" + totalPrice +
-                '}';
+    public void setUserid(Person person) {
+        this.userid = person;
     }
+
+
 }

@@ -1,41 +1,40 @@
 package com.example.eurder.dto;
 
 import com.example.eurder.domain.order.Order;
+import com.example.eurder.domain.order.ReservedOrder;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class OrderDTO {
 
-    private final  ArrayList<Order> order;
-    private final double price;
-
-    private final String userId;
+    private final Map<Order, List<ReservedOrder>> order;
 
 
-    public OrderDTO(ArrayList<Order> order, String userId) {
+    public OrderDTO(Map<Order, List<ReservedOrder>> order) {
         this.order = order;
-        this.price = calculateTotalPrice(order);
-        this.userId = userId;
     }
 
-
-    public String getUserId() {
-        return userId;
+    public OrderDTO(Order order, List<ReservedOrder> reservedOrderList) {
+        this.order = setupOrderDto(order,reservedOrderList);
     }
 
-    private double calculateTotalPrice(ArrayList<Order> order) {
-        double sum = 0;
-        for (Order ordered : order){
-            sum+=ordered.getTotalPrice();
-        }
-        return sum;
+    private Map<Order, List<ReservedOrder>> setupOrderDto(Order order, List<ReservedOrder> reservedOrderList) {
+        HashMap<Order,List<ReservedOrder>> orderArrayListHashMap = new HashMap<>();
+        orderArrayListHashMap.put(order, reservedOrderList);
+        return orderArrayListHashMap;
     }
 
-    public ArrayList<Order> getOrder() {
+    public Map<Order, List<ReservedOrder>> getOrder() {
         return order;
     }
 
-    public double getPrice() {
-        return price;
+    @Override
+    public String toString() {
+        return "OrderDTO{" +
+                "order=" + order +
+                '}';
     }
 }
