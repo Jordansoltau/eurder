@@ -1,7 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.OrderDTO;
+
 import com.example.eurder.dto.UserDto;
 import com.example.eurder.service.UserService;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 @RequestMapping("users")

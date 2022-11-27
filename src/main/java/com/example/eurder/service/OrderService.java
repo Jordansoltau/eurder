@@ -3,8 +3,10 @@ package com.example.eurder.service;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
+import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.exceptions.UnknownPersonException;
+import com.example.eurder.mapper.OrderMapper;
 import com.example.eurder.repositories.ItemRepository;
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
@@ -30,11 +32,12 @@ public class OrderService {
     private final UserRepository userRepository;
     private final ReservedOrderRepository reservedOrderRepository;
     private final ReservedOrderService reservedOrderService;
+    private final OrderMapper orderMapper;
 
 
     public OrderService(SecurityService securityService
             , ValidationItemService validationItemService
-            , OrderRepository orderRepository, ItemRepository itemRepository, ItemMapper itemMapper, UserRepository userRepository, ReservedOrderRepository reservedOrderRepository, ReservedOrderService reservedOrderService) {
+            , OrderRepository orderRepository, ItemRepository itemRepository, ItemMapper itemMapper, UserRepository userRepository, ReservedOrderRepository reservedOrderRepository, ReservedOrderService reservedOrderService, OrderMapper orderMapper) {
         this.securityService = securityService;
         this.validationItemService = validationItemService;
         this.orderRepository = orderRepository;
@@ -43,6 +46,7 @@ public class OrderService {
         this.userRepository = userRepository;
         this.reservedOrderRepository = reservedOrderRepository;
         this.reservedOrderService = reservedOrderService;
+        this.orderMapper = orderMapper;
     }
 
     public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
@@ -65,7 +69,7 @@ public class OrderService {
         //not ok
     }
 
-    public Order confirmReservedItems(String authorization, Integer userId) {
+    public OrderDTO confirmReservedItems(String authorization, Integer userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
         securityService.validateUserAndAuthorization(authorization, userId);
         Person person = userRepository.findById(userId).orElseThrow(()->new NotFoundexception());
@@ -81,7 +85,8 @@ public class OrderService {
         //set orderIdInReservedOrder
         reservedOrderService.finalizeReservedOrder(userId,order);
         //retunr order
-        return order;
+        List<ReservedOrder> reservedOrderList = reservedOrderService.findReservedOrderByUserId(userId);
+        return orderMapper.mapFromOrderToOrderDto(order,reservedOrderList);
     }
 
 

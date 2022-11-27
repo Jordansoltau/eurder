@@ -1,9 +1,7 @@
 package com.example.eurder.service;
 
-import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.OrderDTO;
 import com.example.eurder.mapper.OrderMapper;
 import com.example.eurder.dto.UserDto;
 import com.example.eurder.mapper.UserMapper;
@@ -47,12 +45,6 @@ public class UserService {
 
     }
 
-    public List<OrderDTO> getReportOfOrders(String authorization, Integer userId) {
-        securityService.validateAuthorization(authorization, Feature.VIEW_OWN_REPORTS);
-        securityService.validateUserAndAuthorization(authorization,userId);
-        List<Order> allOrders = orderService.getAllOrderOfItemsWithoutAuthorization();
-        return orderMapper.fromListOrderToListOrderDTO(allOrders,userId);
-    }
 
     public List<Person> getAllUsers(String authorization) {
         securityService.validateAuthorization(authorization,Feature.ADMIN);
