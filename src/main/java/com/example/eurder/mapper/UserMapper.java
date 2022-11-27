@@ -2,7 +2,7 @@ package com.example.eurder.mapper;
 
 import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.UserDto;
+import com.example.eurder.service.dto.personDto.UserDto;
 import org.springframework.stereotype.Component;
 
 @Component

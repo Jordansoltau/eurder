@@ -1,4 +1,4 @@
-package com.example.eurder.repositories;
+package com.example.eurder.Repositories;
 
 import com.example.eurder.domain.item.Item;
 import org.springframework.data.jpa.repository.JpaRepository;

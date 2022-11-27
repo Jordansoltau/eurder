@@ -3,15 +3,15 @@ package com.example.eurder.mapper;
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.ItemGroepClientViewDTO;
-import com.example.eurder.dto.OrderedItemsDto;
+import com.example.eurder.service.dto.orderDto.ItemGroepClientViewDTO;
+import com.example.eurder.service.dto.orderDto.OrderedItemsDto;
 import com.example.eurder.exceptions.NotFoundexception;
 
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 
-import com.example.eurder.dto.ItemDto;
-import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.service.dto.itemDto.ItemDto;
+import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

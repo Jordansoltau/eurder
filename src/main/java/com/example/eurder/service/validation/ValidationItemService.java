@@ -2,7 +2,7 @@ package com.example.eurder.service.validation;
 
 
 import com.example.eurder.Repositories.ItemRepository;
-import com.example.eurder.dto.ItemDto;
+import com.example.eurder.service.dto.itemDto.ItemDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

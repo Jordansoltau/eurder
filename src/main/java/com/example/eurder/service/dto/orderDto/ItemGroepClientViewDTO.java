@@ -1,7 +1,6 @@
-package com.example.eurder.dto;
+package com.example.eurder.service.dto.orderDto;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public record ItemGroepClientViewDTO (
         int amount,

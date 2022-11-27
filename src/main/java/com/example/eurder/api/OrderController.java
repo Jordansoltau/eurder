@@ -1,14 +1,15 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.order.Order;
-import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 
-import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.service.dto.orderDto.OrderDTO;
 import com.example.eurder.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RequestMapping("orders")
@@ -31,4 +32,6 @@ public class OrderController {
     public OrderDTO confirmOrder(@RequestHeader String authorization, @PathVariable Integer userId){
         return orderService.confirmReservedItems(authorization,userId);
     }
+
+
 }

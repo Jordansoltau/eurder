@@ -1,7 +1,7 @@
 package com.example.eurder.service.validation;
 
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.UserDto;
+import com.example.eurder.service.dto.personDto.UserDto;
 import com.example.eurder.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

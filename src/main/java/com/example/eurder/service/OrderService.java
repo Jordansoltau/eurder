@@ -7,15 +7,15 @@ import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.ItemGroepClientViewDTO;
-import com.example.eurder.dto.OrderDTO;
+import com.example.eurder.service.dto.orderDto.ItemGroepClientViewDTO;
+import com.example.eurder.service.dto.orderDto.OrderDTO;
 import com.example.eurder.exceptions.NotFoundexception;
 import com.example.eurder.exceptions.UnknownPersonException;
 import com.example.eurder.mapper.OrderMapper;
 
 import com.example.eurder.domain.order.Order;
 import com.example.eurder.domain.user.Feature;
-import com.example.eurder.dto.ItemGroepDto;
+import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.service.security.SecurityService;
@@ -68,10 +68,6 @@ public class OrderService {
     }
 
 
-    public List<Order> getAllOrderOfItemsWithoutAuthorization() {
-        return orderRepository.findAll();
-        //not ok
-    }
 
     public OrderDTO confirmReservedItems(String authorization, Integer userId) {
         securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);

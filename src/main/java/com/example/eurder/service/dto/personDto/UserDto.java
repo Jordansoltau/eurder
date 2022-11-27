@@ -1,6 +1,5 @@
-package com.example.eurder.dto;
+package com.example.eurder.service.dto.personDto;
 
-import com.example.eurder.domain.user.Address.Address;
 
 public class UserDto {
 

@@ -1,12 +1,10 @@
 package com.example.eurder.mapper;
 
 
-import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.Order;
-import com.example.eurder.domain.user.Person;
-import com.example.eurder.dto.ItemGroepClientViewDTO;
-import com.example.eurder.dto.OrderDTO;
-import com.example.eurder.dto.PersonDTO;
+import com.example.eurder.service.dto.orderDto.ItemGroepClientViewDTO;
+import com.example.eurder.service.dto.orderDto.OrderDTO;
+import com.example.eurder.service.dto.personDto.PersonDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

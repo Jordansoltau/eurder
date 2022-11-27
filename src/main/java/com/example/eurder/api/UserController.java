@@ -2,7 +2,7 @@ package com.example.eurder.api;
 
 import com.example.eurder.domain.user.Person;
 
-import com.example.eurder.dto.UserDto;
+import com.example.eurder.service.dto.personDto.UserDto;
 import com.example.eurder.service.UserService;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.slf4j.Logger;

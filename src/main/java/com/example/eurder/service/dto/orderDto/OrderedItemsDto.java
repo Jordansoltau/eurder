@@ -1,4 +1,4 @@
-package com.example.eurder.dto;
+package com.example.eurder.service.dto.orderDto;
 
 public record OrderedItemsDto(
         String id,

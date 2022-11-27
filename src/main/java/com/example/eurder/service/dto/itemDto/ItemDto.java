@@ -1,4 +1,4 @@
-package com.example.eurder.dto;
+package com.example.eurder.service.dto.itemDto;
 
 public class ItemDto {
     private final String name;

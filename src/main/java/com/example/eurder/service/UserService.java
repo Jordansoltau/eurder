@@ -3,7 +3,7 @@ package com.example.eurder.service;
 import com.example.eurder.domain.user.Feature;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.mapper.OrderMapper;
-import com.example.eurder.dto.UserDto;
+import com.example.eurder.service.dto.personDto.UserDto;
 import com.example.eurder.mapper.UserMapper;
 import com.example.eurder.repositories.UserRepository;
 import com.example.eurder.service.security.SecurityService;

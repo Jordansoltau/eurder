@@ -1,8 +1,6 @@
-package com.example.eurder.dto;
+package com.example.eurder.service.dto.orderDto;
 
-import com.example.eurder.domain.order.ItemGroep;
-import com.example.eurder.domain.order.ReservedOrder;
-import com.example.eurder.domain.user.Person;
+import com.example.eurder.service.dto.personDto.PersonDTO;
 
 import java.util.List;
 

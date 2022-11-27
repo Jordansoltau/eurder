@@ -1,7 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.item.Item;
-import com.example.eurder.dto.ItemDto;
+import com.example.eurder.service.dto.itemDto.ItemDto;
 import com.example.eurder.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
