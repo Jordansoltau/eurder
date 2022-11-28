@@ -52,17 +52,19 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public void createAReservation(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
+    public ReservedOrder createAReservation(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
         securityService.validateAccesAndSecurity(authorization, userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
 
-        Person person = userRepository.findById(userId).orElseThrow(() -> new UnknownPersonException());
+        Person person = userRepository.findById(userId).orElseThrow(UnknownPersonException::new);
         ReservedOrder reservedOrder = itemMapper.fromItemGroepDTOToReservedOrder(itemGroepDto, person);
         reservedOrderRepository.saveAnOrder(reservedOrder);
 
         Item item = itemRepository.findById(itemGroepDto.getItemId()).orElseThrow();
         item.decreaseAmount(itemGroepDto.getAmountToPurchase());
         itemRepository.save(item);
+
+        return reservedOrder;
     }
 
 
@@ -73,7 +75,7 @@ public class OrderService {
             throw new IllegalArgumentException("There are no reserved orders for this member");
         }
 
-        Person person = userRepository.findById(userId).orElseThrow(()->new NotFoundexception());
+        Person person = userRepository.findById(userId).orElseThrow(NotFoundexception::new);
         double totalPrice = reservedOrderService.getTotalprice(userId);
         Order order = new Order(person,totalPrice);
         orderRepository.save(order);

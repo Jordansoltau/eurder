@@ -1,5 +1,6 @@
 package com.example.eurder.api;
 
+import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 
 import com.example.eurder.service.dto.orderDto.OrderDTO;
@@ -20,8 +21,8 @@ public class OrderController {
 
     @PostMapping(path = "/{userId}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void AddItemToReservedOrder(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto, @PathVariable Integer userId) {
-        orderService.createAReservation(authorization, itemgroepDto,userId);
+    public ReservedOrder AddItemToReservedOrder(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto, @PathVariable Integer userId) {
+       return orderService.createAReservation(authorization, itemgroepDto,userId);
     }
 
     @PostMapping(path = "/{userId}/confirm",produces = MediaType.APPLICATION_JSON_VALUE)

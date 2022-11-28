@@ -34,15 +34,17 @@ public class UserService {
         this.orderMapper = orderMapper;
     }
 
-    public void createANewAccount(UserDto userDto) {
+    public Person createANewAccount(UserDto userDto) {
         validationUserService.validateNewUser(userDto);
         validationUserService.validateFirstName(userDto, "FirstName");
         validationUserService.validateLastName(userDto, "LastName");
         validationUserService.validateEmail(userDto, "Email");
         validationUserService.validateAddressName(userDto, "Adress");
         validationUserService.validatePhoneNumber(userDto, "phoneNumber");
-        userRepository.save(userMapper.fromDtoToUser(userDto));
+        Person person = userMapper.fromDtoToUser(userDto);
+        userRepository.save(person);
 
+        return person;
     }
 
 

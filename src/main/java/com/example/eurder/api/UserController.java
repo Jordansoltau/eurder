@@ -24,22 +24,24 @@ public class UserController {
         this.userService = userService;
 
     }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void addANewUser(@RequestBody UserDto userDto) {
-        userService.createANewAccount(userDto);
+    public Person addANewUser(@RequestBody UserDto userDto) {
+        return userService.createANewAccount(userDto);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<Person> getAllUsers(@RequestHeader String authorization){
+    public List<Person> getAllUsers(@RequestHeader String authorization) {
         return userService.getAllUsers(authorization);
         //Danger!! ask Tim
     }
-    @GetMapping(params = "id",produces = MediaType.APPLICATION_JSON_VALUE)
+
+    @GetMapping(params = "id", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Person getUserInformation(@RequestHeader String authorization, @Parameter Integer id){
-        return userService.getUsers(authorization,id);
+    public Person getUserInformation(@RequestHeader String authorization, @Parameter Integer id) {
+        return userService.getUsers(authorization, id);
         //Danger!! ask Tim
     }
 
