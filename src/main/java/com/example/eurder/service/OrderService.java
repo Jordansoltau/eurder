@@ -14,7 +14,6 @@ import com.example.eurder.exceptions.UnknownPersonException;
 import com.example.eurder.mapper.OrderMapper;
 
 import com.example.eurder.domain.order.Order;
-import com.example.eurder.domain.user.Feature;
 import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.repositories.UserRepository;
@@ -53,12 +52,11 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public void createAnOrder(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
-        securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
-        securityService.validateUserAndAuthorization(authorization, userId);
+    public void createAReservation(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
+        securityService.validateAccesAndSecurity(authorization, userId);
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
-        Person person = userRepository.findById(userId).orElseThrow(() -> new UnknownPersonException());
 
+        Person person = userRepository.findById(userId).orElseThrow(() -> new UnknownPersonException());
         ReservedOrder reservedOrder = itemMapper.fromItemGroepDTOToReservedOrder(itemGroepDto, person);
         reservedOrderRepository.saveAnOrder(reservedOrder);
 
@@ -68,10 +66,8 @@ public class OrderService {
     }
 
 
-
     public OrderDTO confirmReservedItems(String authorization, Integer userId) {
-        securityService.validateAuthorization(authorization, Feature.ORDER_ITEM);
-        securityService.validateUserAndAuthorization(authorization, userId);
+        securityService.validateAccesAndSecurity(authorization, userId);
 
         if(reservedOrderService.findReservedOrderByUserId(userId).isEmpty()){
             throw new IllegalArgumentException("There are no reserved orders for this member");

@@ -62,4 +62,9 @@ public class SecurityService {
 
     }
 
+    public void validateAccesAndSecurity(String authorization, Integer userId) {
+        validateAuthorization(authorization, Feature.ORDER_ITEM);
+        validateUserAndAuthorization(authorization, userId);
+    }
+
 }

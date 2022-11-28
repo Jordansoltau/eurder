@@ -6,8 +6,11 @@ import com.example.eurder.domain.user.Address.Address;
 import com.example.eurder.domain.user.Person;
 import com.example.eurder.domain.user.Role;
 import com.example.eurder.repositories.UserRepository;
+import com.example.eurder.service.UserService;
+import com.example.eurder.service.dto.personDto.UserDto;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -26,6 +29,8 @@ import static io.restassured.RestAssured.given;
 class PersonControllerTest {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserService userService;
 
     @LocalServerPort
     private int port;
@@ -186,5 +191,10 @@ class PersonControllerTest {
 
     }
 
+    @Test
+    void validateANewUser() {
+        UserDto userDto = new UserDto("Jordan", "Soltau", "user2@eurder.com", "street", "5", "1560", "bxl", "1111");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> userService.createANewAccount(userDto));
+    }
 
 }
