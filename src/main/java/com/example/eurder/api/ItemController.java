@@ -24,15 +24,15 @@ public class ItemController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void addANewItem( @RequestHeader String authorization, @RequestBody ItemDto itemDto) {
+    public Item addANewItem( @RequestHeader String authorization, @RequestBody ItemDto itemDto) {
         logger.info("Create a new Item in itemRepository");
-        itemService.createANewItemInItemRepository(itemDto,authorization);
+        return itemService.createANewItemInItemRepository(itemDto,authorization);
     }
 
     @PatchMapping(path="/{itemID}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public void updateItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto, @PathVariable String itemID){
-        itemService.updateThisItem(authorization,itemDto,itemID);
+    public Item updateItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto, @PathVariable String itemID){
+        return itemService.updateThisItem(authorization,itemDto,itemID);
     }
 
     @GetMapping(path = ("/stock"), produces = MediaType.APPLICATION_JSON_VALUE)

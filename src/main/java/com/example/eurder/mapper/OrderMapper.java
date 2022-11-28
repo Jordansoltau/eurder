@@ -11,8 +11,6 @@ import java.util.List;
 
 @Component
 public class OrderMapper {
-
-
     public OrderDTO mapFromOrderToOrderDto(Order order, List<ItemGroepClientViewDTO> reservedOrderList) {
         return new OrderDTO(order.getId()
                 ,reservedOrderList

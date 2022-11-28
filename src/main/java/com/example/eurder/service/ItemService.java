@@ -29,22 +29,23 @@ public class ItemService {
         this.securityService = securityService;
     }
 
-    public void createANewItemInItemRepository(ItemDto itemDto, String authorization) {
+    public Item createANewItemInItemRepository(ItemDto itemDto, String authorization) {
         securityService.validateAuthorization(authorization, ADDING_NEW_ITEM);
         validationItemService.validateCorrectInput(itemDto);
         Item item = itemMapper.fromItemDtoToItemWhenCreatingItem(itemDto, UUID.randomUUID().toString());
         itemRepository.save(item);
+        return item;
     }
 
 
 
-    public void updateThisItem(String authorization, ItemDto itemDto, String itemId) {
+    public Item updateThisItem(String authorization, ItemDto itemDto, String itemId) {
         securityService.validateAuthorization(authorization,ADMIN);
         validationItemService.validateIfItemExist(itemId);
         validationItemService.validateCorrectInput(itemDto);
         Item item = itemMapper.fromItemDtoToItem(itemDto, itemId);
         itemRepository.save(item);
-
+        return item;
     }
 
     public List<Item> getItemStockOverview(String authorization) {
