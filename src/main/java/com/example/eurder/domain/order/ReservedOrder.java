@@ -12,7 +12,7 @@ public class ReservedOrder {
     @Id
     @Column(name = "reserved_order_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reserved_order_seq")
-    @SequenceGenerator(name = "reserved_order_seq", sequenceName = "reserved_order_seq",allocationSize = 1)
+    @SequenceGenerator(name = "reserved_order_seq", sequenceName = "reserved_order_seq", allocationSize = 1)
     private Integer id;
 
     @Embedded

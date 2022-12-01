@@ -64,6 +64,7 @@ public class OrderService {
         item.decreaseAmount(itemGroepDto.getAmountToPurchase());
         itemRepository.save(item);
 
+        //return after post
         return reservedOrder;
     }
 
@@ -76,21 +77,20 @@ public class OrderService {
         }
 
         Person person = userRepository.findById(userId).orElseThrow(NotFoundexception::new);
-        double totalPrice = reservedOrderService.getTotalprice(userId);
-        Order order = new Order(person,totalPrice);
+        List<ReservedOrder> listOfAllReservedOrdersOfUser =  reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
+        double totalPriceOfReservedOrder = reservedOrderService.getTotalPrice(listOfAllReservedOrdersOfUser);
+
+        Order order = new Order(person,totalPriceOfReservedOrder);
         orderRepository.save(order);
 
-        List<ReservedOrder> listOfAllReservedOrdersOfUser =  reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
-        reservedOrderService.finalizeReservedOrder(userId,order,listOfAllReservedOrdersOfUser);
+        reservedOrderService.finalizeReservedOrder(order,listOfAllReservedOrdersOfUser);
 
+        //return after post
         List<ItemGroep> orderedItems = listOfAllReservedOrdersOfUser.stream().map(ReservedOrder::getItemGroep).collect(Collectors.toList());
         List<ItemGroepClientViewDTO> itemGroepClientViewDTOList = itemMapper.mapFromItemGroepListToItemGroepClientViewDTOList(orderedItems);
         return orderMapper.mapFromOrderToOrderDto(order,itemGroepClientViewDTOList);
     }
 
 
-//    public List<Order> getOrderOfItems(String authorization, Integer userId) {
-//        securityService.validateAuthorization(authorization, Feature.ADMIN);
-//        return orderRepository.findAll();
-//    }
+
 }

@@ -16,8 +16,6 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
 
-    private final Logger logger = LoggerFactory.getLogger(ItemController.class);
-
     public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
@@ -25,7 +23,6 @@ public class ItemController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public Item addANewItem( @RequestHeader String authorization, @RequestBody ItemDto itemDto) {
-        logger.info("Create a new Item in itemRepository");
         return itemService.createANewItemInItemRepository(itemDto,authorization);
     }
 

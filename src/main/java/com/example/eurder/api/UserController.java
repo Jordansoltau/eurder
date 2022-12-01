@@ -18,11 +18,8 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    private final Logger logger = LoggerFactory.getLogger(ItemController.class);
-
     public UserController(UserService userService) {
         this.userService = userService;
-
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

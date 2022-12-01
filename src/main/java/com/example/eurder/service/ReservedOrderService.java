@@ -6,7 +6,6 @@ import com.example.eurder.domain.order.ReservedOrder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ReservedOrderService {
@@ -15,24 +14,22 @@ public class ReservedOrderService {
     public ReservedOrderService(ReservedOrderRepository reservedOrderRepository) {
         this.reservedOrderRepository = reservedOrderRepository;
     }
-    public double getTotalprice(Integer userId) {
-        List<ReservedOrder> listOfAllReservedOrdersOfUserNotConfirmed = reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
-        double totalprice = 0;
-        for (ReservedOrder reservedOrder:listOfAllReservedOrdersOfUserNotConfirmed){
-            totalprice+= reservedOrder.getItemGroep().getPriceOfOrder();
-        }
-        return totalprice;
-    }
-
-    public void finalizeReservedOrder(Integer userId, Order orderId,List<ReservedOrder> listOfAllReservedOrdersOfUser) {
+    public void finalizeReservedOrder( Order orderId,List<ReservedOrder> listOfAllReservedOrdersOfUser) {
    for (ReservedOrder reservedOrder: listOfAllReservedOrdersOfUser){
        reservedOrder.setOrderId(orderId);
        reservedOrderRepository.UpdateReservedOrder(reservedOrder);
    }
-
     }
 
     public List<ReservedOrder> findReservedOrderByUserId(Integer userId) {
         return reservedOrderRepository.findReservedOrderByPerson_IdWhereOrder_IDIsNull(userId);
+    }
+
+    public double getTotalPrice(List<ReservedOrder> listOfAllReservedOrdersOfUser) {
+        double totalPrice = 0;
+        for (ReservedOrder reservedOrder:listOfAllReservedOrdersOfUser){
+            totalPrice+= reservedOrder.getItemGroep().getPriceOfOrder();
+        }
+        return totalPrice;
     }
 }

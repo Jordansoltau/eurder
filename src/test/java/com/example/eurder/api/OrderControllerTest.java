@@ -75,7 +75,7 @@ class OrderControllerTest {
         ReservedOrder reservedOrder = new ReservedOrder(itemGroep, member1);
         reservedOrderRepository.saveAnOrder(reservedOrder);
 
-        double totalPrice = reservedOrderService.getTotalprice(member1.getUserId());
+        double totalPrice = reservedOrderService.getTotalPrice(member1.getUserId(), listOfAllReservedOrdersOfUser);
         Order order = new Order(member1, totalPrice);
         orderRepository.save(order);
     }

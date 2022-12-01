@@ -9,13 +9,13 @@ import javax.persistence.*;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_seq")
-    @SequenceGenerator(name = "person_seq", sequenceName = "person_seq",allocationSize = 1)
+    @SequenceGenerator(name = "person_seq", sequenceName = "person_seq", allocationSize = 1)
     private Integer id;
     @Column(name = "firstname")
     private String firstName;
     @Column(name = "lastname")
     private String lastName;
-    @Column(unique = true,name = "email")
+    @Column(unique = true, name = "email")
     private String email;
     @Embedded
     private Address address;

@@ -11,11 +11,11 @@ public class ItemGroep {
     @JoinColumn(name = "item_id")
     private Item itemId;
     @Column(name = "amount_purchase")
-    private  int amount;
+    private int amount;
     @Column(name = "shipping_date")
-    private  LocalDate shippingdate;
+    private LocalDate shippingdate;
     @Column(name = "price_of_items")
-    private  double priceOfOrder;
+    private double priceOfOrder;
 
 
     public ItemGroep(Item itemId, int amount, LocalDate shippingdate, double priceOfOrder) {

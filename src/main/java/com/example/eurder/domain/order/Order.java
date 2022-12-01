@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_seq")
-    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq",allocationSize = 1)
+    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq", allocationSize = 1)
     private Integer id;
     @ManyToOne()
     @JoinColumn(name = "member_id")
@@ -24,11 +24,9 @@ public class Order {
         this.userid = userid;
         this.totalPrice = totalPrice;
     }
-//getters
 
 
-
-
+    //getters
     public Integer getId() {
         return id;
     }
@@ -43,13 +41,10 @@ public class Order {
     }
 
 
-
     //setters
     public void setOrderId(Integer orderId) {
         this.id = orderId;
     }
-
-
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
