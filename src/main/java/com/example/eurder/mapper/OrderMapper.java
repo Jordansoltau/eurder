@@ -25,7 +25,9 @@ public class OrderMapper {
     public List<ReservedOrderDTO>  mapFromReservedOrderToReservedOrderDtoList(List<ReservedOrder> listToMap) {
         List<ReservedOrderDTO> listToReturn = new ArrayList<>();
         for (ReservedOrder reservedOrder:listToMap){
-            ReservedOrderDTO reservedOrderDTO = new ReservedOrderDTO(reservedOrder.getItemGroep().getItem().getId(),
+            ReservedOrderDTO reservedOrderDTO = new ReservedOrderDTO(
+                    reservedOrder.getId(),
+                    reservedOrder.getItemGroep().getItem().getId(),
                     reservedOrder.getItemGroep().getItem().getName(),
                     reservedOrder.getItemGroep().getAmount(),
                     reservedOrder.getItemGroep().getShippingdate(),
