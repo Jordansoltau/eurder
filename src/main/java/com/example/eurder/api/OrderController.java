@@ -1,6 +1,7 @@
 package com.example.eurder.api;
 
 import com.example.eurder.domain.order.ReservedOrder;
+import com.example.eurder.service.dto.ReservedOrderDTO;
 import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 
 import com.example.eurder.service.dto.orderDto.OrderDTO;
@@ -8,6 +9,8 @@ import com.example.eurder.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RequestMapping("orders")
@@ -31,5 +34,9 @@ public class OrderController {
         return orderService.confirmReservedItems(authorization,userId);
     }
 
-
+@GetMapping(path = "/reservedorders",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<ReservedOrderDTO> getallreservedOrders(){
+        return orderService.getAllReservedOrders();
+}
 }

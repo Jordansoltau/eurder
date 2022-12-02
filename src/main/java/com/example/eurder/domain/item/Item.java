@@ -12,10 +12,10 @@ import java.util.UUID;
 public class Item {
     @Id
     private String id;
-    @Column(name = "description")
-    private String description;
     @Column(name = "name")
     private String name;
+    @Column(name = "description")
+    private String description;
     @Column(name = "price")
     private double price;
     @Column(name = "amountstock")

@@ -2,11 +2,12 @@ package com.example.eurder.service;
 
 import com.example.eurder.Repositories.ItemRepository;
 import com.example.eurder.Repositories.OrderRepository;
-import com.example.eurder.Repositories.ReservedOrderRepository;
 import com.example.eurder.domain.item.Item;
 import com.example.eurder.domain.order.ItemGroep;
 import com.example.eurder.domain.order.ReservedOrder;
 import com.example.eurder.domain.user.Person;
+import com.example.eurder.repositories.ReservedOrderRepository;
+import com.example.eurder.service.dto.ReservedOrderDTO;
 import com.example.eurder.service.dto.orderDto.ItemGroepClientViewDTO;
 import com.example.eurder.service.dto.orderDto.OrderDTO;
 import com.example.eurder.exceptions.NotFoundexception;
@@ -92,5 +93,8 @@ public class OrderService {
     }
 
 
-
+    public List<ReservedOrderDTO> getAllReservedOrders() {
+        List<ReservedOrder> listToMap = reservedOrderRepository.getAllReservedOrders();
+        return orderMapper.mapFromReservedOrderToReservedOrderDtoList(listToMap);
+    }
 }

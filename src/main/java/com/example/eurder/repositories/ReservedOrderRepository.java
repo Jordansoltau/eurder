@@ -1,11 +1,6 @@
-package com.example.eurder.Repositories;
-
-import com.example.eurder.domain.order.ItemGroep;
+package com.example.eurder.repositories;
 import com.example.eurder.domain.order.ReservedOrder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -45,4 +40,8 @@ public class ReservedOrderRepository{
     }
 
 
+    public List<ReservedOrder> getAllReservedOrders() {
+        return entityManager.createQuery("select a from ReservedOrder a", ReservedOrder.class)
+                .getResultList();
+    }
 }

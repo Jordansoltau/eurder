@@ -48,8 +48,8 @@ public class ItemService {
         return item;
     }
 
-    public List<Item> getItemStockOverview(String authorization) {
-        securityService.validateAuthorization(authorization,ADMIN);
+    public List<Item> getItemStockOverview() {
+//        securityService.validateAuthorization(authorization,ADMIN);
         return itemRepository.findAll();
     }
 }
