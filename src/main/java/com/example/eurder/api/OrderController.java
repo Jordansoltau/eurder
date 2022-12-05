@@ -40,7 +40,7 @@ public class OrderController {
 @GetMapping(path = "/reservedorders",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
 //@PreAuthorize("hasAuthority('ADMIN')")
-    public List<ReservedOrderDTO> getallreservedOrders(){
-        return orderService.getAllReservedOrders();
+    public List<ReservedOrderDTO> getallreservedOrders(@RequestParam String userName){
+        return orderService.getAllReservedOrders(userName);
 }
 }

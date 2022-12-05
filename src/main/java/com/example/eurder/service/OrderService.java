@@ -92,7 +92,7 @@ public class OrderService {
     }
 
 
-    public List<ReservedOrderDTO> getAllReservedOrders() {
+    public List<ReservedOrderDTO> getAllReservedOrders(String userName) {
         List<ReservedOrder> listToMap = reservedOrderRepository.getAllReservedOrders();
         return orderMapper.mapFromReservedOrderToReservedOrderDtoList(listToMap);
     }
