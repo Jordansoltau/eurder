@@ -18,7 +18,6 @@ import com.example.eurder.domain.order.Order;
 import com.example.eurder.service.dto.orderDto.ItemGroepDto;
 import com.example.eurder.mapper.ItemMapper;
 import com.example.eurder.repositories.UserRepository;
-import com.example.eurder.service.security.SecurityService;
 import com.example.eurder.service.validation.ValidationItemService;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +27,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
-    private final SecurityService securityService;
+
     private final ValidationItemService validationItemService;
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
@@ -39,10 +38,10 @@ public class OrderService {
     private final OrderMapper orderMapper;
 
 
-    public OrderService(SecurityService securityService
-            , ValidationItemService validationItemService
+    public OrderService(
+             ValidationItemService validationItemService
             , OrderRepository orderRepository, ItemRepository itemRepository, ItemMapper itemMapper, UserRepository userRepository, ReservedOrderRepository reservedOrderRepository, ReservedOrderService reservedOrderService, OrderMapper orderMapper) {
-        this.securityService = securityService;
+
         this.validationItemService = validationItemService;
         this.orderRepository = orderRepository;
         this.itemRepository = itemRepository;
@@ -53,8 +52,8 @@ public class OrderService {
         this.orderMapper = orderMapper;
     }
 
-    public ReservedOrder createAReservation(String authorization, ItemGroepDto itemGroepDto, Integer userId) {
-        securityService.validateAccesAndSecurity(authorization, userId);
+    public ReservedOrder createAReservation(ItemGroepDto itemGroepDto, Integer userId) {
+
         validationItemService.validateIfItemExist(itemGroepDto.getItemId());
 
         Person person = userRepository.findById(userId).orElseThrow(UnknownPersonException::new);
@@ -70,8 +69,8 @@ public class OrderService {
     }
 
 
-    public OrderDTO confirmReservedItems(String authorization, Integer userId) {
-        securityService.validateAccesAndSecurity(authorization, userId);
+    public OrderDTO confirmReservedItems(Integer userId) {
+
 
         if(reservedOrderService.findReservedOrderByUserId(userId).isEmpty()){
             throw new IllegalArgumentException("There are no reserved orders for this member");

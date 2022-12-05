@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,21 +25,24 @@ public class UserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public Person addANewUser(@RequestBody UserDto userDto) {
         return userService.createANewAccount(userDto);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<Person> getAllUsers(@RequestHeader String authorization) {
-        return userService.getAllUsers(authorization);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public List<Person> getAllUsers() {
+        return userService.getAllUsers();
         //Danger!! ask Tim
     }
 
     @GetMapping(params = "id", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Person getUserInformation(@RequestHeader String authorization, @Parameter Integer id) {
-        return userService.getUsers(authorization, id);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public Person getUserInformation( @Parameter Integer id) {
+        return userService.getUsers( id);
         //Danger!! ask Tim
     }
 

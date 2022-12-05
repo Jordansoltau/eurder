@@ -8,6 +8,7 @@ import com.example.eurder.service.dto.orderDto.OrderDTO;
 import com.example.eurder.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,18 +25,21 @@ public class OrderController {
 
     @PostMapping(path = "/{userId}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public ReservedOrder AddItemToReservedOrder(@RequestHeader String authorization, @RequestBody ItemGroepDto itemgroepDto, @PathVariable Integer userId) {
-       return orderService.createAReservation(authorization, itemgroepDto,userId);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public ReservedOrder AddItemToReservedOrder( @RequestBody ItemGroepDto itemgroepDto, @PathVariable Integer userId) {
+       return orderService.createAReservation(itemgroepDto,userId);
     }
 
     @PostMapping(path = "/{userId}/confirm",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderDTO confirmOrder(@RequestHeader String authorization, @PathVariable Integer userId){
-        return orderService.confirmReservedItems(authorization,userId);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public OrderDTO confirmOrder( @PathVariable Integer userId){
+        return orderService.confirmReservedItems(userId);
     }
 
 @GetMapping(path = "/reservedorders",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
+//@PreAuthorize("hasAuthority('ADMIN')")
     public List<ReservedOrderDTO> getallreservedOrders(){
         return orderService.getAllReservedOrders();
 }

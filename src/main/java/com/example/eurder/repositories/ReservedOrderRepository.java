@@ -41,7 +41,7 @@ public class ReservedOrderRepository{
 
 
     public List<ReservedOrder> getAllReservedOrders() {
-        return entityManager.createQuery("select a from ReservedOrder a", ReservedOrder.class)
+        return entityManager.createQuery("select a from ReservedOrder a where a.order is null ", ReservedOrder.class)
                 .getResultList();
     }
 }

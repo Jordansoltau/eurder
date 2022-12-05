@@ -20,18 +20,21 @@ public class ItemController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Item addANewItem( @RequestHeader String authorization, @RequestBody ItemDto itemDto) {
-        return itemService.createANewItemInItemRepository(itemDto,authorization);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public Item addANewItem( @RequestBody ItemDto itemDto) {
+        return itemService.createANewItemInItemRepository(itemDto);
     }
 
     @PatchMapping(path="/{itemID}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public Item updateItem(@RequestHeader String authorization, @RequestBody ItemDto itemDto, @PathVariable String itemID){
-        return itemService.updateThisItem(authorization,itemDto,itemID);
+//    @PreAuthorize("hasAuthority('ADMIN')")
+    public Item updateItem(@RequestBody ItemDto itemDto, @PathVariable String itemID){
+        return itemService.updateThisItem(itemDto,itemID);
     }
 //security is uit
     @GetMapping(path = ("/stock"), produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public List<Item> getStockOverview(){
         return itemService.getItemStockOverview();
     }
